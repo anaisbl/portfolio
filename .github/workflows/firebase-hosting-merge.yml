@@ -19,4 +19,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.firebasetoken }}
           channelId: live
           projectId: nana-16ec2
-          entryPoint: /code/firebase.json  # Specify the path to your firebase.json file
+          entryPoint: C:\Github\portfolio\code\firebase.json  # Specify the path to your firebase.json file
