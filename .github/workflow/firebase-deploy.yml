@@ -1,0 +1,22 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches:
+      - main  # Deploy on pushes to the 'main' branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Build your app
+        run: npm run build portfolio  # Replace with your build command
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          site: nana-16ec2.web.app  # Replace with your Firebase site ID
+          token: ${{ secrets.firebasetoken }}  # Replace with your Firebase token
+          public: 'build'  # Replace with your build output directory
