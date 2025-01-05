@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build your app
-        run: npm run build portfolio  # Replace with your build command
+        run: npm run build  # Replace with your build command
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
