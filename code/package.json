@@ -3,7 +3,7 @@
     "autoprefixer": "^10.4.20"
   },
   "scripts": {
-    "build": "tailwindcss build ./public/src/style.css -o ./dist/style.css"
+    "build": "tailwindcss build ./public/style.css -o ./dist/style.css"
   },
   "dependencies": {
     "css": "^3.0.0",
