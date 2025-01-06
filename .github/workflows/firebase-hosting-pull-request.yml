@@ -10,8 +10,36 @@ permissions:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout code
       - uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Set your desired Node.js version
+
+      # Step 3: Navigate to the directory containing package.json (if needed)
+      - name: Navigate to the correct directory
+        run: cd code  # Modify this based on the actual location of your package.json
+
+      # Step 4: Install dependencies (npm install)
+      - name: Install dependencies
+        run: |
+          npm install  # Install your Node.js dependencies, including Tailwind CSS
+
+      # Step 5: Build Tailwind CSS
+      - name: Build Tailwind CSS
+        run: |
+          npx tailwindcss build ./src/styles.css -o ./dist/styles.css  # Customize paths if needed
+
+      # Step 6: Run other build commands if you have additional processing (optional)
+      - name: Build project (optional)
+        run: |
+          npm run build  # Replace with your build command if you have a custom build step
+
+      # Step 7: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

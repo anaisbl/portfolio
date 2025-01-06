@@ -13,30 +13,50 @@
 >>>>>>> Stashed changes
         <title>Anais | Home</title>
     </head>
-    <body>
-        <!--Header image-->
-        <img src="img/profile.jpg" width="400" alt="anais-profile-picture">
-        <!--Header title-->
-        <h1>Anaïs Blenet</h1>
-        <!--Header introduction-->
-        <h4>Welcome to my website! <br> I am a multifaceted recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
+    <body class="bg-gray-100 text-gray-800 font-sans">
 
-        <!--Navbar-->
-        <button><a href="cs.html"><h3>Computer science</h3></a></button>
-        <button><a href="art.html"><h3>Art</h3></a></button>
-        <button><a href="#about"><h3>About</h3></a></button>
-        <button><a href="#contact"><h3>Contact</h3></a></button>
+      <!--full body container for responsivness & centering-->
+      <div class="flex flex-col items-center justify-center ">
+
+        <!-- Header container for filling the screen -->
+        <div class="flex flex-col items-center justify-center min-h-screen">
+
+          <!--Header image-->
+          <img src="img/profile.jpg" class="rounded-full w-80 h-80 mb-4 mt-4" alt="anais-profile-picture">
+
+          <!--Header title-->
+          <h1 class="text-4xl font-bold mb-2">Anaïs Blenet</h1>
+
+          <!--Header introduction-->
+          <h4 class="text-lg text-center mb-8 px-4 max-w-lg">Welcome to my website! I am a multifaceted recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
+
+          <!--Navbar-->
+          <div class="space-x-4 mb-8">
+            <button class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="cs.html"><h3>Computer science</h3></a></button>
+            <button class="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="art.html"><h3>Art</h3></a></button>
+            <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"><a href="#about"><h3>About</h3></a></button>
+            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"><a href="#contact"><h3>Contact</h3></a></button>
+          </div>
+
+        </div>
 
         <!--About section-->
-        <h2 id="about">About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maxime exercitationem placeat voluptates? Soluta officia vero recusandae quia dolorum alias ipsa praesentium libero autem, itaque, perspiciatis quos nostrum dicta suscipit?</p>
+        <div id="about" class="text-center max-w-2xl mx-auto mb-8">
+          <h2 id="about" class="text-2xl font-semibold mb-4">About</h2>
+          <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maxime exercitationem placeat voluptates? Soluta officia vero recusandae quia dolorum alias ipsa praesentium libero autem, itaque, perspiciatis quos nostrum dicta suscipit?</p>
+        </div>
 
         <!--Contact section-->
-        <h2 id="contact">Contact</h2>
-        <button><a href="mailto:anais.blenet@work.com">Email</a></button>
-        <button><a ref="https://github.com/anaisbl">Github</a></button>
-        <button><a href="https://www.linkedin.com/in/anais-blenet/">Linkedin</a></button>
+        <div id="contact" class="text-center max-w-2xl mx-auto mb-8">
+          <h2 id="contact" class="text-2xl font-semibold mb-4">Contact</h2>
+          <div class="space-x-4">
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="mailto:anais.blenet@work.com">Email</a></button>
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="https://github.com/anaisbl">Github</a></button>
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="https://www.linkedin.com/in/anais-blenet/">Linkedin</a></button>
+          </div>
+        </div>
         
+      </div>       
     </body>
 
 </html>
