@@ -3,11 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="src/style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
         <title>Anais | Home</title>
     </head>
-    <body class="bg-gray-100 text-gray-800 font-sans">
+    <body class="bg-gray-100 text-gray-800 font-sans my-theme">
 
       <!--full body container for responsivness & centering-->
       <div class="flex flex-col items-center justify-center ">
@@ -25,11 +24,11 @@
           <h4 class="text-lg text-center mb-8 px-4 max-w-lg">Welcome to my website! I am a multifaceted recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
 
           <!--Navbar-->
-          <div class="space-x-4 mb-8">
-            <button class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="cs.html"><h3>Computer science</h3></a></button>
-            <button class="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="art.html"><h3>Art</h3></a></button>
-            <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"><a href="#about"><h3>About</h3></a></button>
-            <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"><a href="#contact"><h3>Contact</h3></a></button>
+          <div class="navbar bg-base-100">
+            <a class="btn btn-primary" href="cs.html"><h3>Computer science</h3></a>
+            <a class="btn btn-primary" href="art.html"><h3>Art</h3></a>
+            <a class="btn btn-primary" href="#about"><h3>About</h3></a>
+            <a class="btn btn-primary" href="#contact"><h3>Contact</h3></a>
           </div>
 
         </div>
