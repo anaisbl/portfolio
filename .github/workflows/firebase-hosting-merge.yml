@@ -21,23 +21,26 @@ jobs:
         with:
           node-version: '16'  # Set your desired Node.js version
 
-      # Step 3: Navigate to the directory containing package.json (if needed)
-      - name: Navigate to the correct directory
-        run: cd code  # Modify this based on the actual location of your package.json
+      # Step 3: Navigate to the code directory where package.json is located
+      - name: Navigate to the 'code' directory
+        run: cd code  # Navigate to the directory containing package.json
 
       # Step 4: Install dependencies (npm install)
       - name: Install dependencies
         run: |
+          cd code  # Ensure we are in the correct directory before installing dependencies
           npm install  # Install your Node.js dependencies, including Tailwind CSS
 
       # Step 5: Build Tailwind CSS
       - name: Build Tailwind CSS
         run: |
+          cd code  # Ensure we're in the 'code' directory before running Tailwind
           npx tailwindcss build ./src/styles.css -o ./dist/styles.css  # Customize paths if needed
 
       # Step 6: Run other build commands if you have additional processing (optional)
       - name: Build project (optional)
         run: |
+          cd code  # Ensure we're in the correct directory for the build
           npm run build  # Replace with your build command if you have a custom build step
 
       # Step 7: Deploy to Firebase Hosting
