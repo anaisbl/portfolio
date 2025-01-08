@@ -3,10 +3,10 @@ module.exports = {
     content: [
       "./public/**/*.{html,js}", // Ensure that Tailwind scans your HTML/JS files
     ],
-    theme: {
-      extend: {},
+    daisyui: {
+      themes: ["autumn"],
     },
     plugins: [
-      require('daisyui'), // Adding DaisyUI plugin
+      require('daisyui'),
     ],
   };

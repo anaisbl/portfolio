@@ -1,55 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="autumn">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="style.css" rel="stylesheet">
+        <link href="dist/style.css" rel="stylesheet">
+        <!--Icons by Icons8-->
         <title>Anais | Home</title>
     </head>
-    <body class="bg-gray-100 text-gray-800 font-sans my-theme">
+    <body class="bg-base-200">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+        /*font for nav*/
+        .kalam-light {
+          font-family: "Kalam", serif;
+          font-weight: 300;
+          font-style: normal;
+        }
+      </style>
 
       <!--full body container for responsivness & centering-->
-      <div class="flex flex-col items-center justify-center ">
+      <div class="flex flex-col items-center justify-center">
 
-        <!-- Header container for filling the screen -->
-        <div class="flex flex-col items-center justify-center min-h-screen">
-
-          <!--Header image-->
-          <img src="img/profile.jpg" class="rounded-full w-80 h-80 mb-4 mt-4" alt="anais-profile-picture">
-
-          <!--Header title-->
-          <h1 class="text-4xl font-bold mb-2">Anaïs Blenet</h1>
-
-          <!--Header introduction-->
-          <h4 class="text-lg text-center mb-8 px-4 max-w-lg">Welcome to my website! I am a multifaceted recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
-
-          <!--Navbar-->
-          <div class="navbar bg-base-100">
-            <a class="btn btn-primary" href="cs.html"><h3>Computer science</h3></a>
-            <a class="btn btn-primary" href="art.html"><h3>Art</h3></a>
-            <a class="btn btn-primary" href="#about"><h3>About</h3></a>
-            <a class="btn btn-primary" href="#contact"><h3>Contact</h3></a>
+         <!--Navbar-->
+        <div class="w-full mb-8">
+          <div class="navbar bg-primary w-full mx-auto py-2 flex justify-between items-center">
+            <!-- Logo (on the left) -->
+            <a href="#" class="flex items-center space-x-4">
+              <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
+              <span class="text-2xl font-extralight text-gray-50 kalam-light">Anaïs Blenet</span>
+            </a>
+  
+            <!-- Navigation links (centered) -->
+            <div class="flex space-x-6">
+              <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="cs.html">Computer Science</a>
+              <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="art.html">Art</a>
+              <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="#about">About</a>
+              <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="#contact">Contact</a>
+            </div>
           </div>
-
         </div>
 
+        <!--Header image-->
+        <img src="img/profile.jpg" class="rounded-full w-80 h-80 mb-4 mt-2 shadow-xl" alt="anais-profile-picture">
+
+        <!--Header title-->
+        <h1 class="text-4xl font-extrabold text-primary mb-6">Hi, my name is Anaïs</h1>
+
+        <!--Header introduction-->
+        <h4 class="text-lg text-center mb-6 px-4 w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
+      
         <!--About section-->
-        <div id="about" class="text-center max-w-2xl mx-auto mb-8">
-          <h2 id="about" class="text-2xl font-semibold mb-4">About</h2>
-          <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maxime exercitationem placeat voluptates? Soluta officia vero recusandae quia dolorum alias ipsa praesentium libero autem, itaque, perspiciatis quos nostrum dicta suscipit?</p>
+        <div id="about" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-lg">
+          <h2 id="about" class="text-3xl font-extrabold text-primary mb-6">About</h2>
+          <h4 class="text-2xl font-semibold text-accent-content mb-4">Why art and computer science?</h4>
+          <p class="text-lg mb-6 leading-relaxed text-accent-content">Art has a special place in my heart. I started drawing before I even learned to write! Drawing my day dreams, my nighmares, my goals, my many trains of thoughts, anything and everything I saw, heard about and imagined. <br> I didn't want to mix business and pleasure so much, which is why I didn't pursue a higher education in the subject. However, in my free time I hone my skills and take on certain projects with a lot of creative freedom and super cools ideas!</p>
+          <div class="mb-6">
+            <button class="bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300"><a href="art.html">View art projects</a></button>
+          </div>
+          
+          <p class="text-lg mb-6 leading-relaxed text-accent-content">Art and computer science might have seemed miles apart decades ago, and some might consider them so still to this day, including me. I like how different they both are in terms of content and approaches. Art stimulates my creative brain, and computer science stimulates the "scienc-y" side of it. I love how both allow me to fall into the zone, wether I'm trying to figure out how to deploy through Github actions or choosing a color palette for a new project. My interest in computers was minimal from a young age, I was agile with technology, I liked learning the little tricks, tips and shortcuts but I always thought the world of computer science was out of reach for me. </p>
+
+          <p class="text-lg mb-6 leading-relaxed text-accent-content">The pandemic changed that for me, I was introduced to web development thanks to an elective class I took in my last year of bachelors, and I thought "Wow, this is what coding is!". 5 years later, here I am, graduated masters in computer science, knowing what OOP means and being able to deploy my own website and data science projects! Time is a beautiful thing, I am proud of where I stand today and I can't wait to look back in 2030</p>
+
+          <div class="mb-6">
+            <button class="bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300"><a href="art.html">View art projects</a></button>
+          </div>
         </div>
 
         <!--Contact section-->
-        <div id="contact" class="text-center max-w-2xl mx-auto mb-8">
-          <h2 id="contact" class="text-2xl font-semibold mb-4">Contact</h2>
-          <div class="space-x-4">
-            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="mailto:anais.blenet@work.com">Email</a></button>
-            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="https://github.com/anaisbl">Github</a></button>
-            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><a href="https://www.linkedin.com/in/anais-blenet/">Linkedin</a></button>
+        <div id="contact" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-xl">
+          <h2 id="contact" class="text-3xl font-extrabold text-primary mb-6">Contact</h2>
+          <h3 class="text-xl font-medium text-accent-content mb-6">If you want to get in touch to chat, or view my socials ...</h3>
+
+          <div class="space-x-8 flex justify-center">
+
+            <a href="mailto:anais.blenet@work.com" class="inline-block text-xl hover:scale-125 transition-all duration-300">
+              <img width="100" height="100" src="img/icons8-email-100.png" alt="new-post" alt="Email" />
+            </a>
+
+            <a href="https://github.com/anaisbl" class="inline-block text-xl hover:scale-125 transition-all duration-300">
+              <img width="100" height="100" src="img/icons8-github-100.png" alt="Github" />
+            </a>
+
+            <a href="https://www.linkedin.com/in/anais-blenet/" class="inline-block text-xl hover:scale-125 transition-all duration-300">
+              <img width="100" height="100" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+            </a>
+
           </div>
         </div>
         
       </div>       
     </body>
-
 </html>
