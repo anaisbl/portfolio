@@ -8,6 +8,7 @@
         <title>Anais | Home</title>
     </head>
     <body class="bg-base-200">
+
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
         /*font for nav*/
@@ -29,14 +30,29 @@
               <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
               <span class="text-2xl font-extralight text-gray-50 kalam-light">Anaïs Blenet</span>
             </a>
+
+            <!-- Hamburger Icon for Mobile (visible on small screens) -->
+            <div class="block md:hidden">
+              <button id="hamburger-btn" class="text-gray-200">
+                <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+              </button>
+            </div>
   
             <!-- Navigation links (centered) -->
-            <div class="flex space-x-6">
+            <div id="navbar-links" class="hidden md:flex space-x-6">
               <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="cs.html">Computer Science</a>
               <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="art.html">Art</a>
               <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="#about">About</a>
               <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300" href="#contact">Contact</a>
             </div>
+          </div>
+
+          <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
+          <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
+            <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300 block py-2 px-4" href="cs.html">Computer Science</a>
+            <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300 block py-2 px-4" href="art.html">Art</a>
+            <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300 block py-2 px-4" href="#about">About</a>
+            <a class="btn btn-ghost text-xl text-gray-200 hover:text-neutral-content transition-all duration-300 block py-2 px-4" href="#contact">Contact</a>
           </div>
         </div>
 
@@ -88,7 +104,10 @@
 
           </div>
         </div>
-        
-      </div>       
+      </div>
+
+      <!-- Link to the external JavaScript file -->
+      <script src="main.js"></script>
+      
     </body>
 </html>
