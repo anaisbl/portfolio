@@ -1,103 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="autumn">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="dist/style.css" rel="stylesheet">
         <!--Icons by Icons8-->
-        <title>Anais | CS Projects</title>
+        <title>Anaïs | CS Projects</title>
     </head>
     <body class="bg-base-200 fade-transition">
-        
+
       <!--full body container for responsivness & centering-->
       <div class="flex flex-col items-center justify-center">
 
         <!--Navbar-->
-       <div class="w-full mb-8">
-            <div class="navbar bg-primary w-full mx-auto py-2 flex justify-between items-center">
-                <!-- Logo (on the left) -->
-                <a href="index.html" class="flex items-center space-x-4">
-                    <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
-                    <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
+        <div class="w-full mb-8">
+          <div class="navbar bg-primary mx-auto py-2 flex justify-between items-center">
+            <!-- Logo (on the left) -->
+            <a href="index.html" class="flex items-center space-x-4">
+              <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
+              <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
+            </a>
+
+            <!-- Hamburger Icon for Mobile (visible on small screens) -->
+            <div class="block md:hidden">
+              <button id="hamburger-btn" class="text-gray-200">
+                <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+              </button>
+            </div>
+  
+            <!-- Navigation links (centered) -->
+            <div id="navbar-links" class="hidden md:flex space-x-6">
+              <a class="transition-link nav-link" href="cs.html">Computer Science</a>
+              <a class="transition-link nav-link" href="art.html">Art</a>
+              <a class="transition-link nav-link" href="#about">About</a>
+            </div>
+          </div>
+
+          <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
+          <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
+            <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
+            <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
+            <a id="about-link" class="transition-link nav-link-mobile" href="#about">About</a>
+          </div>
+        </div>
+
+        <!--Header title-->
+        <h1 class="text-4xl font-extrabold text-primary mb-6">Computer science projects</h1>
+
+        <!--Header introduction-->
+        <h4 class="text-lg text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Computer science is an umbrella spanning many, many different disciplines. Something I try to explain to my parents that yes I studied computer science, no I am not capable of building an application like Facebook to become a millionnaire. <br> <br>
+        These projects have been done as part of university coursework, paid work and personal little projects to keep up my skills and learn more. <br> <br>
+        Some are ongoing (like this website), others have horrible syntax (we live and we learn) and a select few are actually, quite fantastic!</h4>
+
+        <section class="project my-16">
+            <!--Personal projects-->
+            <div class="divider divider-primary p-4">Personal projects</div>
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-extrabold text-primary mb-4">Corto Safaris website</h2>
+              <p class="text-lg text-gray-700 mb-4">
+                A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission
+              </p>
+              <p class="text-md font-semibold text-gray-600 mb-4"><strong>Tech Stack:</strong> HTML/CSS, Bootstrap, JavaScript</p>
+              <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Web development</p>
+              <div class="space-x-4 mb-6">
+                <a href="https://www.cortosafaristanzania.com/" class="btn-red">
+                  Link to website
                 </a>
+              </div>
+              <div class="flex flex-wrap justify-center gap-4">
+                <img src="img/corto_screen1.png" alt="Screenshot of contact form code" class="rounded-lg shadow-lg max-w-sm">
+                <img src="img/corto_screen2.png" alt="Screenshot of home page" class="rounded-lg shadow-lg max-w-sm">
+              </div>
+            </div>
 
-                <!-- Hamburger Icon for Mobile (visible on small screens) -->
-                <div class="block md:hidden">
-                    <button id="hamburger-btn" class="text-gray-200">
-                    <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
-                    </button>
+            <!--Uni projects-->
+            <div class="divider divider-primary pt-10 pb-4">University projects</div>
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-extrabold text-primary mb-4">Bank Management System</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                  A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account.
+                </p>
+                <p class="text-md font-semibold text-gray-600 mb-4"><strong>Tech Stack:</strong> Python</p>
+                <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Software development</p>
+                <div class="space-x-4 mb-6">
+                  <a href="https://your-live-project-link.com" class="btn-red">
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/anaisbl/TUD---OOP-final-CA" class="btn-red">
+                    View Code
+                  </a>
                 </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <img src="path-to-screenshot1.jpg" alt="Screenshot of project" class="rounded-lg shadow-lg max-w-sm">
+                  <img src="path-to-screenshot2.jpg" alt="Screenshot of project" class="rounded-lg shadow-lg max-w-sm">
+                </div>
+            </div>
+        </section>
         
-                <!-- Navigation links (centered) -->
-                <div id="navbar-links" class="hidden md:flex space-x-6">
-                    <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 active:text-red-100 transition-all duration-300" href="cs.html">Computer Science</a>
-                    <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="art.html">Art</a>
+
+    </div>
+
+    <footer class="footer footer-center bg-primary text-primary-content p-4">
+        <aside>
+          <p>Copyright © 2025 - All right reserved to Nana</p>
+          <nav>
+                <div class="grid grid-flow-col gap-5 pb-2">
+                    <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-email-100.png" alt="Email" />
+                    </a>
+                    <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-github-100.png" alt="Github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+                    </a>
                 </div>
+            </nav>
+        </aside>
+    </footer>
 
-                <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
-                <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
-                    <a id="cs-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="cs.html">Computer Science</a>
-                    <a id="art-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="art.html">Art</a>
-                    <a id="contact-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="#contact">Contact</a>
-                </div>
-            </div>
-        </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="main.js"></script>
 
-       <!--Header title-->
-       <h1 class="text-4xl font-extrabold text-primary mb-6">Computer Science projects</h1>
-
-       <!--Header introduction-->
-       <h4 class="text-lg text-center mb-6 px-4 w-1/2">From web development to data science, here are the projects I have completed. Some of them are personal aka done for me and to improve my skills, others were paid and the rest is university coursework.</h4>
-
-       <!--Project section-->
-       <div id="cs-projects">
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure>
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
-                </figure>
-                <div class="card-body">
-                <h2 class="card-title">
-                    Shoes!
-                    <div class="badge badge-secondary">NEW</div>
-                </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <div class="badge badge-outline">Fashion</div>
-                    <div class="badge badge-outline">Products</div>
-                </div>
-                </div>
-            </div>
-       </div>
-
-       <!--Contact section-->
-       <div id="contact" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-xl">
-            <h2 id="contact" class="text-3xl font-extrabold text-primary mb-6">Contact</h2>
-            <h3 class="text-xl font-medium text-accent-content mb-6">If you want to get in touch to chat, or view my socials ...</h3>
-
-            <div class="space-x-8 flex justify-center">
-
-            <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-                <img width="100" height="100" src="img/icons8-email-100.png" alt="new-post" alt="Email" />
-            </a>
-
-            <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-                <img width="100" height="100" src="img/icons8-github-100.png" alt="Github" />
-            </a>
-
-            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-                <img width="100" height="100" src="img/icons8-linkedin-100.png" alt="Linkedin" />
-            </a>
-
-            </div>
-        </div>
-
-      </div>
-      
-      <!-- Link to the external JavaScript file -->
-      <script src="main.js"></script>
-        
     </body>
-
 </html>

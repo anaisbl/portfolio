@@ -1,5 +1,4 @@
-/* This file will include the necessary Tailwind directives */
-
+/*Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +7,7 @@
 
 /* social media icons styling */
 .social-link {
-    display: inline-block;
-    transition: all 0.3s;
-}
-.social-link:hover {
-transform: scale(1.25);
+    @apply inline-block text-xl hover:scale-125 transition-all duration-300
 }
 
 /* nav links styling */

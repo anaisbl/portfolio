@@ -40,18 +40,3 @@ document.addEventListener("DOMContentLoaded", function() {
   // Add a class that triggers the fade-in effect
   document.body.classList.add('fade-transition-visible');
 });
-
-// ease in transition of content when scrolling
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in-visible');  // Trigger animation when in view
-      observer.unobserve(entry.target); // Stop observing once animation has triggered
-    }
-  });
-}, {
-  threshold: 0.5 // Trigger when 50% of the element is in the viewport
-});
-document.querySelectorAll('.fade-in').forEach((element) => {
-  observer.observe(element); // Start observing the element
-});
