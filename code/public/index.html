@@ -7,12 +7,12 @@
         <!--Icons by Icons8-->
         <title>Anais | Home</title>
     </head>
-    <body class="bg-base-200">
+    <body class="bg-base-200 fade-transition">
 
       <!--full body container for responsivness & centering-->
       <div class="flex flex-col items-center justify-center">
 
-         <!--Navbar-->
+        <!--Navbar-->
         <div class="w-full mb-8">
           <div class="navbar bg-primary w-full mx-auto py-2 flex justify-between items-center">
             <!-- Logo (on the left) -->
@@ -30,26 +30,26 @@
   
             <!-- Navigation links (centered) -->
             <div id="navbar-links" class="hidden md:flex space-x-6">
-              <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="cs.html">Computer Science</a>
-              <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="art.html">Art</a>
-              <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="#about">About</a>
-              <a class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="#contact">Contact</a>
+              <a class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="cs.html">Computer Science</a>
+              <a class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="art.html">Art</a>
+              <a class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="#about">About</a>
+              <a class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300" href="#contact">Contact</a>
             </div>
           </div>
 
           <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
           <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
-            <a id="cs-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="cs.html">Computer Science</a>
-            <a id="art-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="art.html">Art</a>
-            <a id="about-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="#about">About</a>
-            <a id="contact-link" class="btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="#contact">Contact</a>
+            <a id="cs-link" class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="cs.html">Computer Science</a>
+            <a id="art-link" class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="art.html">Art</a>
+            <a id="about-link" class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="#about">About</a>
+            <a id="contact-link" class="transition-link btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4" href="#contact">Contact</a>
           </div>
         </div>
 
         <!--Header image-->
         <div class="avatar">
-          <div class="ring-primary ring-offset-base-100 w-1/2 sm:w-1/3 md:w-1/3 lg:w-1/4 h-auto mx-auto rounded-full ring ring-offset-2">
-            <img src="img/profile.jpg" />
+          <div class="ring-primary ring-offset-base-100 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 h-auto mx-auto rounded-full ring ring-offset-2">
+            <img src="img/profile.jpg" class="w-full h-full object-cover rounded-full"/>
           </div>
         </div>
 
@@ -58,14 +58,27 @@
 
         <!--Header introduction-->
         <h4 class="text-lg text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse through both, and if you'd like to know more or get in touch, drop me a message!</h4>
-      
+
+        <!--Contact buttons-->
+        <div class="space-x-8 flex justify-center">
+          <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+            <img width="100" height="100" src="img/icons8-email-100.png" alt="Email" />
+          </a>
+          <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+            <img width="100" height="100" src="img/icons8-github-100.png" alt="Github" />
+          </a>
+          <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+            <img width="100" height="100" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+          </a>
+        </div>
+        
         <!--About section-->
         <div id="about" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-lg">
           <h2 id="about" class="text-3xl font-extrabold text-primary mb-6">About</h2>
           <h4 class="text-2xl font-semibold text-accent-content mb-4">Why art and computer science?</h4>
           <p class="text-lg mb-6 leading-relaxed text-accent-content">Art has a special place in my heart. I started drawing before I even learned to write! Drawing my day dreams, my nighmares, my goals, my many trains of thoughts, anything and everything I saw, heard about and imagined. <br> I didn't want to mix business and pleasure so much, which is why I didn't pursue a higher education in the subject. However, in my free time I hone my skills and take on certain projects with a lot of creative freedom and super cools ideas!</p>
           <div class="mb-6">
-            <button class="bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300"><a href="art.html">View art projects</a></button>
+            <button class="btn-red"><a href="art.html">View art projects</a></button>
           </div>
           
           <p class="text-lg mb-6 leading-relaxed text-accent-content">Art and computer science might have seemed miles apart decades ago, and some might consider them so still to this day, including me. I like how different they both are in terms of content and approaches. Art stimulates my creative brain, and computer science stimulates the "scienc-y" side of it. I love how both allow me to fall into the zone, wether I'm trying to figure out how to deploy through Github actions or choosing a color palette for a new project. My interest in computers was minimal from a young age, I was agile with technology, I liked learning the little tricks, tips and shortcuts but I always thought the world of computer science was out of reach for me. </p>
@@ -73,35 +86,14 @@
           <p class="text-lg mb-6 leading-relaxed text-accent-content">The pandemic changed that for me, I was introduced to web development thanks to an elective class I took in my last year of bachelors, and I thought "Wow, this is what coding is!". 5 years later, here I am, graduated masters in computer science, knowing what OOP means and being able to deploy my own website and data science projects! Time is a beautiful thing, I am proud of where I stand today and I can't wait to look back in 2030</p>
 
           <div class="mb-6">
-            <button class="bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300"><a href="art.html">View art projects</a></button>
+            <button class="btn-red"><a href="cs.html">View CS projects</a></button>
           </div>
         </div>
 
-        <!--Contact section-->
-        <div id="contact" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-xl">
-          <h2 id="contact" class="text-3xl font-extrabold text-primary mb-6">Contact</h2>
-          <h3 class="text-xl font-medium text-accent-content mb-6">If you want to get in touch to chat, or view my socials ...</h3>
-
-          <div class="space-x-8 flex justify-center">
-
-            <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-              <img width="100" height="100" src="img/icons8-email-100.png" alt="new-post" alt="Email" />
-            </a>
-
-            <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-              <img width="100" height="100" src="img/icons8-github-100.png" alt="Github" />
-            </a>
-
-            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl hover:scale-125 transition-all duration-300">
-              <img width="100" height="100" src="img/icons8-linkedin-100.png" alt="Linkedin" />
-            </a>
-
-          </div>
-        </div>
       </div>
 
-      <!-- Link to the external JavaScript file -->
-      <script src="main.js"></script>
+    <!-- Link to the external JavaScript file -->
+    <script src="main.js"></script>
 
     </body>
 </html>

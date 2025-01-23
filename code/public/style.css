@@ -3,3 +3,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ____________CLASS STYLING____________ */
+
+/* social media icons styling */
+.social-link {
+    display: inline-block;
+    transition: all 0.3s;
+}
+.social-link:hover {
+transform: scale(1.25);
+}
+
+/* red link button */
+.btn-red {
+    background-color: oklch(var(--p));
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.btn-red:hover {
+background-color: oklch(var(--ac));
+transform: scale(1.05);
+}
+
+/* ____________TRANSITIONS____________ */
+
+/* Global fade animation */
+.fade-transition {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+  
+/* Add this class when the page is ready */
+.fade-transition-visible {
+opacity: 1;
+}
+
+/* Content scroll fade in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.fade-in-visible {
+opacity: 1;
+}
