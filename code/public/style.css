@@ -15,20 +15,17 @@
 transform: scale(1.25);
 }
 
-/* red link button */
-.btn-red {
-    background-color: oklch(var(--p));
-    color: white;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    border-radius: 0.375rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
+/* nav links styling */
+.nav-link {
+    @apply btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300;
+}
+.nav-link-mobile {
+    @apply btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4
 }
 
-.btn-red:hover {
-background-color: oklch(var(--ac));
-transform: scale(1.05);
+/* main red link button */
+.btn-red {
+    @apply bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300
 }
 
 /* ____________TRANSITIONS____________ */
