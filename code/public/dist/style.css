@@ -1391,6 +1391,11 @@ html {
   margin-bottom: 4rem;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1447,8 +1452,8 @@ html {
   max-width: 42rem;
 }
 
-.max-w-sm {
-  max-width: 24rem;
+.max-w-full {
+  max-width: 100%;
 }
 
 .grid-flow-col {
