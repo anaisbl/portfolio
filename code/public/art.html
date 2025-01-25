@@ -1,13 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="autumn">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anais | Art Projects</title>
+        <link href="dist/style.css" rel="stylesheet">
+        <!--Icons by Icons8-->
+        <title>Anaïs | Art Projects</title>
     </head>
-    <body>
-        <p>art page</p>
-        
-    </body>
+    <body class="bg-base-200 fade-transition">
 
+      <!--full body container for responsivness & centering-->
+      <div class="flex flex-col items-center justify-center">
+
+        <!--Navbar-->
+        <div class="w-full mb-8">
+          <div class="navbar bg-primary mx-auto py-2 flex justify-between items-center">
+            <!-- Logo (on the left) -->
+            <a href="index.html" class="flex items-center space-x-4">
+              <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
+              <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
+            </a>
+
+            <!-- Hamburger Icon for Mobile (visible on small screens) -->
+            <div class="block md:hidden">
+              <button id="hamburger-btn" class="text-gray-200">
+                <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+              </button>
+            </div>
+  
+            <!-- Navigation links (centered) -->
+            <div id="navbar-links" class="hidden md:flex space-x-6">
+              <a class="transition-link nav-link" href="cs.html">Computer Science</a>
+              <a class="transition-link nav-link" href="art.html">Art</a>
+              <a class="transition-link nav-link" href="index.html#about">About</a>
+            </div>
+          </div>
+
+          <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
+          <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
+            <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
+            <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
+            <a id="about-link" class="transition-link nav-link-mobile" href="#about">About</a>
+          </div>
+        </div>
+
+        <!--Header image-->
+        <div class="avatar">
+            <img src="img/icons8-under-construction-100.png" class="w-full h-full object-cover"/>
+          </div>
+
+        <!--Header title-->
+        <h1 class="text-4xl font-extrabold text-primary mb-6">Art projects</h1>
+
+        <!--Header introduction-->
+        <h4 class="text-lg text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Sorry! This page is still under construction!</h4>
+
+        <div class="mb-6">
+            <button class="btn-red"><a href="index.html">Return to Home</a></button>
+        </div>
+
+    </div>
+
+    <footer class="footer footer-center bg-primary text-primary-content p-4">
+        <aside>
+          <p>Copyright © 2025 - All right reserved to Nana</p>
+          <nav>
+                <div class="grid grid-flow-col gap-5 pb-2">
+                    <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-email-100.png" alt="Email" />
+                    </a>
+                    <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-github-100.png" alt="Github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+                    </a>
+                </div>
+            </nav>
+        </aside>
+    </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="main.js"></script>
+
+    </body>
 </html>
