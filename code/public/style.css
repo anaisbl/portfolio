@@ -23,6 +23,11 @@
     @apply bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300
 }
 
+/* avatar picture styling */
+.avatar-styling {
+    @apply ring-primary ring-offset-base-100 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden mx-auto rounded-full ring ring-offset-2
+}
+
 /* ____________TRANSITIONS____________ */
 
 /* Global fade animation */
