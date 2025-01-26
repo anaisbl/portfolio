@@ -15,26 +15,6 @@ window.addEventListener('click', function (event) {
   }
 });
 
-// active link styling
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the current page URL
-  const currentUrl = window.location.pathname;
-
-  // Get all the navigation links
-  const navLinks = document.querySelectorAll('.navbar a');
-
-  // Loop through each link to check if it matches the current URL
-  navLinks.forEach(link => {
-    // Reset all links by removing the active class
-    link.classList.remove('text-white'); // Remove active text color from all links
-
-    // If the link matches the current URL, add the active class
-    if (link.href.includes(currentUrl)) {
-      link.classList.add('text-white'); // Add white text color for active link
-    }
-  });
-});
-
 // transition between pages
 document.addEventListener("DOMContentLoaded", function() {
   // Add a class that triggers the fade-in effect

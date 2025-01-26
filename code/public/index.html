@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="autumn">
+<html lang="en" data-theme="coffee">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,19 @@
         <title>Anaïs | Home</title>
     </head>
     <body class="bg-base-200 fade-transition">
+      <style>
+        /* Hiding the navbar on the main page because if i remove the chunk of code everything disappears and idk why*/
+        .navbar {
+          display: none;
+        }
+      </style>
 
       <!--full body container for responsivness & centering-->
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center w-full">
 
         <!--Navbar-->
         <div class="w-full mb-8">
-          <div class="navbar bg-primary mx-auto py-2 flex justify-between items-center">
+          <div class="navbar bg-secondary mx-auto py-2 flex justify-between items-center">
             <!-- Logo (on the left) -->
             <a href="index.html" class="flex items-center space-x-4">
               <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
@@ -24,7 +30,7 @@
             <!-- Hamburger Icon for Mobile (visible on small screens) -->
             <div class="block md:hidden">
               <button id="hamburger-btn" class="text-gray-200">
-                <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+                <img src="icons/icons8-hamburger-menu-100-green.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
               </button>
             </div>
   
@@ -37,7 +43,7 @@
           </div>
 
           <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
-          <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
+          <div id="mobile-menu" class="md:hidden hidden bg-secondary w-full">
             <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
             <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
             <a id="about-link" class="transition-link nav-link-mobile" href="#about">About</a>
@@ -57,52 +63,75 @@
         <!--Header introduction-->
         <h4 class="text-lg text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
 
+        <div class="divider divider-neutral py-4">Projects</div>
+        <div class="mb-6 flex flex-wrap justify-center gap-4">
+          <button class="btn-main"><a href="cs.html">View CS projects</a></button>
+          <button class="btn-main"><a href="art.html">View Art projects</a></button>
+        </div>
+
+        <div class="divider divider-neutral py-4">Socials</div>
+
         <!--Contact buttons-->
         <div class="space-x-8 flex justify-center">
           <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
-            <img width="100" height="100" src="img/icons8-email-100.png" alt="Email" />
+            <img width="100" height="100" src="icons/icons8-email-100-green.png" alt="Email" />
           </a>
           <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
-            <img width="100" height="100" src="img/icons8-github-100.png" alt="Github" />
+            <img width="100" height="100" src="icons/icons8-github-100-green.png" alt="Github" />
           </a>
           <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
-            <img width="100" height="100" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+            <img width="100" height="100" src="icons/icons8-linkedin-100-green.png" alt="Linkedin" />
           </a>
         </div>
         
+        <div class="divider divider-neutral pt-10">Get to know me</div>
         <!--About section-->
         <div id="about" class="text-center max-w-2xl mx-auto mb-8 bg-base-200 p-8 rounded-lg shadow-lg">
-          <h2 id="about" class="text-3xl font-extrabold text-primary mb-6">About</h2>
-          <h4 class="text-2xl font-semibold text-accent-content mb-4">Why art and computer science?</h4>
-          <p class="text-lg mb-6 leading-relaxed text-accent-content">Art has always held a special place in my heart—I've been drawing since before I could even write! I've used it to capture my dreams, fears, ideas, and everything I see or image. While I chose not to pursue formal education in art and keep it as a personal passion, in my free time I continue to hone my skills and take on creative projects with plenty of freedom and exciting ideas.</p>
-          <div class="mb-6">
-            <button class="btn-red"><a href="art.html">View art projects</a></button>
+          <h2 id="about" class="text-2xl font-extrabold text-primary mb-6">Why art and computer science?</h2>
+          <p class="text-lg mb-6 leading-relaxed text-secondary-content">Art has always held a special place in my heart—I've been drawing since before I could even write! I've used it to capture my dreams, fears, ideas, and everything I see or image. While I chose not to pursue formal education in art and keep it as a personal passion, in my free time I continue to hone my skills and take on creative projects with plenty of freedom and exciting ideas.</p>
+          <div class="carousel rounded-box max-w-full mb-6">
+            <div class="carousel-item w-full">
+              <img
+                src="img/gif art.gif"
+                class="w-full" />
+            </div>
           </div>
           
           <p class="text-lg mb-6 leading-relaxed text-accent-content">Art and computer science may seem worlds apart, and in some ways, they are. I enjoy how different they are in both content and approach—art fuels my creativity, while computer science challenges the analytical side of my brain. Both let me get "in the zone," whether I'm training a classification model or picking a color palette for a new project. Growing up, I had minimal interest in computers; while I enjoyed learning tips, tricks, and shortcuts, I always thought computer science was out of my reach.</p>
 
+          <div class="carousel rounded-box max-w-full mb-6">
+            <div class="carousel-item w-full">
+              <img
+                src="img/gif cs.gif"
+                class="w-full" />
+            </div>
+          </div>
+
           <p class="text-lg mb-6 leading-relaxed text-accent-content">That changed during the pandemic when I took an elective coding class in the final year of my bachelor's degree. It opened my eyes to the world of computing, and I thought, "So, this is what it's all about!" Five years later, I've earned a master's in computer science, understand OOP, and can deploy my own websites and data science projects. Time has been a great teacher, and I'm proud of how far I've come. I can't wait to look back in 2030 and see how much further I've gone!</p>
 
-          <div class="mb-6">
-            <button class="btn-red"><a href="cs.html">View CS projects</a></button>
+          <div class="carousel rounded-box max-w-full">
+            <div class="carousel-item w-full">
+              <img
+                src="img/gif end.gif"
+                class="w-full" />
+            </div>
           </div>
-        </div>
 
       </div>
 
-      <footer class="footer footer-center bg-primary text-primary-content p-4">
+      <footer class="footer footer-center bg-primary text-primary-content p-2">
         <aside>
           <p>Copyright © 2025 - All right reserved to Nana</p>
           <nav>
             <div class="grid grid-flow-col gap-5 pb-2">
               <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
-                <img width="50" height="50" src="img/icons8-email-100.png" alt="Email" />
+                <img width="50" height="50" src="icons/icons8-email-100-brown.png" alt="Email" />
               </a>
               <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
-                <img width="50" height="50" src="img/icons8-github-100.png" alt="Github" />
+                <img width="50" height="50" src="icons/icons8-github-100-brown.png" alt="Github" />
               </a>
               <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
-                <img width="50" height="50" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+                <img width="50" height="50" src="icons/icons8-linkedin-100-brown.png" alt="Linkedin" />
               </a>
             </div>
           </nav>

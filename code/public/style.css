@@ -12,15 +12,15 @@
 
 /* nav links styling */
 .nav-link {
-    @apply btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300;
+    @apply btn btn-ghost text-xl text-secondary-content hover:text-white transition-all duration-300;
 }
 .nav-link-mobile {
-    @apply btn btn-ghost text-xl text-red-300 hover:text-red-100 transition-all duration-300 block py-2 px-4
+    @apply btn btn-ghost text-xl text-secondary-content hover:text-white transition-all duration-300 block py-2 px-4
 }
 
-/* main red link button */
-.btn-red {
-    @apply bg-primary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-accent-content hover:scale-105 transition-all duration-300
+/* main link button */
+.btn-main {
+    @apply bg-secondary text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:btn-ghost hover:scale-105 transition-all duration-300
 }
 
 /* avatar picture styling */

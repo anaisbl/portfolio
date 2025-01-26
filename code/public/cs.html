@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="autumn">
+<html lang="en" data-theme="coffee">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
         <!--Navbar-->
         <div class="w-full mb-8">
-          <div class="navbar bg-primary mx-auto py-2 flex justify-between items-center">
+          <div class="navbar bg-secondary mx-auto py-2 flex justify-between items-center">
             <!-- Logo (on the left) -->
             <a href="index.html" class="flex items-center space-x-4">
               <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
@@ -24,7 +24,7 @@
             <!-- Hamburger Icon for Mobile (visible on small screens) -->
             <div class="block md:hidden">
               <button id="hamburger-btn" class="text-gray-200">
-                <img src="img/icons8-hamburger-menu-100.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+                <img src="icons/icons8-hamburger-menu-100-green.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
               </button>
             </div>
   
@@ -45,28 +45,28 @@
         </div>
 
         <!--Header title-->
-        <h1 class="text-4xl font-extrabold text-primary mb-6 text-center">Computer science projects</h1>
+        <h1 class="text-4xl font-extrabold text-info mb-6 text-center">Computer science projects</h1>
 
         <!--Header introduction-->
-        <h4 class="text-lg text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Computer science is an umbrella spanning many, <em>many</em> different disciplines. Something I try to explain to my parents that, "Yes I studied computer science, no I am not capable of building an application like Facebook to become a millionnaire". <br> <br>
+        <h4 class="text-lg text-secondary-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Computer science is an umbrella spanning many, <em>many</em> different disciplines. Something I try to explain to my parents that, "Yes I studied computer science, no I am not capable of building an application like Facebook to become a millionnaire". <br> <br>
         These projects have been completed as part of university coursework, paid work and personal little projects to keep up my skills and learn more. <br> <br>
         Some are ongoing (like this website), others have <em>questionable</em> syntax (we live and we learn) and a select few are actually, quite fantastic!</h4>
 
         <section class="project my-16 w-full">
           <!--Personal projects-->
-          <div class="divider divider-primary p-4">Personal projects</div>
+          <div class="divider divider-secondary text-secondary-content p-4">Personal projects</div>
           <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-extrabold text-primary mb-4">Corto Safaris website</h2>
-            <p class="text-lg text-gray-700 mb-4">
+            <h2 class="text-3xl font-extrabold text-info mb-4">Corto Safaris website</h2>
+            <p class="text-lg text-secondary-content mb-4">
               A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission
             </p>
-            <p class="text-md font-semibold text-gray-600"><strong>Tech Stack:</strong></p>
-            <div class="badge badge-outline">HTML/CSS</div>
-            <div class="badge">Bootstrap</div>
-            <div class="badge badge-warning mb-6">JavaScript</div>
-            <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Web development</p>
+            <p class="text-md font-semibold text-gray-400"><strong>Tech Stack:</strong></p>
+            <div class="badge badge-outline badge-info">HTML/CSS</div>
+            <div class="badge badge-outline badge-info">Bootstrap</div>
+            <div class="badge badge-outline badge-info mb-6">JavaScript</div>
+            <p class="text-md font-semibold text-gray-200 mb-4"><strong>Project tag:</strong> Web development</p>
             <div class="space-x-4 mb-6">
-              <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn-red">
+              <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn-main">
                 Link to website
               </a>
             </div>
@@ -77,21 +77,21 @@
           </div>
 
           <!--Uni projects-->
-          <div class="divider divider-primary pt-10 pb-4">University projects</div>
+          <div class="divider divider-secondary text-secondary-content pt-10 pb-4">University projects</div>
           <!--1. Bank management system-->
-          <div class="container mx-auto px-4 pb-8">
-            <h2 class="text-3xl font-extrabold text-primary mb-4">1. Bank Management System</h2>
-            <p class="text-lg text-gray-700 mb-4">
+          <div class="container mx-auto px-4 pb-4 mb-6">
+            <h2 class="text-3xl font-extrabold text-info mb-4">1. Bank Management System</h2>
+            <p class="text-lg text-secondary-content mb-4">
               A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account among ther features. <br><br> A grade of <strong>63%</strong> was awarded for this project.
             </p>
-            <p class="text-md font-semibold text-gray-600"><strong>Tech Stack:</strong></p>
-            <div class="badge badge-secondary mb-6">Python</div>
-            <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Software development</p>
+            <p class="text-md font-semibold text-gray-400"><strong>Tech Stack:</strong></p>
+            <div class="badge badge-outline badge-info mb-6">Python</div>
+            <p class="text-md font-semibold text-gray-200 mb-4"><strong>Project tag:</strong> Software development</p>
             <div class="space-x-4 mb-6">
-              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-red">
+              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-main">
                 Live Demo
               </a>-->
-              <button><a href="https://github.com/anaisbl/TUD---OOP-final-CA" class="btn-red">
+              <button><a href="https://github.com/anaisbl/TUD---OOP-final-CA" class="btn-main">
                 View Code
               </a></button>
             </div>
@@ -102,21 +102,21 @@
           </div>
           <hr>
           <!--2. Classifier marketing campaign-->
-          <div class="container mx-auto px-4 py-4">
-            <h2 class="text-3xl font-extrabold text-primary mb-4">2. Predicting the outcome of a marketing campaign</h2>
-            <p class="text-lg text-gray-700 mb-4">
+          <div class="container mx-auto px-4 py-4 mb-6">
+            <h2 class="text-3xl font-extrabold text-info mb-4">2. Predicting the outcome of a marketing campaign</h2>
+            <p class="text-lg text-secondary-content mb-4">
               A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data. I tested various classifiers from the sci-kit learn library and utlized certain encoding techniques to achieve the task. <br> <br> A grade of <strong>100%</strong> was awarded for this project.
             </p>
-            <p class="text-md font-semibold text-gray-600"><strong>Tech Stack:</strong></p>
-            <div class="badge badge-secondary">Python</div>
-            <div class="badge badge-success">Sci-kit learn</div>
-            <div class="badge badge-neutral mb-6">Jupyter Notebook</div>
-            <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Machine learning</p>
+            <p class="text-md font-semibold text-gray-400"><strong>Tech Stack:</strong></p>
+            <div class="badge badge-outline badge-info">Python</div>
+            <div class="badge badge-outline badge-info">Sci-kit learn</div>
+            <div class="badge badge-outline badge-info mb-6">Jupyter Notebook</div>
+            <p class="text-md font-semibold text-gray-200 mb-4"><strong>Project tag:</strong> Machine learning</p>
             <div class="space-x-4 mb-6">
-              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-red">
+              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-main">
                 Live Demo
               </a>-->
-              <button><a href="https://github.com/anaisbl/TUD---ML-CA1" class="btn-red">
+              <button><a href="https://github.com/anaisbl/TUD---ML-CA1" class="btn-main">
                 View Code
               </a></button>
             </div>
@@ -127,23 +127,23 @@
           </div>
           <hr>
           <!--3. Big data-->
-          <div class="container mx-auto px-4 py-4">
-            <h2 class="text-3xl font-extrabold text-primary mb-4">3. Predicting steel-plates defects</h2>
-            <p class="text-lg text-gray-700 mb-4">
+          <div class="container mx-auto px-4 py-4 mb-6">
+            <h2 class="text-3xl font-extrabold text-info mb-4">3. Predicting steel-plates defects</h2>
+            <p class="text-lg text-secondary-content mb-4">
                 I joined a Kaggle playground series competition with the task of predicting steel-plate defects. Submissions were evaluated using area under the ROC curve for each of the defect categories and then averaged to give a final score. <br> <br>
                 I achieved a area under ROC score of 0.86375, which ranked me in the <strong>65th percentile</strong> (1443 out of 2199). The top score of the competition achieved a 0.89782 score.
             </p>
-            <p class="text-md font-semibold text-gray-600"><strong>Tech Stack:</strong></p>
-            <div class="badge badge-secondary">Python</div>
-            <div class="badge badge-success">Sci-kit Learn</div>
-            <div class="badge badge-neutral">Jupyter Notebook</div>
-            <div class="badge badge-accent mb-4">Pyspark</div>
-            <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Big data</p>
+            <p class="text-md font-semibold text-gray-400"><strong>Tech Stack:</strong></p>
+            <div class="badge badge-outline badge-info">Python</div>
+            <div class="badge badge-outline badge-info">Sci-kit Learn</div>
+            <div class="badge badge-outline badge-info">Jupyter Notebook</div>
+            <div class="badge badge-outline badge-info mb-4">Pyspark</div>
+            <p class="text-md font-semibold text-gray-200 mb-4"><strong>Project tag:</strong> Big data</p>
             <div class="space-x-4 my-6">
-              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-red">
+              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-main">
                 Live Demo
               </a>-->
-              <button><a href="https://github.com/anaisbl/TUD---Bigdata-CA" class="btn-red">
+              <button><a href="https://github.com/anaisbl/TUD---Bigdata-CA" class="btn-main">
                 View Code
               </a></button>
             </div>
@@ -154,26 +154,26 @@
           </div>
           <hr>
           <!--4. Deep learning-->
-          <div class="container mx-auto px-4 py-4">
-            <h2 class="text-3xl font-extrabold text-primary mb-4">Prediction, Image processing & Transfer learning</h2>
-            <p class="text-lg text-gray-700 mb-4">
+          <div class="container mx-auto px-4 py-4 mb-4">
+            <h2 class="text-3xl font-extrabold text-info mb-4">4. Prediction, Image processing & Transfer learning</h2>
+            <p class="text-lg text-secondary-content mb-4">
                 This assessment was separated into 2 parts: Song genre prediction and Image processing & transfer learning. <br>
                 Part 1 focused on predicting the genre of a song using through deep neural network models and methods using a dataset from Kaggle. <br>
                 Part 2 utilized the CIFAR-100 dataset to perform a range of image processing and transfer learning operations. <br> <br>
                 A grade of <strong>71%</strong> was awarded for this project.
 
             </p>
-            <p class="text-md font-semibold text-gray-600"><strong>Tech Stack:</strong></p>
-            <div class="badge badge-secondary">Python</div>
-            <div class="badge badge-neutral">Jupyter Notebook</div>
-            <div class="badge badge-error mb-6">Tensorflow/Keras</div>
+            <p class="text-md font-semibold text-gray-400"><strong>Tech Stack:</strong></p>
+            <div class="badge badge-outline badge-info">Python</div>
+            <div class="badge badge-outline badge-info">Jupyter Notebook</div>
+            <div class="badge badge-outline badge-info mb-6">Tensorflow/Keras</div>
 
-            <p class="text-md font-semibold text-gray-600 mb-4"><strong>Project tag:</strong> Deep learning</p>
+            <p class="text-md font-semibold text-gray-200 mb-4"><strong>Project tag:</strong> Deep learning</p>
             <div class="space-x-4 mb-6">
-              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-red">
+              <!--<a href="https://your-live-project-link.com" target="_blank" class="btn-main">
                 Live Demo
               </a>-->
-              <button><a href="https://github.com/anaisbl/TUD---DeepL-CA1" class="btn-red">
+              <button><a href="https://github.com/anaisbl/TUD---DeepL-CA1" class="btn-main">
                 View Code
               </a></button>
             </div>
@@ -186,19 +186,22 @@
 
     </div>
 
-    <footer class="footer footer-center bg-primary text-primary-content p-4">
+    <footer class="footer footer-center bg-secondary text-secondary-content p-4">
         <aside>
           <p>Copyright © 2025 - All right reserved to Nana</p>
           <nav>
                 <div class="grid grid-flow-col gap-5 pb-2">
+                  <a href="index.html" class="inline-block text-xl social-link">
+                    <img width="50" height="50" src="icons/icons8-home-100-green.png" alt="Home button"/>
+                    </a>
                     <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
-                    <img width="50" height="50" src="img/icons8-email-100.png" alt="Email" />
+                    <img width="50" height="50" src="icons/icons8-email-100-green.png" alt="Email" />
                     </a>
                     <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
-                    <img width="50" height="50" src="img/icons8-github-100.png" alt="Github" />
+                    <img width="50" height="50" src="icons/icons8-github-100-green.png" alt="Github" />
                     </a>
                     <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
-                    <img width="50" height="50" src="img/icons8-linkedin-100.png" alt="Linkedin" />
+                    <img width="50" height="50" src="icons/icons8-linkedin-100-green.png" alt="Linkedin" />
                     </a>
                 </div>
             </nav>
