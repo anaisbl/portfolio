@@ -58,10 +58,17 @@
         These projects have been completed as part of university coursework, paid work and personal little projects to keep up my skills and learn more. <br> <br>
         Some are ongoing (like this website), others have <em>questionable</em> syntax (we live and we learn) and a select few are actually, quite fantastic!</h4>
 
-        <section class="project my-16 w-full">
+        <!--Project filter-->
+        <div role="tablist" class="tabs tabs-bordered tabs-lg mt-4 pt-4">
+          <a role="tab" class="tab tab-active" data-type="all">All</a>
+          <a role="tab" class="tab" data-type="freelance">Freelance</a>
+          <a role="tab" class="tab" data-type="university">University</a>
+          <a role="tab" class="tab" data-type="fun">Just for Fun</a>
+        </div>
+
+        <section class="project my-16 w-full ">
           <!--Personal projects-->
-          <div class="divider divider-secondary text-secondary-content p-4">Freelance projects</div>
-          <div class="container mx-auto px-4">
+          <div class="container mx-auto px-4" data-type="freelance">
             <h2 class="text-3xl font-extrabold text-info mb-4">Corto Safaris website</h2>
             <p class="text-lg text-secondary-content mb-4">
               A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission
@@ -83,9 +90,8 @@
           </div>
 
           <!--Uni projects-->
-          <div class="divider divider-secondary text-secondary-content pt-10 pb-4">University projects</div>
           <!--1. Bank management system-->
-          <div class="container mx-auto px-4 pb-4 mb-6">
+          <div class="container mx-auto px-4 pb-4 mb-6" data-type="university">
             <h2 class="text-3xl font-extrabold text-info mb-4">1. Bank Management System</h2>
             <p class="text-lg text-secondary-content mb-4">
               A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account among ther features. <br><br> A grade of <strong>63%</strong> was awarded for this project.
@@ -106,9 +112,9 @@
               <img src="img/oop_ca_screen2.png" alt="Screenshot of terminal signing up" class="rounded-lg shadow-lg max-w-full">
             </div>
           </div>
-          <hr>
+          <hr data-type="university">
           <!--2. Classifier marketing campaign-->
-          <div class="container mx-auto px-4 py-4 mb-6">
+          <div class="container mx-auto px-4 py-4 mb-6" data-type="university">
             <h2 class="text-3xl font-extrabold text-info mb-4">2. Predicting the outcome of a marketing campaign</h2>
             <p class="text-lg text-secondary-content mb-4">
               A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data. I tested various classifiers from the sci-kit learn library and utlized certain encoding techniques to achieve the task. <br> <br> A grade of <strong>100%</strong> was awarded for this project.
@@ -131,9 +137,9 @@
               <img src="img/ml_ca_screen2.png" alt="Screenshot of predictions" class="rounded-lg shadow-lg max-w-full">
             </div>
           </div>
-          <hr>
+          <hr data-type="university">
           <!--3. Big data-->
-          <div class="container mx-auto px-4 py-4 mb-6">
+          <div class="container mx-auto px-4 py-4 mb-6" data-type="university">
             <h2 class="text-3xl font-extrabold text-info mb-4">3. Predicting steel-plates defects</h2>
             <p class="text-lg text-secondary-content mb-4">
                 I joined a Kaggle playground series competition with the task of predicting steel-plate defects. Submissions were evaluated using area under the ROC curve for each of the defect categories and then averaged to give a final score. <br> <br>
@@ -158,9 +164,9 @@
               <img src="img/bigdata_ca_screen2.png" alt="Screenshot of kaggle leaderboard" class="rounded-lg shadow-lg max-w-full">
             </div>
           </div>
-          <hr>
+          <hr data-type="university">
           <!--4. Deep learning-->
-          <div class="container mx-auto px-4 py-4 mb-4">
+          <div class="container mx-auto px-4 py-4 mb-4" data-type="university">
             <h2 class="text-3xl font-extrabold text-info mb-4">4. Prediction, Image processing & Transfer learning</h2>
             <p class="text-lg text-secondary-content mb-4">
                 This assessment was separated into 2 parts: Song genre prediction and Image processing & transfer learning. <br>
@@ -188,6 +194,9 @@
               <img src="img/deepl_ca_screen2.png" alt="Screenshot of model output for image processing" class="rounded-lg shadow-lg max-w-full">
             </div>
           </div>
+
+          <!--Just for fun project-->
+
         </section>
 
     </div>

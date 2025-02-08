@@ -49,3 +49,23 @@ opacity: 1;
 .fade-in-visible {
 opacity: 1;
 }
+
+/*project filter*/
+.container[data-type] {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    height: 0; /* To collapse the space */
+    overflow: hidden;
+}
+
+.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    height: auto; /* To expand the space */
+}
