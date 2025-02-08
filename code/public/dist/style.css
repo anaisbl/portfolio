@@ -1809,6 +1809,10 @@ input.tab:checked + .tab-content,
   max-width: 42rem;
 }
 
+.max-w-6xl {
+  max-width: 72rem;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -1881,6 +1885,15 @@ input.tab:checked + .tab-content,
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-base-content {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity, 1)));
 }
 
 .bg-base-100 {
