@@ -50,11 +50,12 @@ opacity: 1;
 opacity: 1;
 }
 
+/* ____________ANIMATIONS____________ */
+
 /*project filter*/
 .container[data-type] {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .hide {
     opacity: 0;
     transform: scale(0.95);
@@ -62,10 +63,26 @@ opacity: 1;
     height: 0; /* To collapse the space */
     overflow: hidden;
 }
-
 .show {
     opacity: 1;
     transform: scale(1);
     pointer-events: auto;
     height: auto; /* To expand the space */
+}
+
+/*animation pulse for avatar and social icons*/
+@keyframes pulse-avatar {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+}
+.avatar-styling {
+    @apply ring-secondary ring-offset-base-100 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden mx-auto rounded-full ring ring-offset-2;
+    animation: pulse-avatar 2s ease-in-out infinite;
+}
+.animated-icon {
+    animation: pulse-avatar 2s ease-in-out infinite;
 }

@@ -2807,6 +2807,8 @@ input.tab:checked + .tab-content,
   opacity: 1;
 }
 
+/* ____________ANIMATIONS____________ */
+
 /*project filter*/
 
 .container[data-type] {
@@ -2828,6 +2830,63 @@ input.tab:checked + .tab-content,
   pointer-events: auto;
   height: auto;
   /* To expand the space */
+}
+
+/*animation pulse for avatar and social icons*/
+
+@keyframes pulse-avatar {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.avatar-styling {
+  margin-left: auto;
+  margin-right: auto;
+  height: 12rem;
+  width: 12rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: var(--fallback-s,oklch(var(--s)/var(--tw-ring-opacity, 1)));
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: var(--fallback-b1,oklch(var(--b1)/1));
+}
+
+@media (min-width: 640px) {
+  .avatar-styling {
+    height: 14rem;
+    width: 14rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .avatar-styling {
+    height: 16rem;
+    width: 16rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .avatar-styling {
+    height: 18rem;
+    width: 18rem;
+  }
+}
+
+.avatar-styling {
+  animation: pulse-avatar 2s ease-in-out infinite;
+}
+
+.animated-icon {
+  animation: pulse-avatar 2s ease-in-out infinite;
 }
 
 @media (min-width: 1024px) {
