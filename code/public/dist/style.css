@@ -1813,6 +1813,10 @@ input.tab:checked + .tab-content,
   max-width: 100%;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .grid-flow-col {
   grid-auto-flow: column;
 }
@@ -1861,6 +1865,10 @@ input.tab:checked + .tab-content,
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
   margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .rounded-box {
@@ -2818,6 +2826,10 @@ input.tab:checked + .tab-content,
 @media (min-width: 640px) {
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:flex-none {
+    flex: none;
   }
 }
 
