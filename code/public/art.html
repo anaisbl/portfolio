@@ -7,7 +7,7 @@
         <!--Icons by Icons8-->
         <title>Anaïs | Art Projects</title>
     </head>
-    <body class="bg-base-100 fade-transition">
+    <body class="bg-base-100 fade-transition flex flex-col min-h-screen">
       <style>
         /* Hiding the navbar on the main page because if i remove the chunk of code everything disappears and idk why*/
         .navbar {
@@ -16,7 +16,7 @@
       </style>
 
       <!--full body container for responsivness & centering-->
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex-grow flex flex-col items-center justify-center">
 
         <!--Navbar-->
         <div class="w-full mb-8">
@@ -55,39 +55,48 @@
 
         <!--Header image-->
         <div class="avatar">
-            <img src="icons/icons8-under-construction-100-brown.png" class="w-full h-full object-cover"/>
+            <img src="icons/icons8-under-construction-100-brown.png" class="w-full h-full object-cover animated-icon"/>
         </div>
 
         <!--Header introduction-->
         <h4 class="text-lg text-center mb-6 px-4 pt-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Sorry! This page is still under construction!</h4>
 
-        <div class="mb-6">
+        <div class="mb-6 flex flex-wrap justify-center gap-4">
             <button class="btn-main"><a href="index.html">Return to Home</a></button>
+            <button class="btn-main"><a href="cs.html">View CS Projects</a></button>
         </div>
 
-    </div>
+      </div>
 
-    <footer class="footer footer-center bg-primary text-primary-content p-4">
+      <footer class="footer footer-center bg-primary text-primary-content p-4">
         <aside>
           <p>Copyright © 2025 - All right reserved to Nana</p>
           <nav>
-              <div class="grid grid-flow-col gap-5 pb-2">
+            <div class="grid grid-flow-col gap-5 pb-2">
+              <div class="lg:tooltip" data-tip="Home">
                 <a href="index.html" class="inline-block text-xl social-link">
                   <img width="50" height="50" src="icons/icons8-home-100-green.png" alt="Home button"/>
                 </a>
+              </div>
+              <div class="lg:tooltip" data-tip="Email">
                 <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
                 <img width="50" height="50" src="icons/icons8-email-100-green.png" alt="Email" />
                 </a>
+              </div>
+              <div class="lg:tooltip" data-tip="Github">
                 <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
                 <img width="50" height="50" src="icons/icons8-github-100-green.png" alt="Github" />
                 </a>
+              </div>
+              <div class="lg:tooltip" data-tip="Linkedin">
                 <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
                 <img width="50" height="50" src="icons/icons8-linkedin-100-green.png" alt="Linkedin" />
                 </a>
               </div>
-            </nav>
+            </div>
+          </nav>
         </aside>
-    </footer>
+      </footer>
 
     <!-- Link to the external JavaScript file -->
     <script src="main.js"></script>
