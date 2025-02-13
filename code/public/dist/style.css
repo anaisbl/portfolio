@@ -2733,10 +2733,6 @@ input.tab:checked + .tab-content,
   padding-bottom: 1rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pt-4 {
   padding-top: 1rem;
 }
