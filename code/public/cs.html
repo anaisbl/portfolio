@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="dist/style.css" rel="stylesheet">
-
-        <!-- Link to the external JavaScript file -->
         <script src="main.js" defer></script>
 
-        <!--Icons by Icons8-->
+        <!--All Icons by Icons8-->
         <title>Anaïs | CS Projects</title>
     </head>
     <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
@@ -21,19 +19,6 @@
 
       <!--full body container for responsivness & centering-->
       <div class="flex-grow flex flex-col items-center justify-center">
-
-        <!-- Floating menu -->
-        <div class="fixed bottom-10 right-6 z-50">
-          <div class="dropdown dropdown-left dropdown-hover">
-            <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-              <img id="bubble-float" src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10"/>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="art.html">Art</a></li>
-            </ul>
-          </div>
-        </div>
 
         <!--Light/Dark mode button-->
         <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
@@ -54,6 +39,19 @@
             alt="Dark Mode Icon" />
         </label>
 
+        <!-- Floating menu -->
+        <div class="fixed bottom-10 right-6 z-50">
+          <div class="dropdown dropdown-left dropdown-hover">
+            <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
+              <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="art.html">Art</a></li>
+            </ul>
+          </div>
+        </div>
+
         <!--Navbar-->
         <div class="w-full mb-8">
           <div class="navbar bg-secondary mx-auto py-2 flex justify-between items-center">
@@ -66,7 +64,7 @@
             <!-- Hamburger Icon for Mobile (visible on small screens) -->
             <div class="block md:hidden">
               <button id="hamburger-btn" class="text-gray-200">
-                <img src="icons/icons8-hamburger-menu-100-green.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300"/>
+                <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300 bubble-float"/>
               </button>
             </div>
   
@@ -260,6 +258,6 @@
         </nav>
       </aside>
     </footer>
-    
+
     </body>
 </html>

@@ -64,25 +64,30 @@ function toggleTheme() {
 
 // function to switch avatar and icons
 function updateTheme(theme) {
-  const avatar = document.getElementById('avatar');
-  const bubble = document.getElementById('bubble-float');
-  const emailIcons = document.querySelectorAll('.social-email');
-  const githubIcons = document.querySelectorAll('.social-github');
-  const linkedinIcons = document.querySelectorAll('.social-linkedin');
+  const elements = [
+    { id: 'avatar', darkSrc: 'img/profile-dark.jpg', lightSrc: 'img/profile-light.jpg' },
+    { id: 'construction', darkSrc: 'icons/dark/icons8-under-construction-100-brown.png', lightSrc: 'icons/light/icons8-under-construction-100-light.png'},
+    { class: 'bubble-float', darkSrc: 'icons/dark/icons8-hamburger-menu-100-floating.png', lightSrc: 'icons/light/icons8-hamburger-menu-100-light.png' },
+    { class: 'social-email', darkSrc: 'icons/dark/icons8-email-100-green.png', lightSrc: 'icons/light/icons8-email-100-light.png' },
+    { class: 'social-github', darkSrc: 'icons/dark/icons8-github-100-green.png', lightSrc: 'icons/light/icons8-github-100-light.png' },
+    { class: 'social-linkedin', darkSrc: 'icons/dark/icons8-linkedin-100-green.png', lightSrc: 'icons/light/icons8-linkedin-100-light.png' },
+  ];
 
-  if (theme === 'coffee') {
-    avatar.src = 'img/profile-dark.jpg';
-    if (bubble) bubble.src = 'icons/dark/icons8-hamburger-menu-100-floating.png';
-    emailIcons.forEach(icon => icon.src = 'icons/dark/icons8-email-100-green.png');
-    githubIcons.forEach(icon => icon.src = 'icons/dark/icons8-github-100-green.png');
-    linkedinIcons.forEach(icon => icon.src = 'icons/dark/icons8-linkedin-100-green.png');
-  } else {
-    avatar.src = 'img/profile-light.jpg';
-    if (bubble) bubble.src = 'icons/light/icons8-hamburger-menu-100-light.png';
-    emailIcons.forEach(icon => icon.src = 'icons/light/icons8-email-100-light.png');
-    githubIcons.forEach(icon => icon.src = 'icons/light/icons8-github-100-light.png');
-    linkedinIcons.forEach(icon => icon.src = 'icons/light/icons8-linkedin-100-light.png');
-  }
+  elements.forEach(element => {
+    if (element.id) {
+      // Check for ID-based elements
+      const el = document.getElementById(element.id);
+      if (el) {
+        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
+      }
+    } else if (element.class) {
+      // Check for class-based elements
+      const els = document.querySelectorAll(`.${element.class}`);
+      els.forEach(el => {
+        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
+      });
+    }
+  });
 }
 
 // apply the stored theme on load
