@@ -28,6 +28,37 @@
     @apply ring-secondary ring-offset-base-100 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden mx-auto rounded-full ring ring-offset-2
 }
 
+/* theme toggle positioning */
+.theme-toggle {
+    z-index: 1000; /* Ensure it's on top of other elements */
+    outline: 1px gainsboro groove ;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* theme toggle icons */
+.theme-toggle img {
+    filter: invert(0); /* Default state */
+}
+
+[data-theme="coffee"] #light-icon {
+filter: invert(1); /* Dark mode: light icon gets inverted color */
+}
+
+[data-theme="coffee"] #dark-icon {
+filter: invert(1); /* Dark mode: dark icon remains same color */
+}
+
+[data-theme="fantasy"] #light-icon {
+filter: invert(0); /* Light mode: light icon remains same color */
+}
+
+[data-theme="fantasy"] #dark-icon {
+filter: invert(0); /* Light mode: dark icon gets inverted color */
+}
+  
+  
+
 /* ____________TRANSITIONS____________ */
 
 /* Global fade animation */

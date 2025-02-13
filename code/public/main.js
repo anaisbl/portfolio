@@ -50,5 +50,53 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// light/dark mode button
+// main function
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'fantasy' ? 'coffee' : 'fantasy';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // call function that switches items based on theme
+  updateTheme(newTheme);
+}
+
+// function to switch avatar and icons
+function updateTheme(theme) {
+  const avatar = document.getElementById('avatar');
+  const bubble = document.getElementById('bubble-float');
+  const emailIcons = document.querySelectorAll('.social-email');
+  const githubIcons = document.querySelectorAll('.social-github');
+  const linkedinIcons = document.querySelectorAll('.social-linkedin');
+
+  if (theme === 'coffee') {
+    avatar.src = 'img/profile-dark.jpg';
+    if (bubble) bubble.src = 'icons/dark/icons8-hamburger-menu-100-floating.png';
+    emailIcons.forEach(icon => icon.src = 'icons/dark/icons8-email-100-green.png');
+    githubIcons.forEach(icon => icon.src = 'icons/dark/icons8-github-100-green.png');
+    linkedinIcons.forEach(icon => icon.src = 'icons/dark/icons8-linkedin-100-green.png');
+  } else {
+    avatar.src = 'img/profile-light.jpg';
+    if (bubble) bubble.src = 'icons/light/icons8-hamburger-menu-100-light.png';
+    emailIcons.forEach(icon => icon.src = 'icons/light/icons8-email-100-light.png');
+    githubIcons.forEach(icon => icon.src = 'icons/light/icons8-github-100-light.png');
+    linkedinIcons.forEach(icon => icon.src = 'icons/light/icons8-linkedin-100-light.png');
+  }
+}
+
+// apply the stored theme on load
+window.addEventListener('DOMContentLoaded', () => {
+  const storedTheme = localStorage.getItem('theme') || 'fantasy';
+  document.documentElement.setAttribute('data-theme', storedTheme);
+  document.querySelector('.theme-controller').checked = storedTheme === 'coffee';
+
+  // update items based on the stored theme
+  updateTheme(storedTheme);
+});
+
+
+
+
 
 

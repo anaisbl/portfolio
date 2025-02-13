@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="dist/style.css" rel="stylesheet">
+
+        <!-- Link to the external JavaScript file -->
+        <script src="main.js" defer></script>
+
         <!--Icons by Icons8-->
         <title>Anaïs | CS Projects</title>
     </head>
@@ -18,11 +22,11 @@
       <!--full body container for responsivness & centering-->
       <div class="flex-grow flex flex-col items-center justify-center">
 
-        <!-- Floating button -->
+        <!-- Floating menu -->
         <div class="fixed bottom-10 right-6 z-50">
           <div class="dropdown dropdown-left dropdown-hover">
             <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-              <img src="icons/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10"/>
+              <img id="bubble-float" src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10"/>
             </label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><a href="index.html">Home</a></li>
@@ -30,6 +34,25 @@
             </ul>
           </div>
         </div>
+
+        <!--Light/Dark mode button-->
+        <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
+          <input
+            type="checkbox"
+            value="synthwave"
+            class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+            onclick="toggleTheme()" />
+          <img
+            src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+            class="col-start-1 row-start-1"
+            width="20"
+            alt="Light Mode Icon" />
+          <img
+            src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+            class="col-start-2 row-start-1"
+            width="20"
+            alt="Dark Mode Icon" />
+        </label>
 
         <!--Navbar-->
         <div class="w-full mb-8">
@@ -219,38 +242,24 @@
 
     </div>
 
-    <footer class="footer footer-center bg-secondary text-secondary-content p-4">
-        <aside>
-          <p>Copyright © 2025 - All right reserved to Nana</p>
-          <nav>
-              <div class="grid grid-flow-col gap-5 pb-2">
-                <div class="lg:tooltip" data-tip="Home">
-                  <a href="index.html" class="inline-block text-xl social-link">
-                    <img width="50" height="50" src="icons/icons8-home-100-green.png" alt="Home button"/>
-                  </a>
-                </div>
-                <div class="lg:tooltip" data-tip="Email">
-                  <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
-                  <img width="50" height="50" src="icons/icons8-email-100-green.png" alt="Email" />
-                  </a>
-                </div>
-                <div class="lg:tooltip" data-tip="Github">
-                  <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
-                  <img width="50" height="50" src="icons/icons8-github-100-green.png" alt="Github" />
-                  </a>
-                </div>
-                <div class="lg:tooltip" data-tip="Linkedin">
-                  <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
-                  <img width="50" height="50" src="icons/icons8-linkedin-100-green.png" alt="Linkedin" />
-                  </a>
-                </div>
-              </div>
-            </nav>
-        </aside>
+    <footer class="footer footer-center bg-secondary p-2">
+      <aside>
+        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
+        <nav>
+          <div class="grid grid-flow-col gap-5 pb-2">
+            <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-email" width="50" height="50" src="icons/dark/icons8-email-100-green.png" alt="Email" />
+            </a>
+            <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-github" width="50" height="50" src="icons/dark/icons8-github-100-green.png" alt="Github" />
+            </a>
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-linkedin" width="50" height="50" src="icons/dark/icons8-linkedin-100-green.png" alt="Linkedin" />
+            </a>
+          </div>
+        </nav>
+      </aside>
     </footer>
-
-    <!-- Link to the external JavaScript file -->
-    <script src="main.js"></script>
-
+    
     </body>
 </html>
