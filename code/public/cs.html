@@ -1,353 +1,351 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="coffee">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="dist/style.css" rel="stylesheet">
-        <script src="main.js" defer></script>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="dist/style.css" rel="stylesheet">
+      <script src="main.js" defer></script>
 
-        <!--All Icons by Icons8-->
-        <title>Anaïs | CS Projects</title>
-    </head>
-    <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
-      <style>
-        /* Hiding the navbar on the main page because if i remove the chunk of code everything disappears and idk why*/
-        .navbar {
-          display: none;
-        }
-      </style>
+      <!--All Icons by Icons8-->
+      <title>Anaïs | CS Projects</title>
+  </head>
+  <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
+    <style>
+      /* Hiding the navbar on the main page because if i remove the chunk of code everything disappears and idk why*/
+      .navbar {
+        display: none;
+      }
+    </style>
 
-      <!--full body container for responsivness & centering-->
-      <div class="flex-grow flex flex-col items-center justify-center">
+    <!--full body container for responsivness & centering-->
+    <div class="flex-grow flex flex-col items-center justify-center">
 
-        <!--Light/Dark mode button-->
-        <label class="grid cursor-pointer place-items-center fixed top-4 right-4 z-50">
-          <input
-            type="checkbox"
-            value="synthwave"
-            class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-            onclick="toggleTheme()" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
-            class="col-start-1 row-start-1"
-            width="20"
-            alt="Light Mode Icon" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
-            class="col-start-2 row-start-1"
-            width="20"
-            alt="Dark Mode Icon" />
-        </label>
+      <!--Light/Dark mode button-->
+      <label class="grid cursor-pointer place-items-center fixed top-4 right-4 z-50">
+        <input
+          type="checkbox"
+          value="synthwave"
+          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+          onclick="toggleTheme()" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+          class="col-start-1 row-start-1"
+          width="20"
+          alt="Light Mode Icon" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+          class="col-start-2 row-start-1"
+          width="20"
+          alt="Dark Mode Icon" />
+      </label>
 
-        <!-- Floating menu -->
-        <div class="fixed bottom-10 right-6 z-50">
-          <div class="dropdown dropdown-top dropdown-end dropdown-hover">
-            <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-              <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="art.html">Art</a></li>
-              <li><a href="img/cv.pdf" target="_blank">CV</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!--Navbar-->
-        <div class="w-full mb-8">
-          <div class="navbar bg-secondary mx-auto py-2 flex justify-between items-center">
-            <!-- Logo (on the left) -->
-            <a href="index.html" class="flex items-center space-x-4">
-              <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
-              <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
-            </a>
-
-            <!-- Hamburger Icon for Mobile (visible on small screens) -->
-            <div class="block md:hidden">
-              <button id="hamburger-btn" class="text-gray-200">
-                <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300 bubble-float"/>
-              </button>
-            </div>
-  
-            <!-- Navigation links (centered) -->
-            <div id="navbar-links" class="hidden md:flex space-x-6">
-              <a class="transition-link nav-link" href="cs.html">Computer Science</a>
-              <a class="transition-link nav-link" href="art.html">Art</a>
-              <a class="transition-link nav-link" href="index.html#about">About</a>
-            </div>
-          </div>
-
-          <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
-          <div id="mobile-menu" class="md:hidden hidden bg-secondary w-full">
-            <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
-            <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
-            <a id="about-link" class="transition-link nav-link-mobile" href="index.html#about">About</a>
-          </div>
-        </div>
-
-        <!--Header title-->
-        <h1 class="text-4xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
-
-        <!--Header introduction-->
-        <h2 class="text-xl font-semibold text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Explore my journey as I dive into the world of data!</h2>
-
-        <!--Content-->
-        <div class="pt-8 mb-5 w-full max-w-6xl">
-          <ul class="timeline timeline-vertical lg:timeline-horizontal overflow-x-auto">
-            <!-- Business Management Degree -->
-            <li>
-              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
-                <time class="font-mono text-info italic">2020</time>
-                <div class="text-lg">Graduated in Business Management</div>
-                <p>ESCP Business School</p>
-              </div>
-              <div class="timeline-middle">
-                <div class="h-5 w-5 bg-accent rounded-full"></div>
-              </div>
-              <hr class="bg-accent"/>
-            </li>
-            <!-- Pivot to Computer Science -->
-            <li>
-              <hr class="bg-accent"/>
-              <div class="timeline-middle">
-                <div class="h-5 w-5 bg-accent rounded-full"></div>
-              </div>
-              <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
-                <time class="font-mono text-info italic">2021-2022</time>
-                <div class="text-lg">Started learning Computer Science</div>
-                <p>Self-taught web development</p>
-              </div>
-              <hr class="bg-accent"/>
-            </li>
-            <!-- Logistics & Accounts Job -->
-            <li>
-              <hr class="bg-accent"/>
-              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
-                <time class="font-mono text-info italic">2022-2024</time>
-                <div class="text-lg">Worked in Logistics & Accounting</div>
-                <p>Corto Safaris Ltd</p>
-              </div>
-              <div class="timeline-middle">
-                <div class="h-5 w-5 bg-accent rounded-full"></div>
-              </div>
-              <hr class="bg-accent"/>
-            </li>
-            <!-- Master’s in Data Science -->
-            <li>
-              <hr class="bg-accent"/>
-              <div class="timeline-middle">
-                <div class="h-5 w-5 bg-accent rounded-full"></div>
-              </div>
-              <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
-                <time class="font-mono italic text-info">2025</time>
-                <div class="text-lg ">Graduated in Computer Science</div>
-                <p>TU Dublin</p>
-              </div>
-              <hr class="bg-accent"/>
-            </li>
-            <!-- Currently -->
-            <li>
-              <hr />
-              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
-                <time class="font-mono italic text-info">2025-now</time>
-                <div class="text-lg ">Career in Data</div>
-                <p>Landing that perject job soon!</p>
-              </div>
-              <div class="timeline-middle">
-                <div class="h-5 w-5  outline outline-accent rounded-full"></div>
-              </div>
-            </li>
+      <!-- Floating menu -->
+      <div class="fixed bottom-10 right-6 z-50">
+        <div class="dropdown dropdown-top dropdown-end dropdown-hover">
+          <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
+            <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
+          </label>
+          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="img/cv.pdf" target="_blank">CV</a></li>
           </ul>
         </div>
+      </div>
 
-        <div class="container flex flex-wrap gap-4 justify-center w-full max-w-5xl">
-          <div class="w-full max-w-sm outline outline-1 outline-primary rounded-lg py-4 mb-5">
-            <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Tech stack: </h1>
-            <div class="justify-center flex flex-wrap gap-2">
-              <div class="badge badge-lg badge-outline badge-success">Python</div>
-              <div class="badge badge-lg badge-outline badge-success">HTML/CSS</div>
-              <div class="badge badge-lg badge-outline badge-success">SQL</div>
-              <div class="badge badge-lg badge-outline badge-success">Tensorflow/Keras</div>
-              <div class="badge badge-lg badge-outline badge-success">Pyspark</div>
-            </div>
+      <!--Navbar-->
+      <div class="w-full mb-8">
+        <div class="navbar bg-secondary mx-auto py-2 flex justify-between items-center">
+          <!-- Logo (on the left) -->
+          <a href="index.html" class="flex items-center space-x-4">
+            <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
+            <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
+          </a>
+
+          <!-- Hamburger Icon for Mobile (visible on small screens) -->
+          <div class="block md:hidden">
+            <button id="hamburger-btn" class="text-gray-200">
+              <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300 bubble-float"/>
+            </button>
           </div>
-          
-          <div class="w-full max-w-lg outline outline-1 outline-primary rounded-lg py-4">
-            <h1 class="text-3xl text-primary font-extrabold font-mono pb-4 text-center">Experience:</h1>
-            <div class="container w-full max-w-6xl justify-center flex flex-wrap gap-2">
-              <div class="badge badge-lg badge-outline badge-warning">Machine learning</div>
-              <div class="badge badge-lg badge-outline badge-warning">Deep learning</div>
-              <div class="badge badge-lg badge-outline badge-warning">Big data</div>
-              <div class="badge badge-lg badge-outline badge-warning">Object detection</div>
-              <div class="badge badge-lg badge-outline badge-warning">Software development</div>
-              <div class="badge badge-lg badge-outline badge-warning">Product development</div>
+
+          <!-- Navigation links (centered) -->
+          <div id="navbar-links" class="hidden md:flex space-x-6">
+            <a class="transition-link nav-link" href="cs.html">Computer Science</a>
+            <a class="transition-link nav-link" href="art.html">Art</a>
+            <a class="transition-link nav-link" href="index.html#about">About</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-secondary w-full">
+          <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
+          <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
+          <a id="about-link" class="transition-link nav-link-mobile" href="index.html#about">About</a>
+        </div>
+      </div>
+
+      <!--Header title-->
+      <h1 class="text-4xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
+
+      <!--Header introduction-->
+      <h2 class="text-xl font-semibold text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Explore my journey as I dive into the world of data!</h2>
+
+      <!--Timeline-->
+      <div class="pt-8 mb-5 w-full max-w-6xl">
+        <ul class="timeline timeline-vertical lg:timeline-horizontal overflow-x-auto">
+          <!-- Business Management Degree -->
+          <li>
+            <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+              <time class="font-mono text-info italic">2020</time>
+              <div class="text-lg">Graduated in Business Management</div>
+              <p>ESCP Business School</p>
             </div>
+            <div class="timeline-middle">
+              <div class="h-5 w-5 bg-accent rounded-full"></div>
+            </div>
+            <hr class="bg-accent"/>
+          </li>
+          <!-- Pivot to Computer Science -->
+          <li>
+            <hr class="bg-accent"/>
+            <div class="timeline-middle">
+              <div class="h-5 w-5 bg-accent rounded-full"></div>
+            </div>
+            <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
+              <time class="font-mono text-info italic">2021-2022</time>
+              <div class="text-lg">Started learning Computer Science</div>
+              <p>Self-taught web development</p>
+            </div>
+            <hr class="bg-accent"/>
+          </li>
+          <!-- Logistics & Accounts Job -->
+          <li>
+            <hr class="bg-accent"/>
+            <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+              <time class="font-mono text-info italic">2022-2024</time>
+              <div class="text-lg">Worked in Logistics & Accounting</div>
+              <p>Corto Safaris Ltd</p>
+            </div>
+            <div class="timeline-middle">
+              <div class="h-5 w-5 bg-accent rounded-full"></div>
+            </div>
+            <hr class="bg-accent"/>
+          </li>
+          <!-- Master’s in Data Science -->
+          <li>
+            <hr class="bg-accent"/>
+            <div class="timeline-middle">
+              <div class="h-5 w-5 bg-accent rounded-full"></div>
+            </div>
+            <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
+              <time class="font-mono italic text-info">2025</time>
+              <div class="text-lg ">Graduated in Computer Science</div>
+              <p>TU Dublin</p>
+            </div>
+            <hr class="bg-accent"/>
+          </li>
+          <!-- Currently -->
+          <li>
+            <hr />
+            <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+              <time class="font-mono italic text-info">2025-now</time>
+              <div class="text-lg ">Career in Data</div>
+              <p>Landing that perject job soon!</p>
+            </div>
+            <div class="timeline-middle">
+              <div class="h-5 w-5  outline outline-accent rounded-full"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!--Tech stack & experience-->
+      <div class="container flex flex-wrap gap-4 justify-center w-full max-w-5xl">
+        <div class="w-full max-w-sm outline outline-1 outline-primary rounded-lg py-4 mb-5">
+          <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Tech stack: </h1>
+          <div class="justify-center flex flex-wrap gap-2">
+            <div class="badge badge-lg badge-outline badge-success">Python</div>
+            <div class="badge badge-lg badge-outline badge-success">HTML/CSS</div>
+            <div class="badge badge-lg badge-outline badge-success">SQL</div>
+            <div class="badge badge-lg badge-outline badge-success">Tensorflow/Keras</div>
+            <div class="badge badge-lg badge-outline badge-success">Pyspark</div>
           </div>
         </div>
         
-        
+        <div class="w-full max-w-lg outline outline-1 outline-primary rounded-lg py-4">
+          <h1 class="text-3xl text-primary font-extrabold font-mono pb-4 text-center">Experience:</h1>
+          <div class="container w-full max-w-6xl justify-center flex flex-wrap gap-2">
+            <div class="badge badge-lg badge-outline badge-warning">Machine learning</div>
+            <div class="badge badge-lg badge-outline badge-warning">Deep learning</div>
+            <div class="badge badge-lg badge-outline badge-warning">Big data</div>
+            <div class="badge badge-lg badge-outline badge-warning">Object detection</div>
+            <div class="badge badge-lg badge-outline badge-warning">Software development</div>
+            <div class="badge badge-lg badge-outline badge-warning">Product development</div>
+          </div>
+        </div>
+      </div>
+      
+      <!--Projects-->
+      <h1 class="text-3xl text-primary font-extrabold font-mono mt-6 pt-4 text-center">Projects</h1>
+      <!--Project filter-->
+      <div role="tablist" class="tabs tabs-bordered tabs-lg mt-4 pt-4 flex flex-wrap overflow-x-auto">
+        <a role="tab" class="tab tab-active flex-1 sm:flex-none" data-type="all">All</a>
+        <a role="tab" class="tab flex-1 sm:flex-none" data-type="freelance">Freelance</a>
+        <a role="tab" class="tab flex-1 sm:flex-none" data-type="university">University</a>
+        <!--<a role="tab" class="tab flex-1 sm:flex-none" data-type="fun">Just for Fun</a>-->
+      </div>
 
-        <h1 class="text-3xl text-primary font-extrabold font-mono mt-6 pt-4 text-center">Projects</h1>
-
-        <!--Project filter-->
-        <div role="tablist" class="tabs tabs-bordered tabs-lg mt-4 pt-4 flex flex-wrap overflow-x-auto">
-          <a role="tab" class="tab tab-active flex-1 sm:flex-none" data-type="all">All</a>
-          <a role="tab" class="tab flex-1 sm:flex-none" data-type="freelance">Freelance</a>
-          <a role="tab" class="tab flex-1 sm:flex-none" data-type="university">University</a>
-          <!--<a role="tab" class="tab flex-1 sm:flex-none" data-type="fun">Just for Fun</a>-->
+      <!--Project cards-->
+      <section class="project my-10 w-full max-w-5xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
+        <!--Personal-->
+        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="freelance">
+          <figure>
+            <img
+              src="img/corto_screen2.png"
+              alt="Screenshot of home page" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Corto Safaris website
+            </h2>
+            <div>
+              <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>
+            <p>A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">HTML/CSS</div>
+              <div class="badge badge-outline badge-success">Bootstrap</div>
+              <div class="badge badge-outline badge-warning">Web development</div>
+            </div>
+          </div>
         </div>
 
-        <!--Project cards-->
-        <section class="project my-10 w-full max-w-5xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
-          <!--Personal-->
-          <div class="card lg:card-side bg-base-100 shadow-xl" data-type="freelance">
-            <figure>
-              <img
-                src="img/corto_screen2.png"
-                alt="Screenshot of home page" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">
-                Corto Safaris website
-              </h2>
-              <div>
-                <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn btn-xs btn-outline">
-                  View
-                  <svg width="16" height="16" fill="currentColor" class="ml-1">
-                    <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                  </svg>
-                </a>
-              </div>
-              <p>A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission.</p>
-              <div class="card-actions justify-normal py-2">
-                <div class="badge badge-outline badge-success">HTML/CSS</div>
-                <div class="badge badge-outline badge-success">Bootstrap</div>
-                <div class="badge badge-outline badge-warning">Web development</div>
-              </div>
+        <!--Uni-->
+        <!--1. Bank management system-->
+        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+          <figure>
+            <img
+              src="img/oop_ca_screen2.png"
+              alt="Screenshot of terminal signing up"/>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Bank Management System
+            </h2>
+            <div>
+              <a href="https://github.com/anaisbl/TUD---OOP-final-CA" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>
+            <p>A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account among ther features. <br><br> A grade of <strong>63%</strong> was awarded for this project.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">Python</div>
+              <div class="badge badge-outline badge-warning">Software development</div>
             </div>
           </div>
+        </div>
 
-          <!--Uni-->
-          <!--1. Bank management system-->
-          <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
-            <figure>
-              <img
-                src="img/oop_ca_screen2.png"
-                alt="Screenshot of terminal signing up"/>
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">
-                Bank Management System
-              </h2>
-              <div>
-                <a href="https://github.com/anaisbl/TUD---OOP-final-CA" target="_blank" class="btn btn-xs btn-outline">
-                  View
-                  <svg width="16" height="16" fill="currentColor" class="ml-1">
-                    <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                  </svg>
-                </a>
-              </div>
-              <p>A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account among ther features. <br><br> A grade of <strong>63%</strong> was awarded for this project.</p>
-              <div class="card-actions justify-normal py-2">
-                <div class="badge badge-outline badge-success">Python</div>
-                <div class="badge badge-outline badge-warning">Software development</div>
-              </div>
+        <!--2. Classifier marketing campaign-->
+        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+          <figure>
+            <img
+              src="img/ml_ca_screen1.png"
+              alt="Screenshot of main code"/>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Predicting the outcome of a marketing campaign
+            </h2>
+            <div>
+              <a href="https://github.com/anaisbl/TUD---ML-CA1" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>  
+            <p>A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data. I tested various classifiers from the sci-kit learn library and utlized certain encoding techniques to achieve the task. <br> <br> A grade of <strong>100%</strong> was awarded for this project.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">Python</div>
+              <div class="badge badge-outline badge-success">Sci-kit learn</div>
+              <div class="badge badge-outline badge-warning">Machine learning</div>
             </div>
           </div>
+        </div>
 
-          <!--2. Classifier marketing campaign-->
-          <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
-            <figure>
-              <img
-                src="img/ml_ca_screen1.png"
-                alt="Screenshot of main code"/>
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">
-                Predicting the outcome of a marketing campaign
-              </h2>
-              <div>
-                <a href="https://github.com/anaisbl/TUD---ML-CA1" target="_blank" class="btn btn-xs btn-outline">
-                  View
-                  <svg width="16" height="16" fill="currentColor" class="ml-1">
-                    <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                  </svg>
-                </a>
-              </div>  
-              <p>A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data. I tested various classifiers from the sci-kit learn library and utlized certain encoding techniques to achieve the task. <br> <br> A grade of <strong>100%</strong> was awarded for this project.</p>
-              <div class="card-actions justify-normal py-2">
-                <div class="badge badge-outline badge-success">Python</div>
-                <div class="badge badge-outline badge-success">Sci-kit learn</div>
-                <div class="badge badge-outline badge-warning">Machine learning</div>
-              </div>
+        <!--3. Big data-->
+        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+          <figure>
+            <img
+              src="img/bigdata_ca_screen2.png"
+              alt="Screenshot of kaggle leaderboard"/>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Predicting steel-plates defects
+            </h2>
+            <div>
+              <a href="https://github.com/anaisbl/TUD---Bigdata-CA" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>
+            <p>I joined a Kaggle playground series competition with the task of predicting steel-plate defects. Submissions were evaluated using area under the ROC curve for each of the defect categories and then averaged to give a final score. <br> <br>
+              I achieved a area under ROC score of 0.86375, which ranked me in the <strong>65th percentile</strong> (1443 out of 2199). The top score of the competition achieved a 0.89782 score.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">Python</div>
+              <div class="badge badge-outline badge-success">Sci-kit learn</div>
+              <div class="badge badge-outline badge-success">Pyspark</div>
+              <div class="badge badge-outline badge-warning">Big data</div>
             </div>
           </div>
+        </div>
 
-          <!--3. Big data-->
-          <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
-            <figure>
-              <img
-                src="img/bigdata_ca_screen2.png"
-                alt="Screenshot of kaggle leaderboard"/>
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">
-                Predicting steel-plates defects
-              </h2>
-              <div>
-                <a href="https://github.com/anaisbl/TUD---Bigdata-CA" target="_blank" class="btn btn-xs btn-outline">
-                  View
-                  <svg width="16" height="16" fill="currentColor" class="ml-1">
-                    <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                  </svg>
-                </a>
-              </div>
-              <p>I joined a Kaggle playground series competition with the task of predicting steel-plate defects. Submissions were evaluated using area under the ROC curve for each of the defect categories and then averaged to give a final score. <br> <br>
-                I achieved a area under ROC score of 0.86375, which ranked me in the <strong>65th percentile</strong> (1443 out of 2199). The top score of the competition achieved a 0.89782 score.</p>
-              <div class="card-actions justify-normal py-2">
-                <div class="badge badge-outline badge-success">Python</div>
-                <div class="badge badge-outline badge-success">Sci-kit learn</div>
-                <div class="badge badge-outline badge-success">Pyspark</div>
-                <div class="badge badge-outline badge-warning">Big data</div>
-              </div>
+        <!--4. Deep learning-->
+        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+          <figure>
+            <img
+              src="img/deepl_ca_screen2.png"
+              alt="Screenshot of model output for image processing"/>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              Prediction, Image processing & Transfer learning
+            </h2>
+            <div>
+              <a href="https://github.com/anaisbl/TUD---DeepL-CA1" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>
+            <p>This assessment was separated into 2 parts: Song genre prediction and Image processing & transfer learning. <br>
+              Part 1 focused on predicting the genre of a song using through deep neural network models and methods using a dataset from Kaggle. <br>
+              Part 2 utilized the CIFAR-100 dataset to perform a range of image processing and transfer learning operations. <br> <br>
+              A grade of <strong>71%</strong> was awarded for this project.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">Python</div>
+              <div class="badge badge-outline badge-success">Tensorflow/Keras</div>
+              <div class="badge badge-outline badge-warning">Deep learning</div>
             </div>
           </div>
+        </div>
 
-          <!--4. Deep learning-->
-          <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
-            <figure>
-              <img
-                src="img/deepl_ca_screen2.png"
-                alt="Screenshot of model output for image processing"/>
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">
-                Prediction, Image processing & Transfer learning
-              </h2>
-              <div>
-                <a href="https://github.com/anaisbl/TUD---DeepL-CA1" target="_blank" class="btn btn-xs btn-outline">
-                  View
-                  <svg width="16" height="16" fill="currentColor" class="ml-1">
-                    <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                  </svg>
-                </a>
-              </div>
-              <p>This assessment was separated into 2 parts: Song genre prediction and Image processing & transfer learning. <br>
-                Part 1 focused on predicting the genre of a song using through deep neural network models and methods using a dataset from Kaggle. <br>
-                Part 2 utilized the CIFAR-100 dataset to perform a range of image processing and transfer learning operations. <br> <br>
-                A grade of <strong>71%</strong> was awarded for this project.</p>
-              <div class="card-actions justify-normal py-2">
-                <div class="badge badge-outline badge-success">Python</div>
-                <div class="badge badge-outline badge-success">Tensorflow/Keras</div>
-                <div class="badge badge-outline badge-warning">Deep learning</div>
-              </div>
-            </div>
-          </div>
+        <!--Just for fun project-->
 
-          <!--Just for fun project-->
-
-        </section>
-
+      </section>
     </div>
 
     <footer class="footer footer-center bg-secondary p-2">
@@ -368,6 +366,5 @@
         </nav>
       </aside>
     </footer>
-
-    </body>
+  </body>
 </html>
