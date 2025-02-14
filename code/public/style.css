@@ -84,7 +84,7 @@ opacity: 1;
 /* ____________ANIMATIONS____________ */
 
 /*project filter*/
-.container[data-type] {
+.card[data-type] {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .hide {
