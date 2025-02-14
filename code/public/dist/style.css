@@ -2119,12 +2119,6 @@ input.tab:checked + .tab-content,
   gap: 1rem;
 }
 
-.divider-primary:before,
-  .divider-primary:after {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
-}
-
 .divider-secondary:before,
   .divider-secondary:after {
   --tw-bg-opacity: 1;
@@ -3078,6 +3072,10 @@ input.tab:checked + .tab-content,
   margin-bottom: 1.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -3168,6 +3166,14 @@ input.tab:checked + .tab-content,
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
 }
 
 .max-w-xs {
@@ -3279,11 +3285,6 @@ input.tab:checked + .tab-content,
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity, 1)));
 }
 
-.bg-base-300 {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity, 1)));
-}
-
 .bg-base-content {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity, 1)));
@@ -3329,6 +3330,10 @@ input.tab:checked + .tab-content,
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .pt-4 {
@@ -3453,8 +3458,16 @@ input.tab:checked + .tab-content,
   outline-style: solid;
 }
 
+.outline-1 {
+  outline-width: 1px;
+}
+
 .outline-accent {
   outline-color: var(--fallback-a,oklch(var(--a)/1));
+}
+
+.outline-primary {
+  outline-color: var(--fallback-p,oklch(var(--p)/1));
 }
 
 .filter {
