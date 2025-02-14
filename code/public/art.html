@@ -1,128 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="coffee">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="dist/style.css" rel="stylesheet">
-        <script src="main.js" defer></script>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="dist/style.css" rel="stylesheet">
+      <script src="main.js" defer></script>
 
-        <!--All Icons by Icons8-->
-        <title>Anaïs | Art Projects</title>
-    </head>
-    <body class="bg-base-100 fade-transition flex flex-col min-h-screen">
-      <style>
-        /* Hiding the navbar on the main page because if i remove the chunk of code everything disappears and idk why*/
-        .navbar {
-          display: none;
-        }
-      </style>
+      <!--All Icons by Icons8-->
+      <title>Anaïs | Art Projects</title>
+  </head>
+  <body class="bg-base-100 fade-transition flex flex-col min-h-screen">
 
-      <!--full body container for responsivness & centering-->
-      <div class="flex-grow flex flex-col items-center justify-center">
+    <!--full body container for responsivness & centering-->
+    <div class="flex-grow flex flex-col items-center justify-center">
 
-        <!--Light/Dark mode button-->
-        <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
-          <input
-            type="checkbox"
-            value="synthwave"
-            class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-            onclick="toggleTheme()" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
-            class="col-start-1 row-start-1"
-            width="20"
-            alt="Light Mode Icon" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
-            class="col-start-2 row-start-1"
-            width="20"
-            alt="Dark Mode Icon" />
-        </label>
+      <!--Light/Dark mode button-->
+      <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
+        <input
+          type="checkbox"
+          value="synthwave"
+          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+          onclick="toggleTheme()" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+          class="col-start-1 row-start-1"
+          width="20"
+          alt="Light Mode Icon" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+          class="col-start-2 row-start-1"
+          width="20"
+          alt="Dark Mode Icon" />
+      </label>
 
-        <!-- Floating menu -->
-        <div class="fixed bottom-10 right-6 z-50">
-          <div class="dropdown dropdown-top dropdown-end dropdown-hover">
-            <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-              <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
-            </label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="cs.html">Computer Science</a></li>
-              <li><a href="img/cv.pdf" target="_blank">CV</a></li>
-            </ul>
-          </div>
+      <!-- Floating menu -->
+      <div class="fixed bottom-10 right-6 z-50">
+        <div class="dropdown dropdown-top dropdown-end dropdown-hover">
+          <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
+            <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
+          </label>
+          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cs.html">Computer Science</a></li>
+            <li><a href="img/cv.pdf" target="_blank">CV</a></li>
+          </ul>
         </div>
-
-        <!--Navbar-->
-        <div class="w-full mb-8">
-          <div class="navbar bg-primary mx-auto py-2 flex justify-between items-center">
-            <!-- Logo (on the left) -->
-            <a href="index.html" class="flex items-center space-x-4">
-              <!--<img src="img/sign.png" alt="Logo" class="h-10 w-auto" />-->
-              <span class="text-2xl font-extralight text-gray-50">Anaïs Blenet</span>
-            </a>
-
-            <!-- Hamburger Icon for Mobile (visible on small screens) -->
-            <div class="block md:hidden">
-              <button id="hamburger-btn" class="text-gray-200">
-                <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Hamburger Menu" class="h-10 w-10 hover:scale-125 transition-all duration-300 bubble-float"/>
-              </button>
-            </div>
-  
-            <!-- Navigation links (centered) -->
-            <div id="navbar-links" class="hidden md:flex space-x-6">
-              <a class="transition-link nav-link" href="cs.html">Computer Science</a>
-              <a class="transition-link nav-link" href="art.html">Art</a>
-              <a class="transition-link nav-link" href="index.html#about">About</a>
-            </div>
-          </div>
-
-          <!-- Mobile menu (hidden by default, shown when hamburger is clicked) -->
-          <div id="mobile-menu" class="md:hidden hidden bg-primary w-full">
-            <a id="cs-link" class="transition-link nav-link-mobile" href="cs.html">Computer Science</a>
-            <a id="art-link" class="transition-link nav-link-mobile" href="art.html">Art</a>
-            <a id="about-link" class="transition-link nav-link-mobile" href="index.html#about">About</a>
-          </div>
-        </div>
-
-        <!--Header title-->
-        <h1 class="text-4xl font-extrabold text-primary mb-6">Art projects</h1>
-
-        <!--Header image-->
-        <div class="avatar">
-            <img id="construction" src="icons/dark/icons8-under-construction-100-brown.png" class="w-full h-full object-cover animated-icon"/>
-        </div>
-
-        <!--Header introduction-->
-        <h4 class="text-lg text-center mb-6 px-4 pt-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Sorry! This page is still under construction!</h4>
-
-        <div class="mb-6 flex flex-wrap justify-center gap-4">
-            <button class="btn-main"><a href="index.html">Return to Home</a></button>
-        </div>
-
       </div>
 
-      <footer class="footer footer-center bg-secondary p-2">
-        <aside>
-          <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
-          <nav>
-            <div class="grid grid-flow-col gap-5 pb-2">
-              <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
-                <img class="social-email" width="50" height="50" src="icons/dark/icons8-email-100-green.png" alt="Email" />
-              </a>
-              <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
-                <img class="social-github" width="50" height="50" src="icons/dark/icons8-github-100-green.png" alt="Github" />
-              </a>
-              <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
-                <img class="social-linkedin" width="50" height="50" src="icons/dark/icons8-linkedin-100-green.png" alt="Linkedin" />
-              </a>
-            </div>
-          </nav>
-        </aside>
-      </footer>
+      <!--Header title-->
+      <h1 class="text-4xl font-extrabold text-primary mb-6">Art projects</h1>
 
-    <!-- Link to the external JavaScript file -->
-    <script src="main.js"></script>
+      <!--Header image-->
+      <div class="avatar">
+          <img id="construction" src="icons/dark/icons8-under-construction-100-brown.png" class="w-full h-full object-cover animated-icon"/>
+      </div>
 
-    </body>
+      <!--Header introduction-->
+      <h4 class="text-lg text-center mb-6 px-4 pt-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Sorry! This page is still under construction!</h4>
+
+      <div class="mb-6 flex flex-wrap justify-center gap-4">
+          <button class="btn-main"><a href="index.html">Return to Home</a></button>
+      </div>
+
+    </div>
+
+    <footer class="footer footer-center bg-secondary p-2">
+      <aside>
+        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
+        <nav>
+          <div class="grid grid-flow-col gap-5 pb-2">
+            <a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-email" width="50" height="50" src="icons/dark/icons8-email-100-green.png" alt="Email" />
+            </a>
+            <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-github" width="50" height="50" src="icons/dark/icons8-github-100-green.png" alt="Github" />
+            </a>
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-linkedin" width="50" height="50" src="icons/dark/icons8-linkedin-100-green.png" alt="Linkedin" />
+            </a>
+          </div>
+        </nav>
+      </aside>
+    </footer>
+
+  </body>
 </html>
