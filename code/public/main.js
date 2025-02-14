@@ -101,6 +101,33 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// timeline animation
+let timeline = document.getElementById('timeline');
+  let scrollWidth = timeline.scrollWidth;
+  let visibleWidth = timeline.offsetWidth;
+
+  // Calculate how much we can scroll without hiding items
+  let scrollAmount = scrollWidth - visibleWidth; 
+
+  // Function to animate the timeline back and forth, keeping everything in view
+  function animateScroll() {
+    // Scroll to the right until all items are visible, without going past the end
+    timeline.style.transform = `translateX(-${scrollAmount / 0.29}px)`;
+
+    // After the scroll is completed, reverse the scroll direction
+    setTimeout(() => {
+      timeline.style.transition = 'transform 10s ease-in-out'; // Smooth transition for scroll back
+      timeline.style.transform = 'translateX(0)'; // Reset to initial position
+    }, 10000); // Wait for 10 seconds before reversing the scroll
+
+    // Repeat the cycle
+    setTimeout(animateScroll, 20000); // Restart the cycle after 20 seconds (10s for scroll + 10s for reverse)
+  }
+
+  // Start the animation
+  animateScroll();
+
+
 
 
 

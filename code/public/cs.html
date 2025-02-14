@@ -21,7 +21,7 @@
       <div class="flex-grow flex flex-col items-center justify-center">
 
         <!--Light/Dark mode button-->
-        <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
+        <label class="grid cursor-pointer place-items-center fixed top-4 right-4 z-50">
           <input
             type="checkbox"
             value="synthwave"
@@ -88,96 +88,80 @@
         <h1 class="text-4xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
 
         <!--Header introduction-->
-        <h2 class="text-xl font-semibold text-secondary text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Explore my journey as I dive into the world of data!</h2>
+        <h2 class="text-xl font-semibold text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Explore my journey as I dive into the world of data!</h2>
 
         <!--Content-->
-        <div class="divider divider-accent py-4 w-full max-w-6xl mx-auto">Qualifications</div>
-        <ul class="timeline timeline-vertical lg:timeline-horizontal">
-          <li>
-            <div class="timeline-start">2017</div>
-            <div class="timeline-middle">
-              <svg xmlns="icons">
-                <path></path>
-              </svg>
-            </div>
-            <div class="timeline-end timeline-box">Graduate highschool - IB Diploma</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">2020</div>
-            <div class="timeline-middle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-end timeline-box">Graduate Bachelors - Bsc in Business Management at ESCP Business</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">2021</div>
-            <div class="timeline-middle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-end timeline-box">Start taking web development courses online</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">2022</div>
-            <div class="timeline-middle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-end timeline-box">Started worked in accounting and logistics at Corto Safaris Ltd</div>
-            <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-start">2023</div>
-            <div class="timeline-middle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="timeline-end timeline-box">Graduate from Computing Certification - TU Dublin</div>
-          </li>
-        </ul>
+        <div class="divider divider-accent text-accent-content py-4 w-full max-w-6xl mx-auto">Path</div>
+        <div>
+          <ul class="timeline timeline-vertical lg:timeline-horizontal overflow-x-auto">
+            <!-- Business Management Degree -->
+            <li>
+              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+                <time class="font-mono text-info italic">2020</time>
+                <div class="text-lg">Graduated in Business Management</div>
+                <p>ESCP Business School</p>
+              </div>
+              <div class="timeline-middle">
+                <div class="h-5 w-5 bg-accent rounded-full"></div>
+              </div>
+              <hr class="bg-accent"/>
+            </li>
+            <!-- Pivot to Computer Science -->
+            <li>
+              <hr class="bg-accent"/>
+              <div class="timeline-middle">
+                <div class="h-5 w-5 bg-accent rounded-full"></div>
+              </div>
+              <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
+                <time class="font-mono text-info italic">2021-2022</time>
+                <div class="text-lg">Started learning Computer Science</div>
+                <p>Self-taught web development</p>
+              </div>
+              <hr class="bg-accent"/>
+            </li>
+            <!-- Logistics & Accounts Job -->
+            <li>
+              <hr class="bg-accent"/>
+              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+                <time class="font-mono text-info italic">2022-2024</time>
+                <div class="text-lg">Worked in Logistics & Accounting</div>
+                <p>Corto Safaris Ltd</p>
+              </div>
+              <div class="timeline-middle">
+                <div class="h-5 w-5 bg-accent rounded-full"></div>
+              </div>
+              <hr class="bg-accent"/>
+            </li>
+            <!-- Master’s in Data Science -->
+            <li>
+              <hr class="bg-accent"/>
+              <div class="timeline-middle">
+                <div class="h-5 w-5 bg-accent rounded-full"></div>
+              </div>
+              <div class="timeline-end timeline-box text-center text-base-content max-w-xs">
+                <time class="font-mono italic text-info">2025</time>
+                <div class="text-lg ">Graduated in Computer Science</div>
+                <p>TU Dublin</p>
+              </div>
+              <hr class="bg-accent"/>
+            </li>
+            <!-- Currently -->
+            <li>
+              <hr />
+              <div class="timeline-start timeline-box text-center text-base-content max-w-xs">
+                <time class="font-mono italic text-info">2025-now</time>
+                <div class="text-lg ">Career in Data</div>
+                <p>Landing that perject job soon!</p>
+              </div>
+              <div class="timeline-middle">
+                <div class="h-5 w-5  outline outline-accent rounded-full"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-        <div class="divider divider-accent py-4 w-full max-w-6xl mx-auto">Experience</div>
-        <h4 class="text-lg text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Experience:</h4>
+        <div class="divider divider-accent py-4 w-full max-w-6xl mx-auto">Tech stack</div>
+        <h4 class="text-lg text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Tech stack:</h4>
 
         <div class="divider divider-accent py-4 w-full max-w-6xl mx-auto">Projects</div>
         <h4 class="text-lg text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Projects:</h4>
