@@ -124,7 +124,7 @@
 
       <!--Tech stack & experience-->
       <div class="container flex flex-wrap gap-4 justify-center w-full max-w-5xl">
-        <div class="w-full max-w-sm outline outline-1 outline-primary rounded-lg py-4 mb-5">
+        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-4 mb-5">
           <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Tech stack: </h1>
           <div class="justify-center flex flex-wrap gap-2">
             <div class="badge badge-lg badge-outline badge-success">Python</div>
@@ -135,7 +135,7 @@
           </div>
         </div>
         
-        <div class="w-full max-w-lg outline outline-1 outline-primary rounded-lg py-4">
+        <div class="w-full max-w-lg bg-base-100 outline outline-1 outline-primary rounded-lg py-4">
           <h1 class="text-3xl text-primary font-extrabold font-mono pb-4 text-center">Experience:</h1>
           <div class="container w-full max-w-6xl justify-center flex flex-wrap gap-2">
             <div class="badge badge-lg badge-outline badge-warning">Machine learning</div>
@@ -161,16 +161,21 @@
       <!--Project cards-->
       <section class="project my-10 w-full max-w-5xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
         <!--Personal-->
-        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="freelance">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="freelance">
           <figure>
             <img
               src="img/corto_screen2.png"
               alt="Screenshot of home page" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
               Corto Safaris website
-            </h2>
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-info italic">2022</time>
+              </span>
+            </div>
             <div>
               <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn btn-xs btn-outline">
                 View
@@ -179,7 +184,7 @@
                 </svg>
               </a>
             </div>
-            <p>A website for a tourism company based in Tanzania. A component-based CSS framework was used (Bootstrap) alongside JavaScript and HTML for content & styling, and Jquery for form submission.</p>
+            <p>A website for a tourism company based in Tanzania, using a component-based CSS framework (Bootstrap), and Jquery for form submission to a php database.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">HTML/CSS</div>
               <div class="badge badge-outline badge-success">Bootstrap</div>
@@ -190,16 +195,21 @@
 
         <!--Uni-->
         <!--1. Bank management system-->
-        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
           <figure>
             <img
               src="img/oop_ca_screen2.png"
               alt="Screenshot of terminal signing up"/>
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
-              Bank Management System
-            </h2>
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
+                Bank Management System
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-right text-info italic">2023</time>
+              </span>
+            </div>
             <div>
               <a href="https://github.com/anaisbl/TUD---OOP-final-CA" target="_blank" class="btn btn-xs btn-outline">
                 View
@@ -208,7 +218,7 @@
                 </svg>
               </a>
             </div>
-            <p>A Bank Management system built in Python which utilizes command line inputs. You can retrieve your bank details, bank balance, create and manage your account among ther features. <br><br> A grade of <strong>63%</strong> was awarded for this project.</p>
+            <p>A Bank Management system built in Python which utilizes command line inputs.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-warning">Software development</div>
@@ -217,16 +227,21 @@
         </div>
 
         <!--2. Classifier marketing campaign-->
-        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
           <figure>
             <img
               src="img/ml_ca_screen1.png"
               alt="Screenshot of main code"/>
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
               Predicting the outcome of a marketing campaign
-            </h2>
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-info italic">2024</time>
+              </span>
+            </div>
             <div>
               <a href="https://github.com/anaisbl/TUD---ML-CA1" target="_blank" class="btn btn-xs btn-outline">
                 View
@@ -235,7 +250,7 @@
                 </svg>
               </a>
             </div>  
-            <p>A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data. I tested various classifiers from the sci-kit learn library and utlized certain encoding techniques to achieve the task. <br> <br> A grade of <strong>100%</strong> was awarded for this project.</p>
+            <p>A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Sci-kit learn</div>
@@ -245,16 +260,21 @@
         </div>
 
         <!--3. Big data-->
-        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
-          <figure>
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+          <figure class="w-full">
             <img
               src="img/bigdata_ca_screen2.png"
               alt="Screenshot of kaggle leaderboard"/>
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
               Predicting steel-plates defects
-            </h2>
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-info italic">2024</time>
+              </span>
+            </div>
             <div>
               <a href="https://github.com/anaisbl/TUD---Bigdata-CA" target="_blank" class="btn btn-xs btn-outline">
                 View
@@ -263,8 +283,7 @@
                 </svg>
               </a>
             </div>
-            <p>I joined a Kaggle playground series competition with the task of predicting steel-plate defects. Submissions were evaluated using area under the ROC curve for each of the defect categories and then averaged to give a final score. <br> <br>
-              I achieved a area under ROC score of 0.86375, which ranked me in the <strong>65th percentile</strong> (1443 out of 2199). The top score of the competition achieved a 0.89782 score.</p>
+            <p>This project involves building a machine learning classifier using PySpark to predict steel-plate defects as part of a Kaggle competition.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Sci-kit learn</div>
@@ -275,16 +294,21 @@
         </div>
 
         <!--4. Deep learning-->
-        <div class="card lg:card-side bg-base-100 shadow-xl" data-type="university">
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
           <figure>
             <img
               src="img/deepl_ca_screen2.png"
               alt="Screenshot of model output for image processing"/>
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
               Prediction, Image processing & Transfer learning
-            </h2>
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-info italic">2024</time>
+              </span>
+            </div>
             <div>
               <a href="https://github.com/anaisbl/TUD---DeepL-CA1" target="_blank" class="btn btn-xs btn-outline">
                 View
@@ -293,10 +317,7 @@
                 </svg>
               </a>
             </div>
-            <p>This assessment was separated into 2 parts: Song genre prediction and Image processing & transfer learning. <br>
-              Part 1 focused on predicting the genre of a song using through deep neural network models and methods using a dataset from Kaggle. <br>
-              Part 2 utilized the CIFAR-100 dataset to perform a range of image processing and transfer learning operations. <br> <br>
-              A grade of <strong>71%</strong> was awarded for this project.</p>
+            <p>This project involves testing different deep neural network for song genre prediction and applying transfer learning techniques to image classification using the CIFAR-100 dataset.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Tensorflow/Keras</div>
@@ -305,7 +326,43 @@
           </div>
         </div>
 
+        <!--5. Magpie-->
+        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+          <figure>
+            <img
+              src="img/magpie_screen.png"
+              alt="Screenshot of dashboard"/>
+          </figure>
+          <div class="card-body">
+            <div class="flex justify-between items-center">
+              <h2 class="card-title">
+              Magpie
+              </h2>
+              <span>
+                <time class="font-mono text-sm text-info italic">2024</time>
+              </span>
+            </div>
+            <div>
+              <a href="https://github.com/2024-CMPU9010-GROUP-3/magpie" target="_blank" class="btn btn-xs btn-outline">
+                View
+                <svg width="16" height="16" fill="currentColor" class="ml-1">
+                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </a>
+            </div>
+            <p>This is the final project for the Msc in Computer science. Magpie is a geographical information service that allows Civil Planners and others to explore public amenities 'at a glance'.</p>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-outline badge-success">Python</div>
+              <div class="badge badge-outline badge-success">Typescript</div>
+              <div class="badge badge-outline badge-success">Go</div>
+              <div class="badge badge-outline badge-success">CSS</div>
+              <div class="badge badge-outline badge-warning">WebApp development</div>
+            </div>
+          </div>
+        </div>
+
         <!--Just for fun project-->
+        
 
       </section>
     </div>
