@@ -8,30 +8,34 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
   const tabs = document.querySelectorAll('[role="tab"]');
   const projects = document.querySelectorAll('.card[data-type]');
-
+  
   tabs.forEach(tab => {
     tab.addEventListener('click', function () {
       const type = this.getAttribute('data-type');
-
+      
       // Remove active class from all tabs
       tabs.forEach(t => t.classList.remove('tab-active'));
-
+      
       // Add active class to the clicked tab
       this.classList.add('tab-active');
-
+      
       // Filter projects based on the selected type with a delay for animation
       projects.forEach(project => {
         if (type === 'all' || project.getAttribute('data-type') === type) {
           project.classList.remove('hide');
           project.classList.add('show');
+          project.style.display = 'flex'; 
         } else {
           project.classList.add('hide');
           project.classList.remove('show');
+          project.style.display = 'none'; 
         }
       });
     });
   });
 });
+
+
 
 // light/dark mode button
 // main function

@@ -4134,16 +4134,11 @@ input.tab:checked + .tab-content,
 
 /*project filter*/
 
-.card[data-type] {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
 .hide {
   opacity: 0;
   transform: scale(0.95);
   pointer-events: none;
-  height: 0;
-  /* To collapse the space */
+  display: none;
   overflow: hidden;
 }
 
@@ -4151,8 +4146,7 @@ input.tab:checked + .tab-content,
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
-  height: auto;
-  /* To expand the space */
+  display: flex;
 }
 
 /*animation pulse for avatar and social icons*/
