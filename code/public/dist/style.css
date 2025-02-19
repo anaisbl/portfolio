@@ -3097,10 +3097,6 @@ input.tab:checked + .tab-content,
   width: 13rem;
 }
 
-.w-72 {
-  width: 18rem;
-}
-
 .w-80 {
   width: 20rem;
 }
