@@ -56,8 +56,6 @@ filter: invert(0); /* Light mode: light icon remains same color */
 [data-theme="fantasy"] #dark-icon {
 filter: invert(0); /* Light mode: dark icon gets inverted color */
 }
-  
-  
 
 /* ____________TRANSITIONS____________ */
 
