@@ -23,4 +23,4 @@ I decided not to use **React** for this project, because I don't know how :sligh
 - **Art page**: Currently working on fleshing out the art projects page. :art:
 
 ### Contact:
-Want to get in touch? Connect with me on [LinkedIn](your-linkedin) or [GitHub](your-github).
+Want to get in touch? Connect with me on [LinkedIn](your-linkedin).
