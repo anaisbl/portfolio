@@ -2,6 +2,9 @@
 
 Welcome to my portfolio repo! I’m building a website to showcase my work, experiences, and projects.
 
+<img src="https://github.com/user-attachments/assets/b7334b37-fe64-40c1-9fa2-8fb7e17e637c" height="400">
+
+
 ### What I'm Using: :wrench:
 - **HTML**: Basic structure for the website. 
 - **JavaScript**: To add interactivity and dynamic elements.
@@ -20,7 +23,4 @@ I decided not to use **React** for this project, because I don't know how :sligh
 - **Light/Dark mode**: Turn the light on :flashlight:... or off!
 
 ### What’s Next:
-- **Art page**: Currently working on fleshing out the art projects page. :art:
-
-### Contact:
-Want to get in touch? Connect with me on [LinkedIn](your-linkedin).
+- **About me page**: Currently working on the about me page and restructuring home 🏠 (15/4/2025)
