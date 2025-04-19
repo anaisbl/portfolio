@@ -6,13 +6,13 @@
 /* ___________IMPORT FONTS______________ */
 @font-face {
     font-family: "notulenfont";
-    src: url("fonts/notulen-serif-display-extra-bold.otf");
+    src: url("/fonts/notulen-serif-display-extra-bold.otf");
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "bellefairfont";
-    src: url("fonts/Bellefair-Regular.ttf");
+    src: url("/fonts/Bellefair-Regular.ttf");
     font-weight: normal;
     font-style: normal;
 }
