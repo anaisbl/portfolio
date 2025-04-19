@@ -23,4 +23,5 @@ I decided not to use **React** for this project, because I don't know how :sligh
 - **Light/Dark mode**: Turn the light on :flashlight:... or off!
 
 ### What’s Next:
-- **About me page**: Currently working on the about me page and restructuring home 🏠 (15/4/2025)
+- ~~**About me page**: Currently working on the about me page and restructuring home 🏠 (15/4/2025)~~ --> done 19/04/2025
+- Restructuring the CS page: I need to revist the layout + filter buttons and cards (19/04/2025)
