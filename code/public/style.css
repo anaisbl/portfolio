@@ -6,13 +6,13 @@
 /* ___________IMPORT FONTS______________ */
 @font-face {
     font-family: "notulenfont";
-    src: url("/code/public/fonts/notulen-serif-display-extra-bold.otf");
+    src: url("/public/fonts/notulen-serif-display-extra-bold.otf");
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "bellefairfont";
-    src: url("/code/public/fonts/Bellefair-Regular.ttf");
+    src: url("/public/fonts/Bellefair-Regular.ttf");
     font-weight: normal;
     font-style: normal;
 }
@@ -53,7 +53,7 @@ h2, h3, h4, p, a {
 
 /* chat container */
 .chat-container {
-    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto max-h-96
+    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto max-h-96 flex flex-col relative
 }
 
 /* theme toggle positioning */
