@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   document.body.classList.add('fade-transition-visible');
 });
 
+//____________________________________________________________________________
 // project filter
 document.addEventListener('DOMContentLoaded', function () {
   const tabs = document.querySelectorAll('[role="tab"]');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+//____________________________________________________________________________
 // light/dark mode button
 // main function
 function toggleTheme() {
@@ -88,6 +89,93 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+//____________________________________________________________________________
+// about me chatbox
+const chatResponses = {
+  "What kind of art do you make?": "I do a lot of observational drawing with Pinterest, a little bit of watercolour or gouache but that's still a work in progress. I take commissions every now and then for digital illustrations too!",
+
+  "Why did you study computer science?": "Because I wanted to be a woman in STEM (+1 if you know the reference) and get that bag honestly.",
+
+  "Is there a story behind your favourite color?": "When I was a kid (core memory), I just remember going to Disneyland and being utterly mesmerized by Cinderella's dress: the blue, the sparkles... I loved it! And ever since then, blue is just my precious.",
+
+  "Why don't you like Hell's Paradise?": "The main character is just bad. He has a confusing composition, the way he behaves + his backstory + his actions are contradicting. Everything else is fine, but he's the problem and since he's main character, the anime sucks unfortunately.",
+
+  "Where is the connection between art and computer science?": "Art and computer science may seem worlds apart, but I enjoy how different they are in both content and approach. Art fuels my creativity, while computer science challenges the analytical side of my brain. Both let me get \"in the zone,\" real good.",
+
+  "How old are you?": "Old enough to rule the world and father 16 offsprings.",
+
+  "Pineapple on pizza?": "Hell yeah, throw in some sweetcorn and caramelied onions too!"
+};
+
+function sendMessage(question) {
+  const chatContainer = document.getElementById("chat-box");
+
+  // User Message
+  const userMessage = document.createElement("div");
+  userMessage.className = "chat chat-end";
+  userMessage.innerHTML = `
+      <div class="chat-image avatar">
+          <div class="w-10 rounded-full">
+              <img alt="Guest-user-profile" src="icons/icons8-user-100.png" />
+          </div>
+      </div>
+      <div class="chat-header">You</div>
+      <div class="chat-bubble">${question}</div>
+  `;
+  chatContainer.appendChild(userMessage);
+
+  // Anaïs Loading Animation
+  const loadingMessage = document.createElement("div");
+  loadingMessage.className = "chat chat-start";
+  loadingMessage.innerHTML = `
+      <div class="chat-image avatar">
+          <div class="w-10 rounded-full">
+              <img id="avatar" alt="Anais-profile-pic" src="img/profile-light.jpg" />
+          </div>
+      </div>
+      <div class="chat-header">Anaïs</div>
+      <div class="chat-bubble">
+          <span class="loading loading-dots loading-sm"></span>
+      </div>
+  `;
+  chatContainer.appendChild(loadingMessage);
+
+  // Replace Loading Animation with Actual Response
+  setTimeout(() => {
+      loadingMessage.innerHTML = `
+          <div class="chat-image avatar">
+              <div class="w-10 rounded-full">
+                  <img id="avatar" alt="Anais-profile-pic" src="img/profile-light.jpg" />
+              </div>
+          </div>
+          <div class="chat-header">Anaïs</div>
+          <div class="chat-bubble">${chatResponses[question]}</div>
+      `;
+
+       // Auto-scroll to the latest response
+      loadingMessage.scrollIntoView({ behavior: "smooth" });
+  }, 2000); // Adjust delay if needed
+}
+
+// clear chat of conversation
+function clearChat() {
+  const chatBox = document.getElementById("chat-box");
+  chatBox.innerHTML = ""; // Remove all messages
+
+  // Restore initial message
+  const initialMessage = document.createElement("div");
+  initialMessage.className = "chat chat-start";
+  initialMessage.innerHTML = `
+      <div class="chat-image avatar">
+          <div class="w-10 rounded-full">
+              <img alt="Anais-profile-pic" src="img/profile-light.jpg" />
+          </div>
+      </div>
+      <div class="chat-header">Anaïs</div>
+      <div class="chat-bubble">Hey there! Ask me anything</div>
+  `;
+  chatBox.appendChild(initialMessage);
+}
 
 
 

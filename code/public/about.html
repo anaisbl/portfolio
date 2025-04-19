@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="coffee">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="dist/style.css" rel="stylesheet">
+      <script src="main.js" defer></script>
+
+      <!--All Icons by Icons8-->
+      <title>Anaïs | About</title>
+  </head>
+  <body class="bg-base-100 fade-transition flex flex-col min-h-screen">
+
+    <!--full body container for responsivness & centering-->
+    <div class="flex-grow flex flex-col items-center justify-center pt-5">
+
+      <!--Light/Dark mode button-->
+      <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
+        <input
+          type="checkbox"
+          value="synthwave"
+          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+          onclick="toggleTheme()" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+          class="col-start-1 row-start-1"
+          width="20"
+          alt="Light Mode Icon" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+          class="col-start-2 row-start-1"
+          width="20"
+          alt="Dark Mode Icon" />
+      </label>
+
+      <!-- Floating menu -->
+      <div class="fixed bottom-10 right-6 z-50">
+        <div class="dropdown dropdown-top dropdown-end dropdown-hover">
+          <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
+            <img src="icons/dark/icons8-hamburger-menu-100-floating.png" alt="Menu" class="h-10 w-10 bubble-float"/>
+          </label>
+          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cs.html">Computer Science</a></li>
+            <li><a href="art.html">Art</a></li>
+            <li><a href="img/cv.pdf" target="_blank">CV</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Header title-->
+      <h1 class="text-4xl text-primary font-extrabold font-serif mb-6 text-center">About me</h1>
+
+       <!--Header image-->
+      <div class="avatar">
+        <div class="avatar-styling">
+          <img id="avatar" src="img/profile.jpg" class="w-full h-full rounded-full"/>
+        </div>
+      </div>
+
+      <!--Header introduction-->
+      <h4 class="text-lg font-mono text-justify mb-6 px-4 pt-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+        My name is Anaïs- I am French and Tanzanian. I can speak 3 languages fluently and I'm learning 2 more because I enjoy hardship. I really like playing sudoku because it's basically a puzzle, and I love puzzles. I'm also a skater gyal, the adrenaline rush is addictive + it's a super cool sport!
+      </h4>
+
+      <!--Silly little about me-->
+      <div class="container flex flex-wrap gap-4 justify-center w-full max-w-5xl">
+        <!--Likes-->
+        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-4 mb-5">
+          <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Fun facts:</h1>
+          <p class="pb-3 px-3 font-mono text-justify">
+            My favourite colour is blue <span></span> <br> <br>
+            I always got Hay-Lin on the W.I.T.C.H personality quizz <span></span> <br><br>
+            If you haven't heard Fantasmas by HUMBE, this is your sign to go listen to it! <span></span> <br><br>
+          </p>
+        </div>
+
+        <!--Dislikes-->
+        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-4 mb-5">
+          <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Hot takes:</h1>
+          <p class="pb-3 px-3 font-mono text-justify">
+            Bell peppers- they look so lovely yet I can't stand their taste <span></span> <br> <br>
+            The hate for low rise jeans stems from the body shaming culture of the 2000s <span></span> <br><br>
+            Hell's Paradise sucked, bottom of the bucket anime of 2024 <span></span> <br><br>
+          </p>
+        </div>
+      </div>
+
+      <!--About section-->
+      <div class="text-center max-w-3xl mb-8 bg-base-200 p-8 rounded-lg shadow-lg">
+        <h1 class="text-primary text-3xl mx-auto pb-2">Chat with me</h1>
+
+        <!-- chat section-->
+        <div id="chat-wrapper" class="chat-container">
+          <div id="chat-box" class="flex flex-col space-y-4 flex-grow">
+              <!-- anais -->
+              <div class="chat chat-start">
+                  <div class="chat-image avatar">
+                      <div class="w-10 rounded-full">
+                          <img id="avatar" alt="Anais-profile-pic" src="img/profile-light.jpg" />
+                      </div>
+                  </div>
+                  <div class="chat-header">Anaïs</div>
+                  <div class="chat-bubble">Hey there! Ask me anything</div>
+              </div>
+          </div>
+
+          <!-- clear chat -->
+          <button class="btn btn-sm btn-warning sticky bottom-0 mt-2" onclick="clearChat()">
+              <img src="icons/icons8-bin-96.png" class="w-5">
+              Clear chat
+          </button>
+        </div>
+
+        <!--pre-defined questions-->
+        <div class="mb-6 flex flex-wrap justify-end gap-2">
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('What kind of art do you make?')">What kind of art do you make?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('How old are you?')">How old are you?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('Pineapple on pizza?')">Pineapple on pizza?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('Why did you study computer science?')">Why did you study computer science?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('Is there a story behind your favourite color?')">Is there a story behind your favourite color?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('Why don\'t you like Hell\'s Paradise?')">Why don't you like Hell's Paradise?</button>
+          <button class="btn btn-sm btn-outline btn-primary" onclick="sendMessage('Where is the connection between art and computer science?')">Where is the connection between art and computer science?</button>
+        </div>
+      </div>
+    
+    </div>
+
+    <footer class="footer footer-center bg-secondary p-2">
+      <aside>
+        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
+        <nav>
+          <div class="grid grid-flow-col gap-5 pb-2">
+            <!--<a href="mailto:anais.blenet@work.com" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-email" width="50" height="50" src="icons/dark/icons8-email-100-green.png" alt="Email" />
+            </a>-->
+            <a href="https://github.com/anaisbl" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-github" width="50" height="50" src="icons/dark/icons8-github-100-green.png" alt="Github" />
+            </a>
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="inline-block text-xl social-link">
+              <img class="social-linkedin" width="50" height="50" src="icons/dark/icons8-linkedin-100-green.png" alt="Linkedin" />
+            </a>
+          </div>
+        </nav>
+      </aside>
+    </footer>
+
+  </body>
+</html>
