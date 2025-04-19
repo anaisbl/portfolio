@@ -23,7 +23,7 @@ jobs:
 
       # Step 3: Navigate to the code directory where package.json is located
       - name: Navigate to the 'code' directory
-        run: cd code  # Navigate to the directory containing package.json
+        run: cd code
 
       # Step 4: Install dependencies (npm install)
       - name: Install dependencies
@@ -35,7 +35,7 @@ jobs:
       - name: Build Tailwind CSS
         run: |
           cd code  # Ensure we're in the 'code' directory before running Tailwind
-          npx tailwindcss build ./public/style.css -o ./dist/style.css  # Customize paths if needed
+          npx tailwindcss build ./public/style.css -o ./public/dist/style.css  # Customize paths if needed
 
       # Step 6: Run other build commands if you have additional processing (optional)
       - name: Build project (optional)
