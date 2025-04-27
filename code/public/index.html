@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="coffee">
-    <head>
-      <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-T999XFZZ');</script>
-      <!-- End Google Tag Manager -->
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="dist/style.css" rel="stylesheet">
+      <script src="main.js" defer></script>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="dist/style.css" rel="stylesheet">
-        <script src="main.js" defer></script>
+      <!--All Icons by Icons8-->
+      <title>Anaïs | Home</title>
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L15XSE8BPC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        <!--All Icons by Icons8-->
-        <title>Anaïs | Home</title>
-    </head>
-    <body class="bg-base-200 fade-transition h-screen overflow-hidden flex flex-col">
+    gtag('config', 'G-L15XSE8BPC');
+  </script>
+  <body class="bg-base-200 fade-transition h-screen overflow-hidden flex flex-col">
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T999XFZZ"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-      </noscript>
-      <!-- End Google Tag Manager (noscript) -->
+    <!--full body container for responsivness & centering-->
+    <div class="flex-grow flex flex-col items-center justify-center overflow-hidden w-full">
 
-      <!--full body container for responsivness & centering-->
-      <div class="flex-grow flex flex-col items-center justify-center overflow-hidden w-full">
+      <!--Light/Dark mode button-->
+      <label class="grid cursor-pointer top-1 right-1 place-items-center fixed sm:top-4 sm:right-4">
+        <input
+          type="checkbox"
+          value="synthwave"
+          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+          onclick="toggleTheme()" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+          class="col-start-1 row-start-1"
+          width="20"
+          alt="Light Mode Icon" />
+        <img
+          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+          class="col-start-2 row-start-1"
+          width="20"
+          alt="Dark Mode Icon" />
+      </label>
 
-        <!--Light/Dark mode button-->
-        <label class="grid cursor-pointer top-1 right-1 place-items-center fixed sm:top-4 sm:right-4">
-          <input
-            type="checkbox"
-            value="synthwave"
-            class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-            onclick="toggleTheme()" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
-            class="col-start-1 row-start-1"
-            width="20"
-            alt="Light Mode Icon" />
-          <img
-            src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
-            class="col-start-2 row-start-1"
-            width="20"
-            alt="Dark Mode Icon" />
-        </label>
-
-        <!--Header image-->
-        <div class="avatar">
-          <div class="avatar-styling">
-            <img id="avatar" src="img/profile-light.jpg" class="w-full h-full rounded-full"/>
-          </div>
-        </div>
-
-        <!--Header title-->
-        <h1 class="sm:text-5xl text-3xl font-extrabold text-primary my-6 text-center">Hi, my name is Anaïs</h1>
-
-        <!--Header introduction-->
-        <h4 class="sm:text-xl text-md text-base-content text-center mb-6 px-4 w-full sm:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
-
-        <div class="mb-6 flex sm:flex-wrap sm:gap-4 join join-horizontal gap-0.5 justify-center">
-          <button class="sm:btn-main btn btn-primary join-item"><a href="cs.html">Computer science</a></button>
-          <button class="sm:btn-main btn btn-primary join-item"><a href="art.html">Art</a></button>
-          <button class="sm:btn-main btn btn-primary join-item"><a href="about.html">About</a></button>
-          <div class="dropdown dropdown-right dropdown-center dropdown-hover">
-            <button tabindex="0" class="sm:btn-main btn btn-primary join-item"><a href="">Contact</a></button>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="https://www.linkedin.com/in/anais-blenet/" target="_blank">Linkedin</a></li>
-              <li><a href="https://github.com/anaisbl" target="_blank">Github</a></li>
-            </ul>
-          </div>
+      <!--Header image-->
+      <div class="avatar">
+        <div class="avatar-styling">
+          <img id="avatar" src="img/profile-light.jpg" class="w-full h-full rounded-full"/>
         </div>
       </div>
-      <footer class="footer footer-center bg-secondary p-2 w-full">
-        <aside>
-          <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
-        </aside>
-      </footer>
 
-    </body>
+      <!--Header title-->
+      <h1 class="sm:text-5xl text-3xl font-extrabold text-primary my-6 text-center">Hi, my name is Anaïs</h1>
+
+      <!--Header introduction-->
+      <h4 class="sm:text-xl text-md text-base-content text-center mb-6 px-4 w-full sm:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
+
+      <div class="mb-6 flex sm:flex-wrap sm:gap-4 join join-horizontal gap-0.5 justify-center">
+        <button class="sm:btn-main btn btn-primary join-item"><a href="cs.html">Computer science</a></button>
+        <button class="sm:btn-main btn btn-primary join-item"><a href="art.html">Art</a></button>
+        <button class="sm:btn-main btn btn-primary join-item"><a href="about.html">About</a></button>
+        <div class="dropdown dropdown-right dropdown-center dropdown-hover">
+          <button tabindex="0" class="sm:btn-main btn btn-primary join-item"><a href="">Contact</a></button>
+          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a href="https://www.linkedin.com/in/anais-blenet/" target="_blank">Linkedin</a></li>
+            <li><a href="https://github.com/anaisbl" target="_blank">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer footer-center bg-secondary p-2 w-full">
+      <aside>
+        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
+      </aside>
+    </footer>
+
+  </body>
 </html>
