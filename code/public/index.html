@@ -9,13 +9,13 @@
         <!--All Icons by Icons8-->
         <title>Anaïs | Home</title>
     </head>
-    <body class="bg-base-200 fade-transition h-screen flex flex-col">
+    <body class="bg-base-200 fade-transition h-screen overflow-hidden flex flex-col">
 
       <!--full body container for responsivness & centering-->
       <div class="flex-grow flex flex-col items-center justify-center w-full">
 
         <!--Light/Dark mode button-->
-        <label class="grid cursor-pointer place-items-center fixed top-4 right-4">
+        <label class="grid cursor-pointer place-items-center sm:fixed sm:top-4 sm:right-4 my-2 pb-1">
           <input
             type="checkbox"
             value="synthwave"
@@ -41,17 +41,17 @@
         </div>
 
         <!--Header title-->
-        <h1 class="text-5xl font-extrabold text-primary my-6 text-center">Hi, my name is Anaïs</h1>
+        <h1 class="sm:text-5xl text-3xl font-extrabold text-primary my-6 text-center">Hi, my name is Anaïs</h1>
 
         <!--Header introduction-->
-        <h4 class="text-xl text-base-content text-center mb-6 px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
+        <h4 class="sm:text-xl text-md text-base-content text-center mb-6 px-4 w-full sm:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
 
-        <div class="mb-6 flex flex-wrap justify-center gap-4">
-          <button class="btn-main"><a href="cs.html">Computer science</a></button>
-          <button class="btn-main"><a href="art.html">Art</a></button>
-          <button class="btn-main"><a href="about.html">About</a></button>
+        <div class="mb-6 flex sm:flex-wrap sm:gap-4 join join-horizontal gap-0.5 justify-center">
+          <button class="sm:btn-main btn btn-primary join-item"><a href="cs.html">Computer science</a></button>
+          <button class="sm:btn-main btn btn-primary join-item"><a href="art.html">Art</a></button>
+          <button class="sm:btn-main btn btn-primary join-item"><a href="about.html">About</a></button>
           <div class="dropdown dropdown-right dropdown-center dropdown-hover">
-            <button tabindex="0" class="btn-main"><a href="">Contact</a></button>
+            <button tabindex="0" class="sm:btn-main btn btn-primary join-item"><a href="">Contact</a></button>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><a href="https://www.linkedin.com/in/anais-blenet/" target="_blank">Linkedin</a></li>
               <li><a href="https://github.com/anaisbl" target="_blank">Github</a></li>
