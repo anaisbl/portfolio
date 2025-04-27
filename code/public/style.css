@@ -53,7 +53,7 @@ h2, h3, h4, p, a {
 
 /* chat container */
 .chat-container {
-    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto max-h-96 flex flex-col relative
+    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
 }
 
 /* theme toggle positioning */

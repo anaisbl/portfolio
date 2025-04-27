@@ -4776,7 +4776,8 @@ h2, h3, h4, p, a {
   position: relative;
   margin-bottom: 0.5rem;
   display: flex;
-  max-height: 24rem;
+  height: 300px;
+  max-height: 100vh;
   flex-direction: column;
 }
 
