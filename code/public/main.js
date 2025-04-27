@@ -104,7 +104,7 @@ const chatResponses = {
 
   "How old are you?": "Old enough to rule the world and father 16 offsprings.",
 
-  "Pineapple on pizza?": "Hell yeah, throw in some sweetcorn and caramelied onions too!"
+  "Pineapple on pizza?": "Hell yeah, throw in some sweetcorn and caramelised onions too!"
 };
 
 function sendMessage(question) {
