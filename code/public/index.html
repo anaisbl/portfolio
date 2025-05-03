@@ -73,12 +73,36 @@
             <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
           </a>
         </li>
-        <li id="nav-icon" class="btn btn-lg">
-          <a href="" data-tip="Contact">
+        <li id="nav-icon" class="btn btn-lg" onclick="my_modal_1.showModal()">
+          <a data-tip="Contact">
             <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
           </a>
         </li>
       </ul>
+
+      <!--contact modal-->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h2 class="text-xl font-bold py-3">Get in touch</h2>
+          <div class="flex flex-wrap gap-6">
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
+              <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+            </a>
+            <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" data-tip="Github">
+              <img class="w-10 h-10" src="icons/github-svgrepo-com.svg" alt="Github" />
+            </a>
+            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
+              <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+            </a>
+            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
+              <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+            </a>
+          </div>
+        </div>
+      </dialog>
     </div>
 
     <footer class="footer footer-center bg-secondary p-2 w-full">
