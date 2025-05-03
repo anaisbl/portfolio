@@ -82,13 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
 //____________________________________________________________________________
 // light/dark mode button
 // main function
-function toggleTheme() {
+/*function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'fantasy' ? 'coffee' : 'fantasy';
   document.documentElement.setAttribute('data-theme', newTheme);
@@ -134,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // update items based on the stored theme
   updateTheme(storedTheme);
-});
+});*/
 
 
 //____________________________________________________________________________

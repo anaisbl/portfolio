@@ -3198,6 +3198,10 @@ html {
   top: 50%;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
 .top-4 {
   top: 1rem;
 }
