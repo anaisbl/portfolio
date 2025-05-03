@@ -56,6 +56,17 @@ h2, h3, h4, p, a {
     @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
 }
 
+/* project cards */
+.project-img {
+    @apply h-[200px] w-full object-cover
+}
+.project-card {
+    @apply card card-compact w-96 bg-base-100 shadow-sm
+}
+
+
+/* ____________DARK - LIGHT MODE____________ */
+
 /* theme toggle positioning */
 .theme-toggle {
     z-index: 1000; /* Ensure it's on top of other elements */

@@ -6,35 +6,83 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //____________________________________________________________________________
 // project filter
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('[role="tab"]');
-  const projects = document.querySelectorAll('.card[data-type]');
-  
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function () {
-      const type = this.getAttribute('data-type');
-      
-      // Remove active class from all tabs
-      tabs.forEach(t => t.classList.remove('tab-active'));
-      
-      // Add active class to the clicked tab
-      this.classList.add('tab-active');
-      
-      // Filter projects based on the selected type with a delay for animation
-      projects.forEach(project => {
-        if (type === 'all' || project.getAttribute('data-type') === type) {
-          project.classList.remove('hide');
-          project.classList.add('show');
-          project.style.display = 'flex'; 
-        } else {
-          project.classList.add('hide');
-          project.classList.remove('show');
-          project.style.display = 'none'; 
-        }
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.filter');
+  const resetBtn = form.querySelector('input[type="reset"]');
+  const cards = document.querySelectorAll('.project .project-card');
+  const container = document.querySelector('.project');
+
+  const inputGroups = {
+    topic: form.querySelectorAll('input[name="topic"]'),
+    complexity: form.querySelectorAll('input[name="complexity"]'),
+    date: form.querySelectorAll('input[name="date"]'),
+  };
+
+  function updateFilters() {
+    const filters = new FormData(form);
+    const topic = filters.get('topic');
+    const complexity = filters.get('complexity');
+    const sortOrder = filters.get('date');
+
+    // Show or hide the reset button
+    const filtersApplied =
+      (topic && topic !== 'all') ||
+      (complexity && complexity !== '') ||
+      (sortOrder && sortOrder !== 'newest');
+    resetBtn.classList.toggle('hidden', !filtersApplied);
+
+    let visibleCards = Array.from(cards).filter(card => {
+      const matchesTopic = topic && topic !== 'all' && card.dataset.topic === topic;
+      const matchesComplexity = complexity && card.dataset.complexity === complexity;
+
+      // Only one group should be active at a time
+      if (topic && topic !== 'all') return matchesTopic;
+      if (complexity) return matchesComplexity;
+      return true; // show all if only date is selected
     });
+
+    if (sortOrder === 'newest') {
+      visibleCards.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+    } else if (sortOrder === 'oldest') {
+      visibleCards.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+    }
+
+    container.innerHTML = '';
+    visibleCards.forEach(card => container.appendChild(card));
+  }
+
+  // Handle exclusivity between filter groups
+  form.addEventListener('change', e => {
+    const changedGroup = e.target.name;
+  
+    // Only enforce mutual exclusivity between topic and complexity
+    if (changedGroup === 'topic') {
+      inputGroups.complexity.forEach(input => (input.checked = false));
+    } else if (changedGroup === 'complexity') {
+      inputGroups.topic.forEach(input => (input.checked = false));
+    }
+  
+    updateFilters();
   });
+  
+
+  form.addEventListener('reset', () => {
+    setTimeout(() => {
+      resetBtn.classList.add('hidden');
+      const sorted = Array.from(cards).sort((a, b) =>
+        b.dataset.date.localeCompare(a.dataset.date)
+      );
+      container.innerHTML = '';
+      sorted.forEach(card => container.appendChild(card));
+    }, 10);
+  });
+
+  // Initialize on page load
+  updateFilters();
 });
+
+
+
 
 
 //____________________________________________________________________________

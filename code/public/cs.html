@@ -6,18 +6,19 @@
       <link href="dist/style.css" rel="stylesheet">
       <script src="main.js" defer></script>
 
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L15XSE8BPC"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-L15XSE8BPC');
+      </script>
+
       <!--All Icons by Icons8-->
       <title>Anaïs | CS Projects</title>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L15XSE8BPC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-L15XSE8BPC');
-  </script>
   <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
     
     <!--full body container for responsivness & centering-->
@@ -58,19 +59,55 @@
       </div>
 
       <!--Header title-->
-      <h1 class="text-4xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
+      <h1 class="sm:text-4xl text-2xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
+
+      <!--Header image-->
+      <div class="avatar">
+        <div class="avatar-styling">
+          <img id="avatar" src="img/profile.jpg" class="w-full h-full rounded-full"/>
+        </div>
+      </div>
 
       <!--Header introduction-->
-      <h2 class="text-xl font-semibold font-mono text-base-content text-center px-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">Explore my journey as I dive into the world of data!</h2>
+      <h2 class="sm:text-xl text-lg font-mono text-base-content text-justify px-4 py-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+        Hi, I'm Anaïs — a data scientist with a background in business and computer science. I work on solving real-world problems using machine learning, data analysis, and predictive modeling.
+      </h2>
 
-      <!--Timeline-->
+      <!--contact-->
+      <div id="contact" class="max-w-4xl justify-center flex flex-col items-center px-4 mb-4 pb-2">
+        <div class="divider divider-secondary">Let's Connect</div>
+        <p class="text-lg mb-2">I'm currently looking for data science roles where I can apply my skills to meaningful projects and continue growing in the field. Feel free to contact me if you like what you see!</p>
+        <div class="card sm:w-96 w-80 bg-base-100 shadow-md p-6 justify-center">        
+          <div class="flex flex-wrap gap-4 justify-center mb-6">
+            <a href="mailto:anais.bl@workmail.com" class="btn btn-secondary">
+              <span class="mr-2">Email Me</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="btn btn-square btn-outline btn-secondary">
+              <img class="social-linkedin" width="50" height="50" src="icons/dark/icons8-linkedin-100-green.png" alt="Linkedin" />
+              </svg>
+            </a>
+            
+            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="btn btn-outline btn-secondary">
+              Schedule a Call
+            </a>
+          </div>
+    
+          <p class="text-center text-sm">Response time: Usually within 24 hours</p>
+        </div>
+      </div>
+
+      <!--Timeline
       <div class="pt-8 mb-5 w-full max-w-7xl flex justify-center">
         <ul class="timeline timeline-vertical lg:timeline-horizontal">
-          <!-- Business Management Degree -->
+          <-- Business Management Degree ->
           <li>
             <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
               <time class="font-mono text-info italic">2020</time>
-              <div class="text-lg">Graduated in Business Management</div>
+              <div class="text-md">Graduated in Business Management</div>
               <p>ESCP Business School</p>
             </div>
             <div class="timeline-middle">
@@ -78,7 +115,7 @@
             </div>
             <hr class="bg-accent"/>
           </li>
-          <!-- Pivot to Computer Science -->
+          <-- Pivot to Computer Science ->
           <li>
             <hr class="bg-accent"/>
             <div class="timeline-middle">
@@ -86,17 +123,17 @@
             </div>
             <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
               <time class="font-mono text-info italic">2021-2022</time>
-              <div class="text-lg">Started learning Computer Science</div>
+              <div class="text-md">Started learning Computer Science</div>
               <p>Self-taught web development</p>
             </div>
             <hr class="bg-accent"/>
           </li>
-          <!-- Logistics & Accounts Job -->
+          <-- Logistics & Accounts Job ->
           <li>
             <hr class="bg-accent"/>
             <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
               <time class="font-mono text-info italic">2022-2024</time>
-              <div class="text-lg">Worked in Logistics & Accounting</div>
+              <div class="text-md">Worked in Logistics & Accounting</div>
               <p>Corto Safaris Ltd</p>
             </div>
             <div class="timeline-middle">
@@ -104,7 +141,7 @@
             </div>
             <hr class="bg-accent"/>
           </li>
-          <!-- Master’s in Data Science -->
+          <-- Master’s in Data Science ->
           <li>
             <hr class="bg-accent"/>
             <div class="timeline-middle">
@@ -112,70 +149,168 @@
             </div>
             <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
               <time class="font-mono italic text-info">2025</time>
-              <div class="text-lg ">Graduated in Computer Science</div>
+              <div class="text-md">Graduated in Computer Science</div>
               <p>TU Dublin</p>
             </div>
             <hr class="bg-accent"/>
           </li>
-          <!-- Currently -->
+          <-- Currently ->
           <li>
             <hr />
             <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
               <time class="font-mono italic text-info">2025-now</time>
-              <div class="text-lg ">Career in Data</div>
-              <p>Landing that perject job soon!</p>
+              <div class="text-md">Career in Data</div>
+              <p>Landing that perfect job soon!</p>
             </div>
             <div class="timeline-middle">
-              <div class="h-5 w-5  outline outline-accent rounded-full animate-pulse"></div>
+              <div class="h-5 w-5  outline outline-accent rounded-full animate-ping"></div>
             </div>
           </li>
         </ul>
-      </div>
+      </div>-->
 
-      <!--Tech stack & experience-->
-      <div class="container flex flex-wrap gap-4 justify-center w-full max-w-5xl">
-        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-4 mb-5">
-          <h1 class="text-3xl text-primary font-extrabold pb-4 font-mono text-center">Tech stack: </h1>
-          <div class="justify-center flex flex-wrap gap-2">
-            <div class="badge badge-lg badge-outline badge-success">Python</div>
-            <div class="badge badge-lg badge-outline badge-success">HTML/CSS</div>
-            <div class="badge badge-lg badge-outline badge-success">SQL</div>
-            <div class="badge badge-lg badge-outline badge-success">Tensorflow/Keras</div>
-            <div class="badge badge-lg badge-outline badge-success">Pyspark</div>
+      <!--tech stack & experience-->
+      <div class="container flex flex-wrap gap-2 justify-center w-full max-w-5xl">
+
+        <!--programming languages-->
+        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
+          <h1 class="sm:text-2xl text-xl text-primary font-extrabold pb-4 font-mono text-center">Programming languages: </h1>
+          <div class="justify-left px-3 space-y-4">
+            <ul class="space-y-2" style="list-style-type:none;">
+              <li class="flex items-center gap-3">
+                <span class="w-1/3 font-bold">Python</span>
+                <progress class="progress progress-info w-1/2" value="90" max="100"></progress>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1/3 font-bold">HTML/CSS</span>
+                <progress class="progress progress-info w-1/2" value="95" max="100"></progress>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1/3 font-bold">SQL</span>
+                <progress class="progress progress-info w-1/2" value="78" max="100"></progress>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1/3 font-bold">R</span>
+                <progress class="progress progress-info w-1/2" value="72" max="100"></progress>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-1/3 font-bold">Javascript</span>
+                <progress class="progress progress-info w-1/2" value="60" max="100"></progress>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--skills-->
+        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
+          <h1 class="sm:text-2xl text-xl text-primary font-extrabold pb-4 font-mono text-center">Skills: </h1>
+          <div class="space-y-4 px-3">
+            <!--technical-->
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-secondary">Technical</h3>
+              <div class="flex flex-wrap gap-2">
+                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Programming</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Data analysis</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Machine learning</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Web development</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Statistical analysis</div>
+              </div>
+            </div>
+            <!--soft-->
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-success">Soft</h3>
+              <div class="flex flex-wrap gap-2">
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Cross-functional collaboration</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Communication</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Problem solving</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Adaptability</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Self-motivation</div>
+                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Time management</div>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div class="w-full max-w-lg bg-base-100 outline outline-1 outline-primary rounded-lg py-4">
-          <h1 class="text-3xl text-primary font-extrabold font-mono pb-4 text-center">Skills:</h1>
-          <div class="container w-full max-w-6xl justify-center flex flex-wrap gap-2">
-            <div class="badge badge-lg badge-outline badge-warning">Machine learning</div>
-            <div class="badge badge-lg badge-outline badge-warning">Deep learning</div>
-            <div class="badge badge-lg badge-outline badge-warning">Big data</div>
-            <div class="badge badge-lg badge-outline badge-warning">Object detection</div>
-            <div class="badge badge-lg badge-outline badge-warning">Software development</div>
-            <div class="badge badge-lg badge-outline badge-warning">Product development</div>
+        <!--technical proficiency-->
+        <div class="w-full max-w-3xl max-h-md bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
+          <h1 class="sm:text-2xl text-xl text-primary font-extrabold font-mono pb-4 text-center">Technical proficiency:</h1>
+          <div class="space-y-4 px-3">
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-secondary">Data Science</h3>
+              <p class="sm:text-md text-sm text-base-content">
+                Pandas, NumPy, Scikit-learn, TensorFlow/Keras, PySpark, Matplotlib, Seaborn, Tableau, R Studio
+              </p>
+            </div>
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-secondary">Machine learning</h3>
+              <p class="sm:text-md text:sm text-base-content">
+                Supervised learning, Deep learning, Object detection, Predictive modeling, Model evaluation & Tuning
+              </p>
+            </div>
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-secondary">Web development</h3>
+              <p class="sm:text-md text-sm text-base-content">
+                Frontend basics with HTML/CSS & Javascript, UI/UX design, Deployment
+              </p>
+            </div>
+            <div>
+              <h3 class="sm:text-lg text-md font-semibold text-secondary">Development Tools</h3>
+              <p class="sm:text-md text-sm text-base-content">
+                Git/Github (Version control, Issue-tracking), Jupyter Notebooks, VS Code, Docker
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
       
-      <!--Projects-->
-      <h1 class="text-3xl text-primary font-extrabold font-mono mt-6 pt-4 text-center">Projects</h1>
-      <!--Project filter-->
-      <div role="tablist" class="tabs tabs-bordered tabs-lg mt-4 pt-4 flex flex-wrap overflow-x-auto">
-        <a role="tab" class="tab tab-active flex-1 sm:flex-none" data-type="all">All</a>
-        <a role="tab" class="tab flex-1 sm:flex-none" data-type="freelance">Freelance</a>
-        <a role="tab" class="tab flex-1 sm:flex-none" data-type="university">University</a>
-        <a role="tab" class="tab flex-1 sm:flex-none" data-type="fun">Personal</a>
-      </div>
+      <!--projects-->
+      <h1 class="sm:text-3xl text-2xl text-primary font-extrabold font-mono mt-6 pt-4 text-center">Projects</h1>
+      <h2 class="sm:text-xl text-lg font-mono text-base-content text-justify px-4 py-4 max-w-4xl">
+        From web development to machine learning, I've completed several projects in a freelance, personal and academic setting. <br> <br> Most are available on Github and some have been deployed to the web. You can filter through them by date, skill and complexity.</h2>
+      <!-- project filter -->
+      <form class="filter flex flex-wrap gap-4 items-center justify-center mt-3 px-4 max-w-4xl">
+        <div class="flex flex-wrap gap-4 items-center">
+          <!-- Topic Filter Group -->
+          <div class="flex flex-wrap justify-start items-center gap-2">
+            <span class="font-semibold sm:text-md text-sm underline">Sort by Topic:</span>
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="datascience" aria-label="Data science" />
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="webdev" aria-label="Web development" />
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="softdev" aria-label="Software development" />
+          </div>
 
-      <!--Project cards-->
-      <section class="project my-10 w-full max-w-5xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
-        <!--Personal-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="freelance">
+          <!-- Complexity Filter Group -->
+          <div class="flex flex-wrap justify-start items-center gap-2">
+            <span class="font-semibold sm:text-md text-sm underline">Sort by Complexity:</span>
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="basic" aria-label="Basic" />
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="intermediate" aria-label="Intermediate" />
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="advanced" aria-label="Advanced" />
+          </div>
+
+          <!-- Date Filter Group -->
+          <div class="flex flex-wrap justify-start items-center gap-2">
+            <span class="font-semibold text-sm underline">Date:</span>
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="date" value="newest" aria-label="Newest" checked />
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="date" value="oldest" aria-label="Oldest" />
+          </div>
+
+          <!-- Clear All Button -->
+          <div class="flex flex-wrap items-center gap-2">
+            <input class="btn btn-xs sm:btn-sm btn-outline" type="reset" value="Clear filter x" title="Clear all filters" />
+          </div>
+        </div>
+
+      </form>
+
+      <!--project cards-->
+      <section class="project my-5 w-full max-w-7xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
+        <!--corto web-->
+        <div class="project-card" data-topic="webdev" data-complexity="intermediate" data-date="2022">
           <figure>
             <img
-              src="img/corto_screen2.png"
-              alt="Screenshot of home page" />
+              src="img/projects/corto_screen2.png"
+              alt="Screenshot of home page"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -194,7 +329,7 @@
                 </svg>
               </a>
             </div>
-            <p>A website for a tourism company based in Tanzania, using a component-based CSS framework (Bootstrap), and Jquery for form submission to a php database.</p>
+            <p>Designed a responsive tourism website with Bootstrap, custom jQuery, and PHP backend for secure data processing.<br><br> Implemented modern UI elements, form validation and Google Analytics that increased online booking inquiries and strengthened the company's digital presence in East Africa & Europe.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">HTML/CSS</div>
               <div class="badge badge-outline badge-success">Bootstrap</div>
@@ -203,13 +338,13 @@
           </div>
         </div>
 
-        <!--Uni-->
-        <!--1. Bank management system-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+        <!--bank cli system-->
+        <div class="project-card" data-topic="softdev" data-complexity="basic" data-date="2023">
           <figure>
             <img
-              src="img/oop_ca_screen2.png"
-              alt="Screenshot of terminal signing up"/>
+              src="img/projects/oop_ca_screen2.png"
+              alt="Screenshot of terminal signing up"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -228,7 +363,7 @@
                 </svg>
               </a>
             </div>
-            <p>A Bank Management system built in Python which utilizes command line inputs.</p>
+            <p>Built a Python CLI banking system featuring transaction processing and account management. Implemented OOP principles with inheritance for different account types, transaction history tracking, and data persistence through file I/O operations.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-warning">Software development</div>
@@ -236,17 +371,18 @@
           </div>
         </div>
 
-        <!--2. Classifier marketing campaign-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+        <!--classifier marketing campaign-->
+        <div class="project-card" data-topic="datascience" data-complexity="intermediate" data-date="2024">
           <figure>
             <img
-              src="img/ml_ca_screen1.png"
-              alt="Screenshot of main code"/>
+              src="img/projects/ml_ca_screen1.png"
+              alt="Screenshot of main code"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
               <h2 class="card-title">
-              Predicting the outcome of a marketing campaign
+              Marketing campaign predictor
               </h2>
               <span>
                 <time class="font-mono text-sm text-info italic">2024</time>
@@ -260,7 +396,7 @@
                 </svg>
               </a>
             </div>  
-            <p>A classifier used to predict the outcome of a bank marketing campaing using csv data containing several types of data.</p>
+            <p>Developed a machine learning classifier that accurately predicted bank marketing campaign outcomes.<br><br> Evaluated multiple classification algorithms using customer demographic to achieve optimal prediction accuracy, providing actionable insights for more targeted marketing approaches.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Sci-kit learn</div>
@@ -269,12 +405,13 @@
           </div>
         </div>
 
-        <!--3. Big data-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+        <!--big data-->
+        <div class="project-card" data-topic="datascience" data-complexity="advanced" data-date="2024">
           <figure class="w-full">
             <img
-              src="img/bigdata_ca_screen2.png"
-              alt="Screenshot of kaggle leaderboard"/>
+              src="img/projects/bigdata_ca_screen2.png"
+              alt="Screenshot of kaggle leaderboard"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -293,7 +430,7 @@
                 </svg>
               </a>
             </div>
-            <p>This project involves building a machine learning classifier using PySpark to predict steel-plate defects as part of a Kaggle competition.</p>
+            <p>Built a PySpark ML pipeline for steel-plate defect classification in a Kaggle competition, achieving an AUC-ROC score of 0.86375. <br><br> Implemented distributed computing techniques to process industrial sensor data and develop a multi-class model for manufacturing quality control. Ranked in the 65th percentile among 2199 participants.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Sci-kit learn</div>
@@ -303,12 +440,13 @@
           </div>
         </div>
 
-        <!--4. Deep learning-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+        <!--deep learning-->
+        <div class="project-card" data-topic="datascience" data-complexity="advanced" data-date="2024">
           <figure>
             <img
-              src="img/deepl_ca_screen2.png"
-              alt="Screenshot of model output for image processing"/>
+              src="img/projects/deepl_ca_screen2.png"
+              alt="Screenshot of model output for image processing"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -327,7 +465,7 @@
                 </svg>
               </a>
             </div>
-            <p>This project involves testing different deep neural network for song genre prediction and applying transfer learning techniques to image classification using the CIFAR-100 dataset.</p>
+            <p>Created a deep CNN project for audio classification and image recognition and leveragin  transfer learning. Fine-tuned pre-trained models with hyperparameter optimization to achieve an improvement over baseline performance.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Tensorflow/Keras</div>
@@ -336,12 +474,13 @@
           </div>
         </div>
 
-        <!--5. Magpie-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="university">
+        <!--magpie-->
+        <div class="project-card" data-topic="softdev" data-complexity="advanced" data-date="2024">
           <figure>
             <img
-              src="img/magpie_screen.png"
-              alt="Screenshot of dashboard"/>
+              src="img/projects/magpie_screen.png"
+              alt="Screenshot of dashboard"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -360,7 +499,7 @@
                 </svg>
               </a>
             </div>
-            <p>This is the final project for the Msc in Computer science. Magpie is a geographical information service that allows Civil Planners and others to explore public amenities 'at a glance'.</p>
+            <p>Led comprehensive user testing for Magpie, a GIS platform for urban planners, gathering and implementing critical feedback to enhance usability.<br><br> Specialized in training object detection model (YOLO) to accurately identify vehicles from satellite and street-level imagery. Refined detection algorithms to improve accuracy across diverse urban environments, building a brand new dataset of parking spaces.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">Typescript</div>
@@ -371,12 +510,13 @@
           </div>
         </div>
 
-        <!--Just for fun project-->
-        <div class="card card-compact w-96 bg-base-100 shadow-xl" data-type="fun">
+        <!--to do list app-->
+        <div class="project-card" data-topic="softdev" data-complexity="intermediate" data-date="2025">
           <figure>
             <img
-              src="img/to-do-app-screen.png"
-              alt="Screenshot of application"/>
+              src="img/projects/to-do-app-screen.png"
+              alt="Screenshot of application"
+              class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
@@ -395,7 +535,7 @@
                 </svg>
               </a>
             </div>
-            <p>An application built with the PyQt5 library in Python. Includes SQLite database for permanent storage, and features to add, modify, delete and tick off tasks on a very cute dashboard!</p>
+            <p>Developed a PyQt5 task management application with an intuitive UI and SQLite database backend. <br><br> Implemented priority color coding, recurring tasks and a history function. Applied MVC architecture for clean separation of data and presentation layers.</p>
             <div class="card-actions justify-normal py-2">
               <div class="badge badge-outline badge-success">Python</div>
               <div class="badge badge-outline badge-success">SQL</div>
@@ -406,6 +546,7 @@
         </div>
 
       </section>
+
     </div>
 
     <footer class="footer footer-center bg-secondary p-2">
