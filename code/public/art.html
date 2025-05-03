@@ -19,7 +19,7 @@
       <!--All Icons by Icons8-->
       <title>Anaïs | Art Projects</title>
   </head>
-  <body class="bg-base-100 fade-transition flex flex-col min-h-screen">
+  <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
 
     <!--full body container for responsivness & centering-->
     <div class="flex-grow flex flex-col items-center justify-center pt-5">
@@ -44,19 +44,51 @@
       </label>-->
 
       <!-- Floating menu -->
-      <div class="fixed bottom-10 right-6 z-50">
-        <div class="dropdown dropdown-top dropdown-end dropdown-hover">
-          <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-            <img src="icons/light/icons8-hamburger-menu-100-light.png" alt="Menu" class="h-10 w-10 bubble-float"/>
-          </label>
-          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="cs.html">Computer Science</a></li>
-            <li><a href="img/cv.pdf" target="_blank">CV</a></li>
-          </ul>
-        </div>
+      <div class="fixed sm:right-12 sm:top-6 top-4 right-4 z-50">
+        <ul tabindex="0" class="menu p-0 gap-2">
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="index.html" data-tip="Home">
+              <img src="icons/home-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="about.html" data-tip="About">
+              <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="cs.html" data-tip="CS">
+              <img src="icons/code-svgrepo-com.svg" alt="cs-icon" class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon" onclick="my_modal_1.showModal()">
+            <a class="lg:tooltip lg:tooltip-left" data-tip="Contact">
+              <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <!--contact modal-->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h2 class="text-xl font-bold py-3">Get in touch</h2>
+          <div class="flex flex-wrap gap-6">
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
+              <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+            </a>
+            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
+              <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+            </a>
+            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
+              <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+            </a>
+          </div>
+        </div>
+      </dialog>
 
       <!--Header title-->
       <h1 class="text-4xl text-primary font-extrabold font-serif mb-6 text-center">Art portfolio</h1>

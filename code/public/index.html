@@ -56,19 +56,31 @@
       <!--Header introduction-->
       <h4 class="sm:text-xl text-md text-base-content text-center mb-6 px-4 w-full sm:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
 
-      <div class="mb-6 flex sm:flex-wrap sm:gap-4 join join-horizontal gap-0.5 justify-center">
-        <button class="sm:btn-main btn btn-primary join-item"><a href="cs.html">Computer science</a></button>
-        <button class="sm:btn-main btn btn-primary join-item"><a href="art.html">Art</a></button>
-        <button class="sm:btn-main btn btn-primary join-item"><a href="about.html">About</a></button>
-        <div class="dropdown dropdown-right dropdown-center dropdown-hover">
-          <button tabindex="0" class="sm:btn-main btn btn-primary join-item"><a href="">Contact</a></button>
-          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="https://www.linkedin.com/in/anais-blenet/" target="_blank">Linkedin</a></li>
-            <li><a href="https://github.com/anaisbl" target="_blank">Github</a></li>
-          </ul>
-        </div>
-      </div>
+      <!-- nav menu -->
+      <ul tabindex="0" class="menu menu-horizontal p-0 gap-2">
+        <li id="nav-icon" class="btn btn-lg">
+          <a href="about.html" data-tip="About">
+            <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
+          </a>
+        </li>
+        <li id="nav-icon" class="btn btn-lg">
+          <a href="cs.html" data-tip="CS">
+            <img src="icons/code-svgrepo-com.svg" alt="cs-icon" class="h-5 w-5">
+          </a>
+        </li>
+        <li id="nav-icon" class="btn btn-lg">
+          <a href="art.html" data-tip="Art">
+            <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
+          </a>
+        </li>
+        <li id="nav-icon" class="btn btn-lg">
+          <a href="" data-tip="Contact">
+            <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
+          </a>
+        </li>
+      </ul>
     </div>
+
     <footer class="footer footer-center bg-secondary p-2 w-full">
       <aside>
         <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>

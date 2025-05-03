@@ -30,15 +30,7 @@ h2, h3, h4, p, a {
 
 /* social media icons styling */
 .social-link {
-    @apply inline-block text-xl hover:scale-125 transition-all duration-300
-}
-
-/* nav links styling */
-.nav-link {
-    @apply btn btn-ghost text-xl text-secondary-content hover:text-white transition-all duration-300;
-}
-.nav-link-mobile {
-    @apply btn btn-ghost text-xl text-secondary-content hover:text-white transition-all duration-300 block py-2 px-4
+    @apply inline-block hover:scale-105 transition-all duration-300
 }
 
 /* main link button */
@@ -64,6 +56,22 @@ h2, h3, h4, p, a {
     @apply card card-compact w-96 bg-base-100 shadow-sm
 }
 
+
+/* ____________nav icon buttons styling____________ */
+
+#nav-icon {
+    @apply btn btn-square btn-outline bg-base-200
+}
+#nav-icon {
+    transition: 0.3s;
+}
+#nav-icon:hover img {
+    filter: invert(1);
+}
+
+#nav-icon img {
+    filter: invert(0);
+}
 
 /* ____________DARK - LIGHT MODE____________ */
 

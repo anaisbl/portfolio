@@ -44,19 +44,51 @@
       </label>-->
 
       <!-- Floating menu -->
-      <div class="fixed top-10 right-6 z-50">
-        <div class="dropdown dropdown-top dropdown-end dropdown-hover">
-          <label tabindex="0" class="btn btn-circle btn-primary hover:scale-110">
-            <img src="icons/light/icons8-hamburger-menu-100-light.png" alt="Menu" class="h-10 w-10 bubble-float"/>
-          </label>
-          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="art.html">Art</a></li>
-            <li><a href="img/cv.pdf" target="_blank">CV</a></li>
-          </ul>
-        </div>
+      <div class="fixed sm:right-12 sm:top-6 top-4 right-4 z-50">
+        <ul tabindex="0" class="menu p-0 gap-2">
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="index.html" data-tip="Home">
+              <img src="icons/home-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="about.html" data-tip="About">
+              <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="art.html" data-tip="Art">
+              <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
+            </a>
+          </li>
+          <li id="nav-icon" onclick="my_modal_1.showModal()">
+            <a class="lg:tooltip lg:tooltip-left" data-tip="Contact">
+              <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <!--contact modal-->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h2 class="text-xl font-bold py-3">Get in touch</h2>
+          <div class="flex flex-wrap gap-6">
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
+              <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+            </a>
+            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
+              <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+            </a>
+            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
+              <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+            </a>
+          </div>
+        </div>
+      </dialog>
 
       <!--Header title-->
       <h1 class="sm:text-4xl text-2xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
@@ -77,25 +109,8 @@
       <div id="contact" class="max-w-4xl justify-center flex flex-col items-center px-4 mb-4 pb-2">
         <div class="divider divider-secondary">Let's Connect</div>
         <p class="text-lg mb-2">I'm currently looking for data science roles where I can apply my skills to meaningful projects and continue growing in the field. Feel free to contact me if you like what you see!</p>
-        <div class="card sm:w-96 w-80 bg-base-100 shadow-md p-6 justify-center">        
-          <div class="flex flex-wrap gap-4 justify-center mb-6">
-            <a href="mailto:anais.bl@workmail.com" class="btn btn-secondary">
-              <span class="mr-2">Email Me</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
-              </svg>
-            </a>
-
-            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="btn btn-square btn-outline btn-secondary">
-              <img class="social-linkedin" width="50" height="50" src="icons/light/icons8-linkedin-100-light.png" alt="Linkedin" />
-              </svg>
-            </a>
-            
-            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="btn btn-outline btn-secondary">
-              Schedule a Call
-            </a>
-          </div>
-    
+        <div class="card sm:w-96 w-80 bg-base-100 shadow-md p-4 flex flex-col justify-center items-center">        
+          <a class="btn btn-outline btn-secondary sm:btn-md btn-sm w-1/2 my-2" onclick="my_modal_1.showModal()">Contact me</a>
           <p class="text-center text-sm">Response time: Usually within 24 hours</p>
         </div>
       </div>
