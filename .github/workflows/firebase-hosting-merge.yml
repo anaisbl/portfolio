@@ -35,7 +35,7 @@ jobs:
       - name: Build Tailwind CSS
         run: |
           cd code  # Ensure we're in the 'code' directory before running Tailwind
-          npx tailwindcss build ./public/style.css -o ./public/dist/style.css  # Customize paths if needed
+          npx tailwindcss build ./public/style.css -o ./dist/style.css  # Customize paths if needed
 
       # Step 6: Run other build commands if you have additional processing (optional)
       - name: Build project (optional)
