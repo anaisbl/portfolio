@@ -60,7 +60,7 @@ h2, h3, h4, p, a {
 /* ____________nav icon buttons styling____________ */
 
 #nav-icon {
-    @apply btn btn-square btn-outline bg-base-200
+    @apply btn btn-square btn-outline bg-base-100
 }
 #nav-icon {
     transition: 0.3s;
