@@ -2,8 +2,7 @@
 
 Welcome to my portfolio repo! I’m building a website to showcase my work, experiences, and projects.
 
-<img src="[https://github.com/user-attachments/assets/028d63d5-ff35-4cb1-81af-f34ff0b6b123]" height="400">
-
+<img src="https://github.com/user-attachments/assets/6d2deb66-1064-404f-868a-8561f1d1563d" height="400">
 
 ### What I'm Using: :wrench:
 - **HTML**: Basic structure for the website. 
