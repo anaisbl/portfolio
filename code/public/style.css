@@ -1,7 +1,25 @@
 /*Tailwind directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: fantasy --default, coffee --prefersdark;
+}
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 /* ___________IMPORT FONTS______________ */
 @font-face {
@@ -30,7 +48,7 @@ h2, h3, h4, p, a {
 
 /* social media icons styling */
 .social-link {
-    @apply inline-block hover:scale-105 transition-all duration-300
+    @apply inline-block hover:scale-105 transition-all duration-300;
 }
 
 /* main link button */
@@ -38,14 +56,9 @@ h2, h3, h4, p, a {
     @apply btn bg-secondary text-lg text-white font-semibold py-3 px-8 hover:btn-primary hover:scale-105 transition-all duration-300
 }
 
-/* avatar picture styling */
-.avatar-styling {
-    @apply ring-secondary ring-offset-base-100 w-40 h-40 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden mx-auto rounded-full ring ring-offset-2
-}
-
 /* chat container */
 .chat-container {
-    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
+    @apply bg-base-100 space-y-4 outline-solid outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
 }
 
 /* project cards */
@@ -53,7 +66,7 @@ h2, h3, h4, p, a {
     @apply h-[200px] w-full object-cover
 }
 .project-card {
-    @apply card card-compact w-96 bg-base-100 shadow-sm
+    @apply card card-compact w-96 bg-base-100 shadow-xs
 }
 
 

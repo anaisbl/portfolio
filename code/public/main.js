@@ -1,10 +1,45 @@
-// transition between pages
-document.addEventListener("DOMContentLoaded", function() {
-  // Add a class that triggers the fade-in effect
-  document.body.classList.add('fade-transition-visible');
+// NEW testing seamless load page approach
+function loadPage(page) {
+  fetch(`${page}.html`)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('main-content').innerHTML = html;
+      window.history.pushState(null, '', `#${page}`); // for basic navigation
+    });
+  setActiveLink(page);
+}
+
+// Optional: handle back/forward browser buttons
+window.addEventListener('popstate', () => {
+  const page = location.hash.slice(1) || 'index';
+  loadPage(page);
+});
+
+// Load initial page
+window.addEventListener('DOMContentLoaded', () => {
+  const page = location.hash.slice(1) || 'index';
+  loadPage(page);
 });
 
 //____________________________________________________________________________
+
+// active navlink
+function setActiveLink(page) {
+  const links = document.querySelectorAll('.nav-link');
+  links.forEach(a => {
+    const isActive = a.dataset.page === page;
+    a.classList.toggle('active', isActive);
+    a.classList.toggle('underline', isActive);
+    a.classList.toggle('opacity-100', isActive);
+    a.classList.toggle('opacity-60', !isActive);
+  });
+}
+
+// Optionally set the default active one on first load:
+document.addEventListener('DOMContentLoaded', () => setActiveLink('index'));
+
+//___________________________________________________________________________
+
 // project filter
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.filter');
@@ -65,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFilters();
   });
   
-
   form.addEventListener('reset', () => {
     setTimeout(() => {
       resetBtn.classList.add('hidden');
@@ -81,60 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFilters();
 });
 
-
 //____________________________________________________________________________
-// light/dark mode button
-// main function
-/*function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'fantasy' ? 'coffee' : 'fantasy';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
 
-  // call function that switches items based on theme
-  updateTheme(newTheme);
-}
-
-// function to switch avatar and icons
-function updateTheme(theme) {
-  const elements = [
-    { id: 'avatar', darkSrc: 'img/profile-dark.jpg', lightSrc: 'img/profile-light.jpg' },
-    { id: 'construction', darkSrc: 'icons/dark/icons8-under-construction-100-brown.png', lightSrc: 'icons/light/icons8-under-construction-100-light.png'},
-    { class: 'bubble-float', darkSrc: 'icons/dark/icons8-hamburger-menu-100-floating.png', lightSrc: 'icons/light/icons8-hamburger-menu-100-light.png' },
-    { class: 'social-email', darkSrc: 'icons/dark/icons8-email-100-green.png', lightSrc: 'icons/light/icons8-email-100-light.png' },
-    { class: 'social-github', darkSrc: 'icons/dark/icons8-github-100-green.png', lightSrc: 'icons/light/icons8-github-100-light.png' },
-    { class: 'social-linkedin', darkSrc: 'icons/dark/icons8-linkedin-100-green.png', lightSrc: 'icons/light/icons8-linkedin-100-light.png' },
-  ];
-
-  elements.forEach(element => {
-    if (element.id) {
-      // Check for ID-based elements
-      const el = document.getElementById(element.id);
-      if (el) {
-        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
-      }
-    } else if (element.class) {
-      // Check for class-based elements
-      const els = document.querySelectorAll(`.${element.class}`);
-      els.forEach(el => {
-        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
-      });
-    }
-  });
-}
-
-// apply the stored theme on load
-window.addEventListener('DOMContentLoaded', () => {
-  const storedTheme = localStorage.getItem('theme') || 'fantasy';
-  document.documentElement.setAttribute('data-theme', storedTheme);
-  document.querySelector('.theme-controller').checked = storedTheme === 'coffee';
-
-  // update items based on the stored theme
-  updateTheme(storedTheme);
-});*/
-
-
-//____________________________________________________________________________
 // about me chatbox
 const chatResponses = {
   "What kind of art do you make?": "I do a lot of observational drawing with Pinterest, a little bit of watercolour or gouache but that's still a work in progress. I take commissions every now and then for digital illustrations too!",

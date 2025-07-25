@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="fantasy">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="dist/style.css" rel="stylesheet">
+      <script src="main.js" defer></script>
+      <!--All Icons by Icons8-->
+      <title>Anaïs | Home</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white fixed min-h-screen flex flex-col">
+        <!--to ensure footer is at the bottom-->
+        <div class="flex-grow">
+            <!--header-->
+            <div class="text-justify p-4">
+                <!--title-->
+                <img src="img/profile-light.jpg" class="rounded-lg mb-2" />
+                <h1 class="text-xl font-bold">Anaïs Blenet</h1>
+                <!--contact-->
+                <p class="text-sm text-gray-400">anais.bl@workmail.com</p>
+                <div class="menu menu-horizontal gap-2 ">
+                    <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Linkedin">
+                        <img class="w-5 h-5" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+                    </a>
+                    <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Github">
+                        <img class="w-5 h-5" src="icons/github-svgrepo-com.svg" alt="Github" />
+                    </a>
+                    <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Email">
+                        <img class="w-5 h-5" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+                    </a>
+                    <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Call">
+                        <img class="w-5 h-5" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+                    </a>
+                </div>
+            </div>
+            <nav class="space-y-4">
+                <ul class="menu menu-horizontal p-0 gap-2 text-gray-400">
+                    <li>
+                        <a data-page="index"
+                        class="nav-link"
+                        onclick="loadPage('index')">Home</a>
+                    </li>
+                    <li>
+                        <a data-page="about"
+                        class="nav-link"
+                        onclick="loadPage('about')">About</a>
+                    </li>
+                    <li>
+                        <a data-page="art"
+                        class="nav-link"
+                        onclick="loadPage('art')">Art</a>
+                    </li>
+                    <li>
+                        <a data-page="cs"
+                        class="nav-link"
+                        onclick="loadPage('cs')">Computer Science</a>
+                    </li>
+                    </ul>
+
+            </nav>
+        </div>
+        <!--footer-->
+        <footer class="footer footer-center w-full">
+            <aside>
+                <p class="text-xs text-primary">Copyright © 2025 - Anais</p>
+            </aside>
+        </footer>
+    </aside>
+    <main id="main-content" class="ml-64 flex-1 overflow-y-auto p-8 bg-white">
+    </main>
+  </body>
+</html>
