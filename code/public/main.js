@@ -1,42 +1,87 @@
-// NEW testing seamless load page approach
+// Seamless page loading function
 function loadPage(page) {
   fetch(`${page}.html`)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Page ${page}.html not found`);
+      }
+      return response.text();
+    })
     .then(html => {
+      // Update main content without affecting sidebar/dock
       document.getElementById('main-content').innerHTML = html;
-      window.history.pushState(null, '', `#${page}`); // for basic navigation
+      window.history.pushState(null, '', `#${page}`);
+      
+      // Set active states for both desktop and mobile navigation
+      setActiveLink(page);
+    })
+    .catch(error => {
+      console.error('Error loading page:', error);
+      // Fallback content if page doesn't exist
+      document.getElementById('main-content').innerHTML = `
+        <h1 class="text-3xl font-bold text-red-500 my-6">Page Not Found</h1>
+        <p>Sorry, the page "${page}" could not be loaded.</p>
+      `;
     });
-  setActiveLink(page);
 }
 
-// Optional: handle back/forward browser buttons
+// Handle browser back/forward buttons
 window.addEventListener('popstate', () => {
   const page = location.hash.slice(1) || 'index';
   loadPage(page);
 });
 
-// Load initial page
+// Load initial page on DOM ready
 window.addEventListener('DOMContentLoaded', () => {
   const page = location.hash.slice(1) || 'index';
   loadPage(page);
 });
 
-//____________________________________________________________________________
-
-// active navlink
+// Set active link states for both sidebar and dock
 function setActiveLink(page) {
-  const links = document.querySelectorAll('.nav-link');
-  links.forEach(a => {
-    const isActive = a.dataset.page === page;
-    a.classList.toggle('active', isActive);
-    a.classList.toggle('underline', isActive);
-    a.classList.toggle('opacity-100', isActive);
-    a.classList.toggle('opacity-60', !isActive);
+  // Handle sidebar navigation (desktop)
+  const sidebarLinks = document.querySelectorAll('aside nav a[onclick]');
+  sidebarLinks.forEach(link => {
+    const linkPage = link.getAttribute('onclick').match(/loadPage\('(.+?)'\)/)?.[1];
+    if (linkPage === page) {
+      link.classList.add('active', 'bg-gray-700', 'text-white');
+      link.classList.remove('text-gray-300');
+    } else {
+      link.classList.remove('active', 'bg-gray-700');
+      link.classList.add('text-gray-300');
+      link.classList.remove('text-white');
+    }
+  });
+
+  // Handle dock navigation (mobile)
+  const dockButtons = document.querySelectorAll('.md\\:hidden button[onclick]');
+  dockButtons.forEach(button => {
+    const buttonPage = button.getAttribute('onclick').match(/loadPage\('(.+?)'\)/)?.[1];
+    if (buttonPage === page) {
+      button.classList.add('text-blue-400', 'scale-105');
+      button.classList.remove('text-white');
+    } else {
+      button.classList.remove('text-blue-400', 'scale-105');
+      button.classList.add('text-white');
+    }
   });
 }
 
-// Optionally set the default active one on first load:
-document.addEventListener('DOMContentLoaded', () => setActiveLink('index'));
+// Utility function to get current page
+function getCurrentPage() {
+  return location.hash.slice(1) || 'index';
+}
+
+// Optional: Add smooth transitions
+function addPageTransitions() {
+  const mainContent = document.getElementById('main-content');
+  if (mainContent) {
+    mainContent.style.transition = 'opacity 0.2s ease-in-out';
+  }
+}
+
+// Initialize transitions on load
+document.addEventListener('DOMContentLoaded', addPageTransitions);
 
 //___________________________________________________________________________
 

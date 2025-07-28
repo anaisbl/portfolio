@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- Sidebar -->
-    <aside class="w-64 bg-gray-900 text-white fixed min-h-screen flex flex-col">
+    <aside class="hidden md:flex md:flex-col md:w-64 md:fixed md:min-h-screen bg-gray-900 text-white">
         <!--to ensure footer is at the bottom-->
         <div class="flex-grow">
             <!--header-->
@@ -59,7 +59,13 @@
             </aside>
         </footer>
     </aside>
-    <main id="main-content" class="ml-64 flex-1 overflow-y-auto p-8 bg-white">
-    </main>
+    <main id="main-content" class="p-8 md:ml-64"></main>
+    <!-- Dock / Bottom Navigation - Visible only on small screens -->
+    <div class="dock bg-gray-900 text-white md:hidden">
+        <button onclick="loadPage('index')"><span class="dock-label">Home</span></button>
+        <button onclick="loadPage('about')"><span class="dock-label">About</span></button>
+        <button onclick="loadPage('art')"><span class="dock-label">Art</span></button>
+        <button onclick="loadPage('cs')"><span class="dock-label">CS</span></button>
+    </div>
   </body>
 </html>

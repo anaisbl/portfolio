@@ -3,23 +3,6 @@
 @plugin "daisyui" {
     themes: fantasy --default, coffee --prefersdark;
 }
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
 
 /* ___________IMPORT FONTS______________ */
 @font-face {
@@ -46,16 +29,6 @@ h2, h3, h4, p, a {
 
 /* ____________CLASS STYLING____________ */
 
-/* social media icons styling */
-.social-link {
-    @apply inline-block hover:scale-105 transition-all duration-300;
-}
-
-/* main link button */
-.btn-main {
-    @apply btn bg-secondary text-lg text-white font-semibold py-3 px-8 hover:btn-primary hover:scale-105 transition-all duration-300
-}
-
 /* chat container */
 .chat-container {
     @apply bg-base-100 space-y-4 outline-solid outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
@@ -66,77 +39,7 @@ h2, h3, h4, p, a {
     @apply h-[200px] w-full object-cover
 }
 .project-card {
-    @apply card card-compact w-96 bg-base-100 shadow-xs
-}
-
-
-/* ____________nav icon buttons styling____________ */
-
-#nav-icon {
-    @apply btn btn-square btn-outline bg-base-100
-}
-#nav-icon {
-    transition: 0.3s;
-}
-#nav-icon:hover img {
-    filter: invert(1);
-}
-
-#nav-icon img {
-    filter: invert(0);
-}
-
-/* ____________DARK - LIGHT MODE____________ */
-
-/* theme toggle positioning */
-.theme-toggle {
-    z-index: 1000; /* Ensure it's on top of other elements */
-    outline: 1px gainsboro groove ;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* theme toggle icons */
-.theme-toggle img {
-    filter: invert(0); /* Default state */
-}
-
-[data-theme="coffee"] #light-icon {
-filter: invert(1); /* Dark mode: light icon gets inverted color */
-}
-
-[data-theme="coffee"] #dark-icon {
-filter: invert(1); /* Dark mode: dark icon remains same color */
-}
-
-[data-theme="fantasy"] #light-icon {
-filter: invert(0); /* Light mode: light icon remains same color */
-}
-
-[data-theme="fantasy"] #dark-icon {
-filter: invert(0); /* Light mode: dark icon gets inverted color */
-}
-
-/* ____________TRANSITIONS____________ */
-
-/* Global fade animation */
-.fade-transition {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-  
-/* Add this class when the page is ready */
-.fade-transition-visible {
-opacity: 1;
-}
-
-/* Content scroll fade in */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.fade-in-visible {
-opacity: 1;
+    @apply card w-96 bg-base-100 shadow-xs
 }
 
 /* ____________ANIMATIONS____________ */
@@ -154,21 +57,4 @@ opacity: 1;
     transform: scale(1);
     pointer-events: auto;
     display: flex;
-}
-
-
-/*animation pulse for avatar and social icons*/
-@keyframes pulse-avatar {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.02);
-    }
-}
-.avatar-styling {
-    animation: pulse-avatar 2s ease-in-out infinite;
-}
-.animated-icon {
-    animation: pulse-avatar 2s ease-in-out infinite;
 }
