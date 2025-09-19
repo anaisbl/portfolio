@@ -35,13 +35,13 @@ jobs:
       - name: Build Tailwind CSS
         run: |
           cd code  # Ensure we're in the 'code' directory before running Tailwind
-          npx tailwindcss build ./public/style.css -o ./dist/style.css  # Customize paths if needed
+          npx tailwindcss build ./public/style.css -o ./public/dist/style.css 
 
       # Step 6: Run other build commands if you have additional processing (optional)
       - name: Build project (optional)
         run: |
           cd code  # Ensure we're in the correct directory for the build
-          npm run build  # Replace with your build command if you have a custom build step
+          npm run build  
 
       # Step 7: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0

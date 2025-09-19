@@ -41,7 +41,7 @@ jobs:
       - name: Build project (optional)
         run: |
           cd code  # Ensure we're in the correct directory for the build
-          npm run build  # Replace with your build command if you have a custom build step
+          npm run build 
 
       # Step 7: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0

@@ -1,28 +1,69 @@
 // Seamless page loading function
 function loadPage(page) {
-  fetch(`${page}.html`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Page ${page}.html not found`);
-      }
-      return response.text();
-    })
-    .then(html => {
-      // Update main content without affecting sidebar/dock
-      document.getElementById('main-content').innerHTML = html;
-      window.history.pushState(null, '', `#${page}`);
-      
-      // Set active states for both desktop and mobile navigation
-      setActiveLink(page);
-    })
-    .catch(error => {
-      console.error('Error loading page:', error);
-      // Fallback content if page doesn't exist
-      document.getElementById('main-content').innerHTML = `
-        <h1 class="text-3xl font-bold text-red-500 my-6">Page Not Found</h1>
-        <p>Sorry, the page "${page}" could not be loaded.</p>
-      `;
-    });
+  const TRANSITION_MS = 200;
+  const main = document.getElementById('main-content');
+  if (!main) return;
+
+  // Ensure the transition style is present
+  if (!main.style.transition) {
+    main.style.transition = `opacity ${TRANSITION_MS}ms ease-in-out`;
+    // ensure it's visible to start
+    main.style.opacity = main.style.opacity || '1';
+  }
+
+  // Fade out, then fetch and replace content, then fade in
+  let proceeded = false;
+  function proceedWithFetch() {
+    if (proceeded) return;
+    proceeded = true;
+
+    fetch(`${page}.html`)
+      .then(response => {
+        if (!response.ok) throw new Error(`Page ${page}.html not found`);
+        return response.text();
+      })
+      .then(html => {
+        // Replace content
+        main.innerHTML = html;
+        window.history.pushState(null, '', `#${page}`);
+        setActiveLink(page);
+
+        // Let the browser register the new DOM, then fade in
+        requestAnimationFrame(() => {
+          // small delay to ensure reflow
+          requestAnimationFrame(() => (main.style.opacity = '1'));
+        });
+      })
+      .catch(error => {
+        console.error('Error loading page:', error);
+        main.innerHTML = `
+          <h1 class="text-3xl font-bold text-red-500 my-6">Page Not Found</h1>
+          <p>Sorry, the page "${page}" could not be loaded.</p>
+        `;
+        // fade back in even on error
+        requestAnimationFrame(() => (main.style.opacity = '1'));
+      });
+  }
+
+  // Start fade-out
+  main.style.opacity = '0';
+
+  // Prefer listening for transitionend, but fall back to timeout
+  const onEnd = (e) => {
+    if (e.propertyName === 'opacity') {
+      main.removeEventListener('transitionend', onEnd);
+      proceedWithFetch();
+    }
+  };
+  main.addEventListener('transitionend', onEnd);
+
+  // fallback in case transitionend doesn't fire
+  setTimeout(() => {
+    if (!proceeded) {
+      main.removeEventListener('transitionend', onEnd);
+      proceedWithFetch();
+    }
+  }, TRANSITION_MS + 50);
 }
 
 // Handle browser back/forward buttons
@@ -72,11 +113,13 @@ function getCurrentPage() {
   return location.hash.slice(1) || 'index';
 }
 
-// Optional: Add smooth transitions
+// Add smooth transitions
 function addPageTransitions() {
   const mainContent = document.getElementById('main-content');
   if (mainContent) {
-    mainContent.style.transition = 'opacity 0.2s ease-in-out';
+    // Ensure a transition is present and default visible state is set
+    mainContent.style.transition = mainContent.style.transition || 'opacity 0.2s ease-in-out';
+    if (!mainContent.style.opacity) mainContent.style.opacity = '1';
   }
 }
 
