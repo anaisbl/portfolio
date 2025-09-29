@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
+    "bootstrap-icons": "^1.13.1",
     "css": "^3.0.0"
   }
 }
