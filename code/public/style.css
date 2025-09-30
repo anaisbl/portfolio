@@ -39,22 +39,5 @@ h2, h3, h4, p, a {
     @apply h-[200px] w-full object-cover
 }
 .project-card {
-    @apply card w-96 bg-base-100 shadow-xs
-}
-
-/* ____________ANIMATIONS____________ */
-
-/*project filter*/
-.hide {
-    opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
-    display: none;
-    overflow: hidden;
-}
-.show {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-    display: flex;
+    @apply card w-96 bg-base-100 shadow-sm
 }

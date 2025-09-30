@@ -28,6 +28,9 @@ function loadPage(page) {
         window.history.pushState(null, '', `#${page}`);
         setActiveLink(page);
 
+        // Notify any page-specific initializers that new content is loaded
+        document.dispatchEvent(new CustomEvent('content:loaded', { detail: { page } }));
+
         // Let the browser register the new DOM, then fade in
         requestAnimationFrame(() => {
           // small delay to ensure reflow
@@ -126,81 +129,62 @@ function addPageTransitions() {
 // Initialize transitions on load
 document.addEventListener('DOMContentLoaded', addPageTransitions);
 
-//___________________________________________________________________________
+//____________________________________________________________________________
 
-// project filter
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.filter');
-  const resetBtn = form.querySelector('input[type="reset"]');
-  const cards = document.querySelectorAll('.project .project-card');
-  const container = document.querySelector('.project');
+// Project filters initializer
+function initProjectFilters(root = document) {
+  const container = root.querySelector('div.project') || document.querySelector('div.project');
+  //if (!container) return  console.log("No project container found"), void 0;
+  // it returns that message but still works?
 
-  const inputGroups = {
-    topic: form.querySelectorAll('input[name="topic"]'),
-    complexity: form.querySelectorAll('input[name="complexity"]'),
-    date: form.querySelectorAll('input[name="date"]'),
-  };
+  // Keep a stable list of original cards
+  const cards = Array.from(container.querySelectorAll('.project-card'));
+  // keep a copy on the container so global reset handler can restore order/visibility
+  try { container.__originalCards = cards.slice(); } catch (e) { /* defensive */ }
+
+  const topicInputs = Array.from(root.querySelectorAll('input[name="topic"]'));
+  const complexityInputs = Array.from(root.querySelectorAll('input[name="complexity"]'));
+  const dateInputs = Array.from(root.querySelectorAll('input[name="date"]'));
 
   function updateFilters() {
-    const filters = new FormData(form);
-    const topic = filters.get('topic');
-    const complexity = filters.get('complexity');
-    const sortOrder = filters.get('date');
+    // Collect checked values (multiple selections allowed per group)
+    const selectedTopics = topicInputs.filter(i => i.checked).map(i => i.value);
+    const selectedComplexities = complexityInputs.filter(i => i.checked).map(i => i.value);
+    const selectedDate = dateInputs.find(i => i.checked)?.value; // if any
 
-    // Show or hide the reset button
-    const filtersApplied =
-      (topic && topic !== 'all') ||
-      (complexity && complexity !== '') ||
-      (sortOrder && sortOrder !== 'newest');
-    resetBtn.classList.toggle('hidden', !filtersApplied);
-
-    let visibleCards = Array.from(cards).filter(card => {
-      const matchesTopic = topic && topic !== 'all' && card.dataset.topic === topic;
-      const matchesComplexity = complexity && card.dataset.complexity === complexity;
-
-      // Only one group should be active at a time
-      if (topic && topic !== 'all') return matchesTopic;
-      if (complexity) return matchesComplexity;
-      return true; // show all if only date is selected
+    // Filter logic: a card must match any selected value inside each group
+    // If a group has no selection, that group does not filter (i.e., matches all)
+    let visibleCards = cards.filter(card => {
+      if (selectedTopics.length && !selectedTopics.includes(card.dataset.topic)) return false;
+      if (selectedComplexities.length && !selectedComplexities.includes(card.dataset.complexity)) return false;
+      return true;
     });
 
-    if (sortOrder === 'newest') {
-      visibleCards.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
-    } else if (sortOrder === 'oldest') {
-      visibleCards.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+    // Sort by date value (YYYY-MM lexicographic sort works)
+    if (selectedDate) {
+      visibleCards.sort((a, b) => selectedDate === 'newest' ? b.dataset.date.localeCompare(a.dataset.date) : a.dataset.date.localeCompare(b.dataset.date));
     }
 
+    // Render
     container.innerHTML = '';
-    visibleCards.forEach(card => container.appendChild(card));
+    visibleCards.forEach(c => container.appendChild(c));
   }
 
-  // Handle exclusivity between filter groups
-  form.addEventListener('change', e => {
-    const changedGroup = e.target.name;
-  
-    // Only enforce mutual exclusivity between topic and complexity
-    if (changedGroup === 'topic') {
-      inputGroups.complexity.forEach(input => (input.checked = false));
-    } else if (changedGroup === 'complexity') {
-      inputGroups.topic.forEach(input => (input.checked = false));
-    }
-  
-    updateFilters();
-  });
-  
-  form.addEventListener('reset', () => {
-    setTimeout(() => {
-      resetBtn.classList.add('hidden');
-      const sorted = Array.from(cards).sort((a, b) =>
-        b.dataset.date.localeCompare(a.dataset.date)
-      );
-      container.innerHTML = '';
-      sorted.forEach(card => container.appendChild(card));
-    }, 10);
+  // Listen for changes on all filter inputs and update
+  [...topicInputs, ...complexityInputs, ...dateInputs].forEach(input => {
+    input.addEventListener('change', updateFilters);
   });
 
-  // Initialize on page load
+  // Initial render
   updateFilters();
+}
+
+// Initialize on initial DOMContentLoaded and after SPA content swaps
+document.addEventListener('DOMContentLoaded', () => initProjectFilters(document));
+document.addEventListener('content:loaded', (e) => {
+  // the loaded content replaced main-content; run initializer on the new main
+  const main = document.getElementById('main-content');
+  if (main) initProjectFilters(main);
 });
 
 //____________________________________________________________________________
@@ -291,6 +275,51 @@ function clearChat() {
   `;
   chatBox.appendChild(initialMessage);
 }
+
+//____________________________________________________________________________
+
+// Global reset handler — ensures a single reset button clears all filter radios
+function attachGlobalFiltersReset() {
+  // Prefer listening to the form reset event (this will fire when an <input type="reset"> is used)
+  const filterForm = document.querySelector('form.filter#project-filters') || document.querySelector('form.filter');
+  if (filterForm) {
+    filterForm.addEventListener('reset', () => {
+      // After native reset, dispatch change on all filter inputs so listeners update
+      const inputs = filterForm.querySelectorAll('input[name="topic"], input[name="complexity"], input[name="date"]');
+      inputs.forEach(i => i.dispatchEvent(new Event('change', { bubbles: true })));
+
+      // Restore original order and ensure all cards are visible if we captured them
+      const container = document.querySelector('div.project');
+      if (container && Array.isArray(container.__originalCards) && container.__originalCards.length) {
+        container.innerHTML = '';
+        container.__originalCards.forEach(c => container.appendChild(c));
+      }
+    });
+    return;
+  }
+
+  // Fallback: if no form.filter exists, bind to any input[type=reset]
+  const resetBtn = document.querySelector('input[type="reset"]');
+  if (!resetBtn) return;
+  resetBtn.addEventListener('click', () => {
+    const inputs = document.querySelectorAll('input[name="topic"], input[name="complexity"], input[name="date"]');
+    inputs.forEach(i => {
+      i.checked = false;
+      // Fire change so any listeners (initProjectFilters) react
+      i.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+    // Restore original order and ensure all cards are visible if we captured them
+    const container = document.querySelector('div.project');
+    if (container && Array.isArray(container.__originalCards) && container.__originalCards.length) {
+      container.innerHTML = '';
+      container.__originalCards.forEach(c => container.appendChild(c));
+    }
+  });
+}
+
+// Attach on initial load and after SPA swaps (content:loaded)
+document.addEventListener('DOMContentLoaded', () => attachGlobalFiltersReset());
+document.addEventListener('content:loaded', () => attachGlobalFiltersReset());
 
 
 
