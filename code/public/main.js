@@ -133,56 +133,89 @@ document.addEventListener('DOMContentLoaded', addPageTransitions);
 
 // Project filters initializer
 function initProjectFilters(root = document) {
+  const form = (root.getElementById && root.getElementById('project-filters')) || root.querySelector('#project-filters');
   const container = root.querySelector('div.project') || document.querySelector('div.project');
-  //if (!container) return  console.log("No project container found"), void 0;
-  // it returns that message but still works?
+  if (!form || !container) return;
 
-  // Keep a stable list of original cards
+  // Collect cards and remember original order on the container
   const cards = Array.from(container.querySelectorAll('.project-card'));
-  // keep a copy on the container so global reset handler can restore order/visibility
-  try { container.__originalCards = cards.slice(); } catch (e) { /* defensive */ }
+  container.__originalCards = container.__originalCards || cards.slice();
 
-  const topicInputs = Array.from(root.querySelectorAll('input[name="topic"]'));
-  const complexityInputs = Array.from(root.querySelectorAll('input[name="complexity"]'));
-  const dateInputs = Array.from(root.querySelectorAll('input[name="date"]'));
+  // All radio inputs inside the form
+  const radios = Array.from(form.querySelectorAll('input[type="radio"]'));
+  const resetBtn = form.querySelector('input[type="reset"]');
 
-  function updateFilters() {
-    // Collect checked values (multiple selections allowed per group)
-    const selectedTopics = topicInputs.filter(i => i.checked).map(i => i.value);
-    const selectedComplexities = complexityInputs.filter(i => i.checked).map(i => i.value);
-    const selectedDate = dateInputs.find(i => i.checked)?.value; // if any
+  // When a radio changes: make groups exclusive across names (clear other groups)
+  radios.forEach(r => {
+    r.addEventListener('change', () => {
+      if (!r.checked) return;
+      const thisGroup = r.name;
+      radios.forEach(other => {
+        if (other === r) return;
+        if (other.name !== thisGroup) other.checked = false;
+      });
+      applyFilters();
+    });
+  });
 
-    // Filter logic: a card must match any selected value inside each group
-    // If a group has no selection, that group does not filter (i.e., matches all)
-    let visibleCards = cards.filter(card => {
-      if (selectedTopics.length && !selectedTopics.includes(card.dataset.topic)) return false;
-      if (selectedComplexities.length && !selectedComplexities.includes(card.dataset.complexity)) return false;
+  // Use the form's native reset event to restore order & visibility (wait a tick for native reset)
+  form.addEventListener('reset', () => {
+    // native reset will uncheck radios — wait until after that happens
+    setTimeout(() => {
+      restoreOriginalOrder();
+      applyFilters();
+    }, 0);
+  });
+
+  // apply filters/sort and render
+  function applyFilters() {
+    const topic = form.querySelector('input[name="topic"]:checked')?.value || null;
+    const complexity = form.querySelector('input[name="complexity"]:checked')?.value || null;
+    const dateSort = form.querySelector('input[name="date"]:checked')?.value || null; // 'newest'|'oldest'|null
+
+    // filter
+    let visible = cards.filter(card => {
+      if (topic && card.dataset.topic !== topic) return false;
+      if (complexity && card.dataset.complexity !== complexity) return false;
       return true;
     });
 
-    // Sort by date value (YYYY-MM lexicographic sort works)
-    if (selectedDate) {
-      visibleCards.sort((a, b) => selectedDate === 'newest' ? b.dataset.date.localeCompare(a.dataset.date) : a.dataset.date.localeCompare(b.dataset.date));
-    }
+    // show/hide
+    cards.forEach(c => c.style.display = visible.includes(c) ? '' : 'none');
 
-    // Render
-    container.innerHTML = '';
-    visibleCards.forEach(c => container.appendChild(c));
+    // sort by date if requested; else restore original relative order among visible
+    if (dateSort) {
+      const sorted = visible.slice().sort((a, b) => {
+        const da = a.dataset.date || '';
+        const db = b.dataset.date || '';
+        // newest => descending
+        return dateSort === 'newest' ? db.localeCompare(da) : da.localeCompare(db);
+      });
+      sorted.forEach(c => container.appendChild(c));
+    } else {
+      const visibleSet = new Set(visible);
+      (container.__originalCards || cards).forEach(c => {
+        if (visibleSet.has(c)) container.appendChild(c);
+      });
+    }
   }
 
-  // Listen for changes on all filter inputs and update
-  [...topicInputs, ...complexityInputs, ...dateInputs].forEach(input => {
-    input.addEventListener('change', updateFilters);
-  });
+  function restoreOriginalOrder() {
+    const original = container.__originalCards || cards;
+    container.innerHTML = '';
+    original.forEach(c => {
+      c.style.display = '';
+      container.appendChild(c);
+    });
+  }
 
-  // Initial render
-  updateFilters();
+  // initial render
+  applyFilters();
 }
 
-// Initialize on initial DOMContentLoaded and after SPA content swaps
+// initialize once on load and after SPA swaps
 document.addEventListener('DOMContentLoaded', () => initProjectFilters(document));
 document.addEventListener('content:loaded', (e) => {
-  // the loaded content replaced main-content; run initializer on the new main
   const main = document.getElementById('main-content');
   if (main) initProjectFilters(main);
 });
@@ -320,6 +353,87 @@ function attachGlobalFiltersReset() {
 // Attach on initial load and after SPA swaps (content:loaded)
 document.addEventListener('DOMContentLoaded', () => attachGlobalFiltersReset());
 document.addEventListener('content:loaded', () => attachGlobalFiltersReset());
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.project');
+  if (!container) return;
+
+  const cards = Array.from(container.querySelectorAll('.project-card'));
+  const originalOrder = cards.slice();
+
+  const form = document.getElementById('project-filters');
+  if (!form) return;
+
+  // all inputs inside the single form (works for radio or checkbox)
+  const inputs = Array.from(form.querySelectorAll('input[type="radio"]'));
+  const resetBtn = form.querySelector('input[type="reset"]');
+
+  // When an input is checked, clear any inputs from other groups (name)
+  inputs.forEach(inp => {
+    inp.addEventListener('change', () => {
+      if (inp.checked) {
+        const group = inp.name;
+        inputs.forEach(other => {
+          if (other === inp) return;
+          if (other.name !== group) other.checked = false;
+        });
+      }
+      applyFilters();
+    });
+  });
+
+  // Global reset: prevent native partial reset and restore original DOM order
+  if (resetBtn) {
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      inputs.forEach(i => i.checked = false);
+      restoreOriginalOrder();
+      applyFilters();
+    });
+  }
+
+  function applyFilters() {
+    const topic = form.querySelector('input[name="topic"]:checked')?.value || null;
+    const complexity = form.querySelector('input[name="complexity"]:checked')?.value || null;
+    const dateSort = form.querySelector('input[name="date"]:checked')?.value || null; // 'newest' | 'oldest' | null
+
+    // decide visibility
+    const visible = cards.filter(card => {
+      if (topic && card.dataset.topic !== topic) return false;
+      if (complexity && card.dataset.complexity !== complexity) return false;
+      return true;
+    });
+
+    // show/hide
+    cards.forEach(c => c.style.display = visible.includes(c) ? '' : 'none');
+
+    // if date sort selected, sort visible by data-date; otherwise restore original relative order
+    if (dateSort) {
+      const multiplier = dateSort === 'newest' ? -1 : 1;
+      const sorted = visible.slice().sort((a, b) => {
+        const da = a.dataset.date || '';
+        const db = b.dataset.date || '';
+        if (da < db) return -1 * multiplier;
+        if (da > db) return 1 * multiplier;
+        return 0;
+      });
+      sorted.forEach(c => container.appendChild(c));
+    } else {
+      const set = new Set(visible);
+      originalOrder.forEach(c => {
+        if (set.has(c)) container.appendChild(c);
+      });
+    }
+  }
+
+  function restoreOriginalOrder() {
+    originalOrder.forEach(c => container.appendChild(c));
+    cards.forEach(c => c.style.display = '');
+  }
+
+  // initialize
+  applyFilters();
+});
 
 
 
