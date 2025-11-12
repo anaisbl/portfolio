@@ -5,111 +5,67 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="dist/style.css" rel="stylesheet">
       <script src="main.js" defer></script>
-
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L15XSE8BPC"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-L15XSE8BPC');
-      </script>
-
       <!--All Icons by Icons8-->
       <title>Anaïs | Home</title>
   </head>
-  <body class="bg-base-200 fade-transition h-screen overflow-hidden flex flex-col">
-
-    <!--full body container for responsivness & centering-->
-    <div class="flex-grow flex flex-col items-center justify-center overflow-hidden w-full">
-
-      <!--Light/Dark mode button--
-      <label class="grid cursor-pointer top-1 right-1 place-items-center fixed sm:top-4 sm:right-4">
-        <input
-          type="checkbox"
-          value="synthwave"
-          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-          onclick="toggleTheme()" />
-        <img
-          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
-          class="col-start-1 row-start-1"
-          width="20"
-          alt="Light Mode Icon" />
-        <img
-          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
-          class="col-start-2 row-start-1"
-          width="20"
-          alt="Dark Mode Icon" />
-      </label>-->
-
-      <!--Header image-->
-      <div class="avatar">
-        <div class="avatar-styling">
-          <img id="avatar" src="img/profile-light.jpg" class="w-full h-full rounded-full"/>
+  <body>
+    <!-- Sidebar -->
+    <aside class="hidden md:flex md:flex-col md:w-64 md:fixed md:min-h-screen bg-gray-900 text-white">
+        <!--to ensure footer is at the bottom-->
+        <div class="flex-grow">
+            <!--header-->
+            <div class="text-justify p-4">
+                <!--title-->
+                <img src="img/profile-light.jpg" class="rounded-lg mb-2" />
+                <h1 class="text-xl font-bold">Anaïs Blenet</h1>
+                <!--contact-->
+                <p class="text-sm text-gray-400">Data scientist | ML-AI Engineer</p>
+                <div class="menu menu-horizontal gap-7 ">
+                    <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Linkedin">
+                        <img class="w-5 h-5" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+                    </a>
+                    <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Github">
+                        <img class="w-5 h-5" src="icons/github-svgrepo-com.svg" alt="Github" />
+                    </a>
+                    <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Email">
+                        <img class="w-5 h-5" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+                    </a>
+                    <!--<a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Call">
+                        <img class="w-5 h-5" src="icons/phone-svgrepo-com.svg" alt="Phone" />-->
+                    </a>
+                </div>
+            </div>
+            <nav class="space-y-4">
+                <ul class="menu menu-horizontal p-0 gap-2">
+                    <li>
+                        <a onclick="loadPage('home')" data-tip="Home">Home</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('about')" data-tip="About">About</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('art')" data-tip="Art">Art</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('cs')" data-tip="CS">Computer Science</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </div>
-
-      <!--Header title-->
-      <h1 class="sm:text-5xl text-3xl font-extrabold text-primary my-6 text-center">Hi, my name is Anaïs</h1>
-
-      <!--Header introduction-->
-      <h4 class="sm:text-xl text-md text-base-content text-center mb-6 px-4 w-full sm:w-1/2">Welcome to my website! I am a recently graduated student with projects in both computer science and art. Feel free to browse or get in touch!</h4>
-
-      <!-- nav menu -->
-      <ul tabindex="0" class="menu menu-horizontal p-0 gap-2">
-        <li id="nav-icon" class="btn btn-lg">
-          <a href="about.html" data-tip="About">
-            <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
-          </a>
-        </li>
-        <li id="nav-icon" class="btn btn-lg">
-          <a href="cs.html" data-tip="CS">
-            <img src="icons/code-svgrepo-com.svg" alt="cs-icon" class="h-5 w-5">
-          </a>
-        </li>
-        <li id="nav-icon" class="btn btn-lg">
-          <a href="art.html" data-tip="Art">
-            <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
-          </a>
-        </li>
-        <li id="nav-icon" class="btn btn-lg" onclick="my_modal_1.showModal()">
-          <a data-tip="Contact">
-            <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
-          </a>
-        </li>
-      </ul>
-
-      <!--contact modal-->
-      <dialog id="my_modal_1" class="modal">
-        <div class="modal-box">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <h2 class="text-xl font-bold py-3">Get in touch</h2>
-          <div class="flex flex-wrap gap-6">
-            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
-              <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
-            </a>
-            <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" data-tip="Github">
-              <img class="w-10 h-10" src="icons/github-svgrepo-com.svg" alt="Github" />
-            </a>
-            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
-              <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
-            </a>
-            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
-              <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
-            </a>
-          </div>
-        </div>
-      </dialog>
+        <!--footer-->
+        <footer class="footer footer-center w-full">
+            <aside>
+                <p class="text-xs text-primary">Copyright © 2025 - Anais</p>
+            </aside>
+        </footer>
+    </aside>
+    <main id="main-content" class="sm:p-8 p-4 md:ml-64"></main>
+    <!-- Dock / Bottom Navigation - Visible only on small screens -->
+    <div class="dock bg-gray-900 text-white md:hidden">
+        <button onclick="loadPage('home')"><span class="dock-label">Home</span></button>
+        <button onclick="loadPage('about')"><span class="dock-label">About</span></button>
+        <button onclick="loadPage('art')"><span class="dock-label">Art</span></button>
+        <button onclick="loadPage('cs')"><span class="dock-label">CS</span></button>
     </div>
-
-    <footer class="footer footer-center bg-secondary p-2 w-full">
-      <aside>
-        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
-      </aside>
-    </footer>
-
   </body>
 </html>

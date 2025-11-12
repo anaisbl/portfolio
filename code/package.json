@@ -1,13 +1,15 @@
 {
   "devDependencies": {
-    "autoprefixer": "^10.4.20"
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^5.0.47",
+    "tailwindcss": "^4.1.11"
   },
   "scripts": {
-    "build": "tailwindcss build ./public/style.css -o ./dist/style.css"
+    "build": "npx tailwindcss -i ./public/style.css -o ./public/dist/style.css --minify"
   },
   "dependencies": {
-    "css": "^3.0.0",
-    "daisyui": "^4.12.23",
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/cli": "^4.1.11",
+    "bootstrap-icons": "^1.13.1",
+    "css": "^3.0.0"
   }
 }

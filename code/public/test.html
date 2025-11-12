@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="fantasy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/style.css" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <title>Anaïs | Home</title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="hidden md:flex md:flex-col md:w-64 md:fixed md:min-h-screen bg-gray-900 text-white">
+        <!--to ensure footer is at the bottom-->
+        <div class="flex-grow">
+            <!--header-->
+            <div class="text-justify p-4">
+                <!--title-->
+                <img src="img/profile-light.jpg" class="rounded-lg mb-2" />
+                <h1 class="text-xl font-bold">Anaïs Blenet</h1>
+                <!--contact-->
+                <p class="text-sm text-gray-400">anais.bl@workmail.com</p>
+                <div class="menu menu-horizontal gap-2 ">
+                    <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Linkedin">
+                        <img class="w-5 h-5" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+                    </a>
+                    <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Github">
+                        <img class="w-5 h-5" src="icons/github-svgrepo-com.svg" alt="Github" />
+                    </a>
+                    <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Email">
+                        <img class="w-5 h-5" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+                    </a>
+                    <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" style="filter: invert(80%);" data-tip="Call">
+                        <img class="w-5 h-5" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+                    </a>
+                </div>
+            </div>
+            <nav class="space-y-4">
+                <ul class="menu menu-horizontal p-0 gap-2">
+                    <li>
+                        <a onclick="loadPage('index')" data-tip="Home">Home</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('about')" data-tip="About">About</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('art')" data-tip="Art">Art</a>
+                    </li>
+                    <li>
+                        <a onclick="loadPage('cs')" data-tip="CS">Computer Science</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--footer-->
+        <footer class="footer footer-center w-full">
+            <aside>
+                <p class="text-xs text-primary">Copyright © 2025 - Anais</p>
+            </aside>
+        </footer>
+    </aside>
+    <main id="main-content" class="p-8 md:ml-64"></main>
+    <!-- Dock / Bottom Navigation - Visible only on small screens -->
+    <div class="dock bg-primary md:hidden">
+        <button onclick="loadPage('index')" class="dock-active"><span class="dock-label">Home</span></button>
+        <button onclick="loadPage('about')"><span class="dock-label">About</span></button>
+        <button onclick="loadPage('art')"><span class="dock-label">Art</span></button>
+        <button onclick="loadPage('cs')"><span class="dock-label">CS</span></button>
+    </div>
+
+  </body>
+</html>

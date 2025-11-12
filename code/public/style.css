@@ -1,161 +1,158 @@
 /*Tailwind directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+    themes: fantasy --default, coffee --prefersdark;
+}
 
 /* ___________IMPORT FONTS______________ */
 @font-face {
-    font-family: "notulenfont";
-    src: url("/fonts/notulen-serif-display-extra-bold.otf");
-    font-weight: bold;
+    font-family: "licoriceregular";
+    src: url("../fonts/Licorice-Regular.ttf");
+    font-weight: bolder;
+    font-style: bold;
+}
+@font-face {
+    font-family: "kleeoneregular";
+    src: url("../fonts/KleeOne-Regular.ttf");
+    font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: "bellefairfont";
-    src: url("/fonts/Bellefair-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
+    font-family: "kleeonesemibold";
+    src: url("../fonts/KleeOne-SemiBold.ttf");
+    font-weight: bold;
+    font-style: bold;
 }
 
 /* ____________HTML STYLING_____________ */
 h1 {
-    font-family: "notulenfont" !important;
+    font-family: "licoriceregular" !important;
 }
-h2, h3, h4, p, a {
-    font-family: "bellefairfont" !important;
+h2, h3, h4, p, a, em, span, div {
+    font-family: "kleeoneregular" !important;
+}
+
+/* Override Tailwind font utilities to ensure bellefair is applied */
+h2.font-mono, h3.font-mono, h4.font-mono, p.font-mono, a.font-mono {
+    font-family: "kleeoneregular" !important;
+}
+h4.font-bold, .font-semibold, h2.font-extrabold {
+    font-family: "kleeonesemibold" !important;
+}
+time {
+    font-family: "kleeoneregular" !important;
 }
 
 
 /* ____________CLASS STYLING____________ */
 
-/* social media icons styling */
-.social-link {
-    @apply inline-block hover:scale-105 transition-all duration-300
-}
-
-/* main link button */
-.btn-main {
-    @apply btn bg-secondary text-lg text-white font-semibold py-3 px-8 hover:btn-primary hover:scale-105 transition-all duration-300
-}
-
-/* avatar picture styling */
-.avatar-styling {
-    @apply ring-secondary ring-offset-base-100 w-40 h-40 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden mx-auto rounded-full ring ring-offset-2
-}
-
-/* chat container */
+/* chat container 
 .chat-container {
-    @apply bg-base-100 space-y-4 outline outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
-}
+    @apply bg-base-100 space-y-4 outline-solid outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
+}*/
 
 /* project cards */
 .project-img {
     @apply h-[200px] w-full object-cover
 }
 .project-card {
-    @apply card card-compact w-96 bg-base-100 shadow-sm
+    @apply card w-96 bg-base-100 shadow-sm
 }
 
-
-/* ____________nav icon buttons styling____________ */
-
-#nav-icon {
-    @apply btn btn-square btn-outline bg-base-100
-}
-#nav-icon {
-    transition: 0.3s;
-}
-#nav-icon:hover img {
-    filter: invert(1);
+/* about pictures */
+.about-pic {
+    @apply h-40 rounded
 }
 
-#nav-icon img {
-    filter: invert(0);
-}
-
-/* ____________DARK - LIGHT MODE____________ */
-
-/* theme toggle positioning */
-.theme-toggle {
-    z-index: 1000; /* Ensure it's on top of other elements */
-    outline: 1px gainsboro groove ;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* theme toggle icons */
-.theme-toggle img {
-    filter: invert(0); /* Default state */
-}
-
-[data-theme="coffee"] #light-icon {
-filter: invert(1); /* Dark mode: light icon gets inverted color */
-}
-
-[data-theme="coffee"] #dark-icon {
-filter: invert(1); /* Dark mode: dark icon remains same color */
-}
-
-[data-theme="fantasy"] #light-icon {
-filter: invert(0); /* Light mode: light icon remains same color */
-}
-
-[data-theme="fantasy"] #dark-icon {
-filter: invert(0); /* Light mode: dark icon gets inverted color */
-}
-
-/* ____________TRANSITIONS____________ */
-
-/* Global fade animation */
-.fade-transition {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-  
-/* Add this class when the page is ready */
-.fade-transition-visible {
-opacity: 1;
-}
-
-/* Content scroll fade in */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.fade-in-visible {
-opacity: 1;
-}
-
-/* ____________ANIMATIONS____________ */
-
-/*project filter*/
-.hide {
-    opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
-    display: none;
-    overflow: hidden;
-}
-.show {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-    display: flex;
-}
-
-
-/*animation pulse for avatar and social icons*/
-@keyframes pulse-avatar {
+/* Custom bounce animations for carousel arrows */
+@keyframes bounce-left {
     0%, 100% {
-      transform: scale(1);
+        transform: translateX(-4px);
+        opacity: 1;
     }
     50% {
-      transform: scale(1.02);
+        transform: translateX(4px);
+        opacity: 0.6;
     }
 }
-.avatar-styling {
-    animation: pulse-avatar 2s ease-in-out infinite;
+
+@keyframes bounce-right {
+    0%, 100% {
+        transform: translateX(4px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-4px);
+        opacity: 0.6;
+    }
 }
-.animated-icon {
-    animation: pulse-avatar 2s ease-in-out infinite;
+
+.animate-bounce-left {
+    animation: bounce-left 1s infinite;
+}
+
+.animate-bounce-right {
+    animation: bounce-right 1s infinite;
+}
+
+/* Tech stack icon animations */
+@keyframes float-up {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px rgba(var(--color-secondary), 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(var(--color-secondary), 0.5));
+    }
+}
+
+.tech-icon {
+    animation: float-up 3s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.15) translateY(-12px);
+    filter: drop-shadow(0 0 12px rgba(var(--color-secondary), 0.8));
+}
+
+/* Staggered animation delays for each icon */
+.tech-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.tech-icon:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.tech-icon:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tech-icon:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.tech-icon:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.tech-icon:nth-child(6) {
+    animation-delay: 0.75s;
+}
+
+.tech-icon:nth-child(7) {
+    animation-delay: 0.9s;
+}
+
+.tech-icon:nth-child(8) {
+    animation-delay: 1.05s;
 }

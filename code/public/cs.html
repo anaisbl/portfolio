@@ -22,339 +22,223 @@
   <body class="bg-base-200 fade-transition flex flex-col min-h-screen">
     
     <!--full body container for responsivness & centering-->
-    <div class="flex-grow flex flex-col items-center justify-center pt-5">
-
-      <!--Light/Dark mode button--
-      <label class="grid cursor-pointer place-items-center fixed top-4 right-4 z-50">
-        <input
-          type="checkbox"
-          value="synthwave"
-          class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
-          onclick="toggleTheme()" />
-        <img
-          src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
-          class="col-start-1 row-start-1"
-          width="20"
-          alt="Light Mode Icon" />
-        <img
-          src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
-          class="col-start-2 row-start-1"
-          width="20"
-          alt="Dark Mode Icon" />
-      </label>-->
-
-      <!-- floating menu -->
-      <details class="dropdown sm:dropdown-bottom dropdown-top fixed sm:right-12 sm:top-6 top-3/4 right-4 z-50">
-        <summary id="nav-icon" class="m-2">
-          <img src="icons/menu-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
-        </summary>
-        <ul class="menu dropdown-content z-1 w-52 p-2 gap-2">
-          <li id="nav-icon">
-            <a class="lg:tooltip lg:tooltip-left" href="index.html" data-tip="Home">
-              <img src="icons/home-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
-            </a>
-          </li>
-          <li id="nav-icon">
-            <a class="lg:tooltip lg:tooltip-left" href="about.html" data-tip="About">
-              <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
-            </a>
-          </li>
-          <li id="nav-icon">
-            <a class="lg:tooltip lg:tooltip-left" href="art.html" data-tip="Art">
-              <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
-            </a>
-          </li>
-          <li id="nav-icon" onclick="my_modal_1.showModal()">
-            <a class="lg:tooltip lg:tooltip-left" data-tip="Contact">
-              <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
-            </a>
-          </li>
-        </ul>
-      </details>
-
-      <!--contact modal-->
-      <dialog id="my_modal_1" class="modal">
-        <div class="modal-box">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <h2 class="text-xl font-bold py-3">Get in touch</h2>
-          <div class="flex flex-wrap gap-6">
-            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
-              <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
-            </a>
-            <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" data-tip="Github">
-              <img class="w-10 h-10" src="icons/github-svgrepo-com.svg" alt="Github" />
-            </a>
-            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
-              <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
-            </a>
-            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
-              <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
-            </a>
-          </div>
-        </div>
-      </dialog>
-
+    <main id="main-content" class="sm:p-8 p-4 mb-6">
       <!--Header title-->
-      <h1 class="sm:text-4xl text-2xl text-primary font-extrabold font-mono mb-6 text-center">Computer science</h1>
-
-      <!--Header image-->
-      <div class="avatar">
-        <div class="avatar-styling">
-          <img id="avatar" src="img/profile-light.jpg" class="w-full h-full rounded-full"/>
-        </div>
-      </div>
+      <h1 class="text-6xl text-primary font-extrabold mb-6">Computer science</h1>
 
       <!--Header introduction-->
-      <h2 class="sm:text-xl text-lg font-mono text-base-content text-justify px-4 py-4 w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
-        Hi, I'm Anaïs — a data scientist with a background in business and computer science. I work on solving real-world problems using machine learning, data analysis, and predictive modeling.
-      </h2>
+      <h3 class="sm:text-xl text-lg font-mono text-base-content text-justify py-4">
+        My journey into technology, specifically <em>'coding'</em> began in 2019, with an elective class during my undergrad called Business Information Systems- glorified name for what was essentially, an introduction to coding fundamentals. This was eye-opening, it made me realise that coding wasn't as hard as I always believed it to be. My interest was <em>piqued</em>.<br><br>
+        After graduating, I looked up a few tutorials online to learn to code, and started down the path of web development. A year later, I wanted more: I wanted to learn how computers work, how data is stored, how tools are built. This led me to pursue and obtain a Master of Science in Computer Science with a specialisation in Data science.<br><br>
 
-      <!--contact-->
-      <div id="contact" class="max-w-4xl justify-center flex flex-col items-center px-4 mb-4 pb-2">
-        <div class="divider divider-secondary">Let's Connect</div>
-        <p class="text-lg mb-2">I'm currently looking for data science roles where I can apply my skills to meaningful projects and continue growing in the field. Feel free to contact me if you like what you see!</p>
-        <div class="card sm:w-96 w-80 bg-base-100 shadow-md p-4 flex flex-col justify-center items-center">        
-          <a class="btn btn-outline sm:text-lg text-md btn-secondary sm:btn-md btn-sm w-1/2 my-2" onclick="my_modal_1.showModal()">Contact me</a>
-          <p class="text-center text-sm">Response time: Usually within 24 hours</p>
+        As of 2025, I am a fresh graduate from the Technological University of Dublin currently working as a Workflow AI Engineer at <a href="https://boundlesshq.com/" target="_blank" class="text-secondary font-bold link link-hover">BoundlessHQ</a>. Knowledge and skills from outside the tech world have been invaluable to my journey so far, and I am excited to continue learning and growing in dynamic industry!
+      </h3>
+      <em>~ Anaïs</em>
+
+      <!--contact/resume-->
+      <div class="card bg-base-100 border border-primary/20 shadow-sm my-5">
+        <div class="card-body">
+          <p class="sm:text-xl text-lg font-mono text-base-content text-justify">
+            Want to know more about my background & get in touch? 
+            <span class="flex flex-wrap gap-3 items-center mt-4">
+              <a href="mailto:anais.bl@workmail.com" class="btn btn-sm btn-ghost gap-2 hover:bg-secondary/10">
+                <img src="icons/letter-unread-svgrepo-com.svg" alt="email icon" class="w-6 h-6">
+                Drop me an email
+              </a>
+              <a target="_blank" href="img/cv.pdf" class="btn btn-sm btn-primary gap-2">View Resume
+                <img src="icons/icons8-arrow-up-right-24.png" alt="download resume icon" class="w-6 h-6 invert">
+                
+              </a>
+            </span>
+          </p>
         </div>
       </div>
 
-      <!--Timeline
-      <div class="pt-8 mb-5 w-full max-w-7xl flex justify-center">
-        <ul class="timeline timeline-vertical lg:timeline-horizontal">
-          <-- Business Management Degree ->
-          <li>
-            <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
-              <time class="font-mono text-info italic">2020</time>
-              <div class="text-md">Graduated in Business Management</div>
-              <p>ESCP Business School</p>
-            </div>
-            <div class="timeline-middle">
-              <div class="h-5 w-5 bg-accent rounded-full"></div>
-            </div>
-            <hr class="bg-accent"/>
-          </li>
-          <-- Pivot to Computer Science ->
-          <li>
-            <hr class="bg-accent"/>
-            <div class="timeline-middle">
-              <div class="h-5 w-5 bg-accent rounded-full"></div>
-            </div>
-            <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
-              <time class="font-mono text-info italic">2021-2022</time>
-              <div class="text-md">Started learning Computer Science</div>
-              <p>Self-taught web development</p>
-            </div>
-            <hr class="bg-accent"/>
-          </li>
-          <-- Logistics & Accounts Job ->
-          <li>
-            <hr class="bg-accent"/>
-            <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
-              <time class="font-mono text-info italic">2022-2024</time>
-              <div class="text-md">Worked in Logistics & Accounting</div>
-              <p>Corto Safaris Ltd</p>
-            </div>
-            <div class="timeline-middle">
-              <div class="h-5 w-5 bg-accent rounded-full"></div>
-            </div>
-            <hr class="bg-accent"/>
-          </li>
-          <-- Master’s in Data Science ->
-          <li>
-            <hr class="bg-accent"/>
-            <div class="timeline-middle">
-              <div class="h-5 w-5 bg-accent rounded-full"></div>
-            </div>
-            <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
-              <time class="font-mono italic text-info">2025</time>
-              <div class="text-md">Graduated in Computer Science</div>
-              <p>TU Dublin</p>
-            </div>
-            <hr class="bg-accent"/>
-          </li>
-          <-- Currently ->
-          <li>
-            <hr />
-            <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
-              <time class="font-mono italic text-info">2025-now</time>
-              <div class="text-md">Career in Data</div>
-              <p>Landing that perfect job soon!</p>
-            </div>
-            <div class="timeline-middle">
-              <div class="h-5 w-5  outline outline-accent rounded-full animate-ping"></div>
-            </div>
-          </li>
-        </ul>
-      </div>-->
-
-      <!--tech stack & experience-->
-      <div class="container flex flex-wrap gap-2 justify-center w-full max-w-5xl">
-
-        <!--programming languages-->
-        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
-          <h1 class="sm:text-2xl text-xl text-primary font-extrabold pb-4 font-mono text-center">Programming languages: </h1>
-          <div class="justify-left px-3 space-y-4">
-            <ul class="space-y-2" style="list-style-type:none;">
-              <li class="flex items-center gap-3">
-                <span class="w-1/3 font-bold">Python</span>
-                <progress class="progress progress-info w-1/2" value="90" max="100"></progress>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1/3 font-bold">HTML/CSS</span>
-                <progress class="progress progress-info w-1/2" value="95" max="100"></progress>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1/3 font-bold">SQL</span>
-                <progress class="progress progress-info w-1/2" value="78" max="100"></progress>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1/3 font-bold">R</span>
-                <progress class="progress progress-info w-1/2" value="72" max="100"></progress>
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-1/3 font-bold">Javascript</span>
-                <progress class="progress progress-info w-1/2" value="60" max="100"></progress>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!--skills-->
-        <div class="w-full max-w-sm bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
-          <h1 class="sm:text-2xl text-xl text-primary font-extrabold pb-4 font-mono text-center">Skills: </h1>
-          <div class="space-y-4 px-3">
-            <!--technical-->
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-secondary">Technical</h3>
-              <div class="flex flex-wrap gap-2">
-                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Programming</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Data analysis</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Machine learning</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Web development</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-secondary">Statistical analysis</div>
+      <!--experience-->
+      <h2 class="sm:text-3xl text-2xl text-primary font-extrabold font-mono mt-10 mb-6">Experience</h2>
+      <div class="join join-vertical bg-base-100 mb-10">
+        <!--boundless contract-->
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title font-semibold">
+            <div class="avatar">
+              <div class="w-6 rounded">
+                <img
+                  src="img/cs/Boundless-1717215688038.jpg"
+                  alt="boundlessq-logo"
+                />
               </div>
             </div>
-            <!--soft-->
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-success">Soft</h3>
-              <div class="flex flex-wrap gap-2">
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Cross-functional collaboration</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Communication</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Problem solving</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Adaptability</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Self-motivation</div>
-                <div class="badge sm:badge-md badge-sm badge-outline badge-success">Time management</div>
-              </div>
-            </div>
+            Workflow & AI Engineer<br>
+            <span class="text-sm text-secondary italic">October 2025 - Current</span><br>
+            <span class="text-sm text-neutral-500">@ Boundless HQ | Ireland</span>
+          </div>
+          <div class="collapse-content text-sm">
+            •	Building internal tools and automations using the new wave of AI/No-Code/Low-Code coding platforms to streamline processes across HR and Payroll Teams.<br><br>
+            •	Working closely with the development team to seamless integrate these tools into the product ecosystem, ensuring robust performance and scalability.
           </div>
         </div>
+        <!--boundless internship-->
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4"/>
+          <div class="collapse-title font-semibold">
+            <div class="avatar">
+              <div class="w-6 rounded">
+                <img
+                  src="img/cs/Boundless-1717215688038.jpg"
+                  alt="boundlessq-logo"
+                />
+              </div>
+            </div>
+            Workflow Automation & AI Intern<br>
+            <span class="text-sm text-secondary italic">July 2025 - September 2025</span><br>
+            <span class="text-sm text-neutral-500">@ Boundless HQ | Ireland</span>
+          </div>
+          <div class="collapse-content text-sm">
+            •	Engineered automation solutions leveraging no-code/low-code platforms to streamline HR workflows, reducing manual processing time and improving operational efficiency metrics.<br>
+          </div>
+        </div>
+        <!--corto safaris-->
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title font-semibold">
+            <div class="avatar">
+              <div class="w-6 rounded">
+                <img
+                  src="img/cs/OIP.jpeg"
+                  alt="boundlessq-logo"
+                />
+              </div>
+            </div>
+            Logistics & Data Analytics (Accounts) Manager<br>
+            <span class="text-sm text-secondary italic">January 2022 - August 2024</span><br>
+            <span class="text-sm text-neutral-500">@ Corto Safaris | Tanzania</span>
+          </div>
+          <div class="collapse-content text-sm">
+            •	Implemented data-driven inventory management system to automate demand forecasting, reducing stockouts and minimizing overstock.<br><br>
+            •	Analyzed purchase history & consumption trends to develop actionable insights for the operations, logistics and finance teams.<br><br>
+            •	Provided cross-functional support across departments, resolving technical issues and ensuring smoother communication between teams.
         
-        <!--technical proficiency-->
-        <div class="w-full max-w-3xl max-h-md bg-base-100 outline outline-1 outline-primary rounded-lg py-2">
-          <h1 class="sm:text-2xl text-xl text-primary font-extrabold font-mono pb-4 text-center">Technical proficiency:</h1>
-          <div class="space-y-4 px-3">
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-secondary">Data Science</h3>
-              <p class="sm:text-md text-sm text-base-content">
-                Pandas, NumPy, Scikit-learn, TensorFlow/Keras, PySpark, Matplotlib, Seaborn, Tableau, R Studio
-              </p>
-            </div>
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-secondary">Machine learning</h3>
-              <p class="sm:text-md text:sm text-base-content">
-                Supervised learning, Deep learning, Object detection, Predictive modeling, Model evaluation & Tuning
-              </p>
-            </div>
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-secondary">Web development</h3>
-              <p class="sm:text-md text-sm text-base-content">
-                Frontend basics with HTML/CSS & Javascript, UI/UX design, Deployment
-              </p>
-            </div>
-            <div>
-              <h3 class="sm:text-lg text-md font-semibold text-secondary">Development Tools</h3>
-              <p class="sm:text-md text-sm text-base-content">
-                Git/Github (Version control, Issue-tracking), Jupyter Notebooks, VS Code, Docker
-              </p>
-            </div>
           </div>
         </div>
-
       </div>
-      
+
+      <div class="divider"></div>
+
+      <!--education-->
+      <h2 class="sm:text-3xl text-2xl text-primary font-extrabold font-mono mt-10 mb-6">Education</h2>
+      <ul class="list bg-base-100 rounded-box shadow-md mb-10">
+        
+        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide"></li>
+        
+        <li class="list-row">
+          <div><img class="size-16 outline-1 outline-gray-400 rounded-box" src="img/cs/tud-logo.png"/></div>
+          <div>
+            <div class="font-bold text-lg">Msc in Computer Science</div>
+            <div class="text-sm font-semibold opacity-60">TU Dublin (2023 - 2025)</div>
+          </div>
+          <p class="list-col-wrap text-lg">
+            Graduated with a <strong>Master of Science in Computer Science ~ Specialisation in Data Science</strong> from the <span class="text-secondary link link-hover"><a href="https://www.tudublin.ie/" target="_blank">Technological University of Dublin</a></span>.<br><br>
+
+            <span class="underline">Final Master's Thesis Project:</span> "Magpie - The Development of a Geographic Information System (GIS) for Public Amenities in Urban Areas".<br><span class="text-sm italic opacity-70">Paper presented at the 17th Annual International Conference on Education and New Learning Technologies (EDULEARN 2025), Barcelona, Spain.</span>
+          </p>
+        </li>
+        
+        <li class="list-row">
+          <div><img class="size-16 rounded-box" src="img/cs/escp-logo.jpg"/></div>
+          <div>
+            <div class="font-bold text-lg">Bsc in Business Management</div>
+            <div class="text-sm font-semibold opacity-60">ESCP Europe (2017 - 2020)</div>
+          </div>
+          <p class="list-col-wrap text-lg">
+            Graduated with a <strong>Bachelor of Science in Business Management</strong> from <span class="text-secondary link link-hover"><a href="https://escp.eu/" target="_blank">Ecole Superieur de Commerce à Paris (ESCP) Business School</a></span>.<br><br>
+            <span class="underline">Bachelor Thesis:</span> "The Global Cashless Payment Revolution: a look at Africa and Europe".
+          </p>
+        </li>        
+      </ul>
+
+      <div class="divider"></div>
+
+      <!--tech stack-->
+      <h2 class="sm:text-3xl text-2xl text-primary text-center font-extrabold font-mono mt-10 mb-6">Tech stack</h2>
+      <div class="flex flex-wrap gap-4 mb-10 justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path d="M535.8 264.5C528.1 233.6 513.5 210.3 482.4 210.3L442.3 210.3L442.3 257.7C442.3 294.5 411.1 325.5 375.5 325.5L268.7 325.5C239.5 325.5 215.3 350.5 215.3 379.8L215.3 481.6C215.3 510.6 240.5 527.6 268.7 535.9C302.5 545.8 335 547.6 375.5 535.9C402.4 528.1 428.9 512.4 428.9 481.6L428.9 440.9L322.2 440.9L322.2 427.3L482.4 427.3C513.5 427.3 525 405.6 535.8 373.1C547 339.6 546.5 307.4 535.8 264.5zM382.2 508.7C374.6 509.2 367.3 505.5 363.3 499C359.4 492.4 359.4 484.3 363.3 477.7C367.3 471.2 374.6 467.5 382.2 468C389.8 467.5 397.1 471.2 401.1 477.7C405 484.3 405 492.4 401.1 499C397.1 505.5 389.8 509.2 382.2 508.7zM263.8 312.1L370.6 312.1C400.3 312.1 424 287.6 424 257.8L424 155.9C424 126.9 399.6 105.2 370.6 100.3C334.8 94.4 295.9 94.7 263.8 100.4C218.6 108.4 210.4 125.1 210.4 156L210.4 196.7L317.3 196.7L317.3 210.3L170.3 210.3C139.2 210.3 112 229 103.5 264.5C93.7 305.2 93.3 330.6 103.5 373.1C111.1 404.7 129.2 427.3 160.3 427.3L197 427.3L197 378.5C197 343.2 227.5 312.1 263.8 312.1zM257.2 128.7C268.5 128.7 277.6 137.8 277.6 149.1C277.6 160.4 268.5 169.5 257.2 169.5C245.9 169.5 236.8 160.4 236.8 149.1C236.8 137.8 245.9 128.7 257.2 128.7z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M96 96L96 544L544 544L544 96L96 96zM339.8 445.4C339.8 489 314.2 508.9 276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4zM439.4 508.9C400.3 508.9 375 490.3 362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M472.3 96L96 96L96 472.3C96 491.3 103.6 509.5 117 523C130.4 536.5 148.7 544 167.7 544L472.3 544C491.3 544 509.5 536.4 523 523C536.5 509.6 544 491.3 544 472.3L544 167.7C544 148.7 536.4 130.5 523 117C509.6 103.5 491.3 96 472.3 96zM428.4 495.4C420.7 486.9 416.7 474.7 416.4 458.8L447.7 458.8C447.9 472.9 452.8 479.9 462.5 479.9C467.4 479.9 470.9 478.3 473 475.2C475 472.1 476 467.2 476 460.4C476 455 474.7 450.5 472 447C468.5 442.8 463.9 439.5 458.8 437.5L447.2 432C436.9 427.1 429.4 421.2 424.7 414.4C420.2 407.6 418 398.1 418 386C418 372.4 422 361.4 429.8 352.9C437.9 344.4 448.9 340.2 463 340.2C476.6 340.2 487.1 344.4 494.5 352.7C502 361.1 506 373 506.3 388.6L476.2 388.6C476.4 383.5 475.3 378.4 473.2 373.8C471.5 370.4 468.2 368.7 463.2 368.7C454.4 368.7 450 373.9 450 384.4C450 389.7 451.1 393.8 453.2 397C456.3 400.5 460.2 403.2 464.6 404.8L475.7 409.7C487.2 415 495.4 421.4 500.5 429.1C505.6 436.8 508.1 447.1 508.1 460.1C508.1 475.6 504.1 487.5 495.8 495.8C487.6 504.1 476.3 508.3 461.7 508.3C447.1 508.3 436.1 504.1 428.3 495.6zM327.4 495.4C319.7 486.9 315.7 474.7 315.4 458.8L346.7 458.8C346.9 472.9 351.8 479.9 361.5 479.9C366.4 479.9 369.9 478.3 371.9 475.2C373.9 472.1 374.9 467.2 374.9 460.4C374.9 455 373.6 450.5 371 447C367.5 442.8 362.9 439.5 357.8 437.5L346.2 432C335.9 427.1 328.4 421.2 323.7 414.4C319.2 407.6 317 398.1 317 386C317 372.4 321 361.4 328.8 352.9C336.9 344.4 347.9 340.2 362 340.2C375.6 340.2 386.1 344.4 393.4 352.7C401 361.1 404.9 373 405.3 388.6L375.2 388.6C375.4 383.5 374.3 378.4 372.2 373.8C370.5 370.4 367.2 368.7 362.2 368.7C353.4 368.7 349 373.9 349 384.4C349 389.7 350.1 393.8 352.2 397C355.3 400.5 359.2 403.2 363.6 404.8L374.7 409.7C386.2 415 394.4 421.4 399.5 429.1C404.6 436.8 407.1 447.1 407.1 460.1C407.1 475.6 403 487.5 394.8 495.8C386.6 504.1 375.3 508.3 360.7 508.3C346.1 508.3 335.1 504.1 327.3 495.6zM221.8 496.5C213.4 488.8 209.3 477.3 209.3 462L209.3 386.6C209.3 371.4 213.7 359.9 222.5 352C231.4 344.2 243.2 340.2 257.7 340.2C271.8 340.2 282.9 344.2 291.1 352.2C299.4 360.2 303.6 372.2 303.6 388.1L303.6 394.1L270.5 394.1L270.5 388.3C270.5 382.2 269.2 377.6 266.5 374.7C265.4 373.2 263.9 372 262.2 371.2C260.5 370.4 258.7 370 256.8 370.1C251.4 370.1 247.6 371.9 245.4 375.7C243.1 380.9 242.1 386.5 242.4 392.1L242.4 457.6C242.4 471.3 247.2 478.2 256.8 478.4C261.3 478.4 264.7 476.8 267 473.6C269.5 469.5 270.7 464.8 270.5 460L270.5 455.1L303.6 455.1L303.6 460.2C303.6 470.8 301.5 479.7 297.4 486.8C293.4 493.7 287.5 499.3 280.3 502.8C272.6 506.5 264.2 508.3 255.7 508.1C241.5 508.1 230.2 504.2 221.9 496.5z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M192 96C174.3 96 160 110.3 160 128L160 512C160 529.7 174.3 544 192 544C209.7 544 224 529.7 224 512L224 384L319.3 384L421.7 530.4C431.8 544.9 451.8 548.4 466.3 538.3C480.8 528.2 484.3 508.2 474.2 493.7L390.1 373.5C442.8 352.1 480 300.4 480 240C480 160.5 415.5 96 336 96L192 96zM336 320L224 320L224 160L336 160C380.2 160 416 195.8 416 240C416 284.2 380.2 320 336 320z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M544 269.8C529.2 279.6 512.2 287.5 494.5 293.8C447.5 310.6 385.8 320 320 320C254.2 320 192.4 310.5 145.5 293.8C127.9 287.5 110.8 279.6 96 269.8L96 352C96 396.2 196.3 432 320 432C443.7 432 544 396.2 544 352L544 269.8zM544 192L544 144C544 99.8 443.7 64 320 64C196.3 64 96 99.8 96 144L96 192C96 236.2 196.3 272 320 272C443.7 272 544 236.2 544 192zM494.5 453.8C447.6 470.5 385.9 480 320 480C254.1 480 192.4 470.5 145.5 453.8C127.9 447.5 110.8 439.6 96 429.8L96 496C96 540.2 196.3 576 320 576C443.7 576 544 540.2 544 496L544 429.8C529.2 439.6 512.2 447.5 494.5 453.8z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M180.4 267C179.7 289.6 191 299.7 191.3 306C191.2 307.3 190.7 308.5 190 309.6C189.3 310.7 188.3 311.6 187.2 312.2L174.4 321.2C172.7 322.4 170.8 323 168.8 323.1C168.4 323.1 160.6 324.9 148.3 297.5C140.8 306.9 131.3 314.4 120.4 319.5C109.5 324.6 97.7 327.2 85.7 327C69.4 327.9 25.3 317.8 27.6 270.8C26 232.5 61.7 208.7 98.5 210.8C105.6 210.8 120.1 211.2 145.5 217.1L145.5 201.5C148.2 175 130.8 154.5 100.7 157.6C98.3 157.6 81.3 157.1 54.9 167.7C47.5 171.1 46.6 170.5 44.1 170.5C36.7 170.5 39.7 149 41.2 146.3C46.4 139.9 77.1 127.9 107.1 128.1C127.2 126.3 147.2 132.5 162.8 145.4C169.1 152.5 174 160.8 177 169.8C180 178.8 181.2 188.3 180.5 197.8L180.5 267.1zM94 299.4C126.4 298.9 140.2 279.4 143.3 268.9C145.8 258.8 145.4 252.5 145.4 241.5C135.7 239.2 121.8 236.6 105.8 236.6C90.6 235.5 63 242.2 64.1 268.9C62.9 285.7 75.2 300.3 94.1 299.4zM264.9 322.5C257 323.2 253.4 317.6 252.2 312.1L202.4 147.4C201.4 144.6 200.8 141.8 200.5 138.8C200.3 137.6 200.6 136.4 201.3 135.4C202 134.4 203.1 133.8 204.3 133.6C204.5 133.6 202.2 133.6 226.5 133.6C235.3 132.7 238.1 139.6 239.1 144L274.9 284.8L308.1 144C308.6 140.8 311 132.9 320.9 133.8L338.1 133.8C340.3 133.6 349.2 133.3 350.8 144.2L384.1 286.7L421 144.1C421.5 141.9 423.7 132.7 433.7 133.7L453.4 133.7C454.3 133.6 459.6 132.9 458.7 142.3C458.3 144.1 462.1 131.6 405.9 312.2C404.8 317.7 401.1 323.3 393.2 322.6L374.5 322.6C363.6 323.8 362 312.9 361.8 311.9L328.6 174.8L295.8 311.8C295.6 312.9 294.1 323.7 283.1 322.5L264.8 322.5L264.8 322.5zM538.4 328.1C532.5 328.1 504.5 327.8 481 315.8C478.7 314.8 476.7 313.2 475.3 311C473.9 308.8 473.2 306.4 473.2 303.9L473.2 293.2C473.2 284.7 479.4 286.3 482 287.3C492 291.4 498.5 294.4 510.8 296.9C547.5 304.4 563.6 294.6 567.5 292.4C580.7 284.6 581.7 266.7 572.8 257.5C562.3 248.7 557.3 248.4 519.7 236.5C515.1 235.2 476 222.9 475.9 184.1C475.3 155.9 500.9 127.9 545.4 128.1C558.1 128.1 591.8 132.2 601 143.7C602.4 145.8 603 148.3 602.9 150.7L602.9 160.8C602.9 165.2 601.3 167.5 598 167.5C590.3 166.6 576.6 156.3 548.8 156.7C541.9 156.3 508.9 157.6 510.4 181.7C510 200.7 537 207.8 540.1 208.6C576.6 219.6 588.7 221.4 603.2 238.2C620.3 260.4 611.1 286.5 607.5 293.6C588.4 331.1 539.1 328 538.2 328zM578.6 433C508.6 484.7 406.9 512.2 320.1 512.2C203 513 89.8 469.9 2.8 391.5C-3.7 385.6 2 377.5 10 382C106.5 437.2 215.7 466.2 326.9 466.1C409.9 465.7 492 448.8 568.5 416.6C580.3 411.6 590.3 424.4 578.6 433zM607.8 399.7C598.8 388.2 548.5 394.3 526 397C519.2 397.8 518.1 391.9 524.2 387.5C564.3 359.3 630.1 367.4 637.6 376.9C645.1 386.4 635.5 452.3 598 483.8C592.2 488.7 586.7 486.1 589.3 479.7C597.7 458.4 616.7 411.2 607.7 399.7z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="inline tech-icon" height="64" width="64" viewBox="0 0 640 640">
+          <path d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/>
+        </svg>
+      </div>
+
+      <div class="divider"></div>      
+
       <!--projects-->
-      <h1 class="sm:text-3xl text-2xl text-primary font-extrabold font-mono mt-6 pt-4 text-center">Projects</h1>
-      <h2 class="sm:text-xl text-lg font-mono text-base-content text-justify px-4 py-4 max-w-4xl">
-        From web development to machine learning, I've completed several projects in a freelance, personal and academic setting. <br> <br> Most are available on Github and some have been deployed to the web. You can filter through them by date, skill and complexity.</h2>
-      <!-- project filter -->
-      <form class="filter flex flex-wrap gap-4 items-center justify-center mt-3 px-4 max-w-4xl">
-        <div class="flex flex-wrap gap-4 items-center">
-          <!-- Topic Filter Group -->
-          <div class="flex flex-wrap justify-start items-center gap-2">
-            <span class="font-semibold sm:text-md text-sm underline">Sort by Topic:</span>
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="datascience" aria-label="Data science" />
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="webdev" aria-label="Web development" />
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="topic" value="softdev" aria-label="Software development" />
-          </div>
+      <h2 class="sm:text-3xl text-2xl text-primary text-center font-extrabold font-mono mt-10 mb-3">Projects</h2>
 
-          <!-- Complexity Filter Group -->
-          <div class="flex flex-wrap justify-start items-center gap-2">
-            <span class="font-semibold sm:text-md text-sm underline">Sort by Complexity:</span>
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="basic" aria-label="Basic" />
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="intermediate" aria-label="Intermediate" />
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="complexity" value="advanced" aria-label="Advanced" />
-          </div>
+      <!-- filter -->
+      <form id="project-filters" class="filter flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+        <input class="btn btn-soft btn-primary" type="radio" name="complexity" value="basic" aria-label="Basic">
+        <input class="btn btn-soft btn-primary" type="radio" name="complexity" value="intermediate" aria-label="Intermediate">
+        <input class="btn btn-soft btn-primary" type="radio" name="complexity" value="advanced" aria-label="Advanced">
+        <input class="btn btn-soft btn-accent" type="radio" name="topic" value="softdev" aria-label="Software development">
+        <input class="btn btn-soft btn-accent" type="radio" name="topic" value="webdev" aria-label="Web development">
+        <input class="btn btn-soft btn-accent" type="radio" name="topic" value="datascience" aria-label="Data science">
+        <input class="btn btn-soft btn-secondary" type="radio" name="date" value="newest" aria-label="Newest">
+        <input class="btn btn-soft btn-secondary" type="radio" name="date" value="oldest" aria-label="Oldest">
 
-          <!-- Date Filter Group -->
-          <div class="flex flex-wrap justify-start items-center gap-2">
-            <span class="font-semibold text-sm underline">Date:</span>
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="date" value="newest" aria-label="Newest" checked />
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="radio" name="date" value="oldest" aria-label="Oldest" />
-          </div>
-
-          <!-- Clear All Button -->
-          <div class="flex flex-wrap items-center gap-2">
-            <input class="btn btn-xs sm:btn-sm btn-outline" type="reset" value="Clear filter x" title="Clear all filters" />
-          </div>
-        </div>
-
+        <input class="btn btn-soft btn-neutral btn-square" type="reset" value="×" aria-label="Reset filters"/>
       </form>
 
       <!--project cards-->
-      <section class="project my-5 w-full max-w-7xl mx-auto py-4 px-4 flex flex-wrap gap-4 justify-center">
+      <div class="project flex flex-wrap justify-center gap-6 mt-4">
         <!--corto web-->
         <div class="project-card" data-topic="webdev" data-complexity="intermediate" data-date="2022-09">
           <figure>
             <img
-              src="img/projects/corto_screen2.png"
+              src="img/cs/corto_screen2.png"
               alt="Screenshot of home page"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Corto Safaris website
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2022</time>
-              </span>
+              <h2 class="card-title">Corto Safaris website</h2>
+              <span><time class="font-mono text-sm text-info italic">2022</time></span>
             </div>
-            <div>
-              <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-              </a>
-            </div>
-            <p>Designed a responsive tourism website with Bootstrap, custom jQuery, and PHP backend for secure data processing.<br><br> Implemented modern UI elements, form validation and Google Analytics that increased online booking inquiries and strengthened the company's digital presence in East Africa & Europe.</p>
             <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">HTML/CSS</div>
-              <div class="badge badge-outline badge-success">Bootstrap</div>
-              <div class="badge badge-outline badge-warning">Web development</div>
+              <div class="badge badge-xs badge-outline badge-success">HTML/CSS</div>
+              <div class="badge badge-xs badge-outline badge-success">Bootstrap</div>
+              <div class="badge badge-xs badge-outline badge-warning">Web development</div>
+            </div>
+            <!--<div>
+              <a href="https://www.cortosafaristanzania.com/" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                Demo ›
+              </a>
+            </div>-->
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Designed a responsive tourism website with Bootstrap, custom jQuery, and PHP backend for secure data processing.<br><br> Implemented modern UI elements, form validation and Google Analytics that increased online booking inquiries and strengthened the company's digital presence in East Africa & Europe.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -363,31 +247,30 @@
         <div class="project-card" data-topic="softdev" data-complexity="basic" data-date="2023-10">
           <figure>
             <img
-              src="img/projects/oop_ca_screen2.png"
+              src="img/cs/oop_ca_screen2.png"
               alt="Screenshot of terminal signing up"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-                Bank Management System
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-right text-info italic">2023</time>
-              </span>
+              <h2 class="card-title">Bank Management System</h2>
+              <span><time class="font-mono text-sm text-right text-info italic">2023</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-warning">Software development</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/TUD---OOP-final-CA" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/TUD---OOP-final-CA" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+              View Code ›
               </a>
             </div>
-            <p>Built a Python CLI banking system featuring transaction processing and account management. Implemented OOP principles with inheritance for different account types, transaction history tracking, and data persistence through file I/O operations.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-warning">Software development</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Built a Python CLI banking system featuring transaction processing and account management. Implemented OOP principles with inheritance for different account types, transaction history tracking, and data persistence through file I/O operations.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -396,32 +279,31 @@
         <div class="project-card" data-topic="datascience" data-complexity="intermediate" data-date="2024-03">
           <figure>
             <img
-              src="img/projects/ml_ca_screen1.png"
+              src="img/cs/ml_ca_screen1.png"
               alt="Screenshot of main code"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Marketing campaign predictor
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2024</time>
-              </span>
+              <h2 class="card-title">Marketing campaign predictor</h2>
+              <span><time class="font-mono text-sm text-info italic">2024</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-success">Sci-kit learn</div>
+              <div class="badge badge-xs badge-outline badge-warning">Machine learning</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/TUD---ML-CA1" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/TUD---ML-CA1" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
-            </div>  
-            <p>Developed a machine learning classifier that accurately predicted bank marketing campaign outcomes.<br><br> Evaluated multiple classification algorithms using customer demographic to achieve optimal prediction accuracy, providing actionable insights for more targeted marketing approaches.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-success">Sci-kit learn</div>
-              <div class="badge badge-outline badge-warning">Machine learning</div>
+            </div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Developed a machine learning classifier that accurately predicted bank marketing campaign outcomes.<br><br> Evaluated multiple classification algorithms using customer demographic to achieve optimal prediction accuracy, providing actionable insights for more targeted marketing approaches.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -430,33 +312,32 @@
         <div class="project-card" data-topic="datascience" data-complexity="advanced" data-date="2024-03">
           <figure class="w-full">
             <img
-              src="img/projects/bigdata_ca_screen2.png"
+              src="img/cs/bigdata_ca_screen2.png"
               alt="Screenshot of kaggle leaderboard"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Predicting steel-plates defects
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2024</time>
-              </span>
+              <h2 class="card-title">Predicting steel-plates defects</h2>
+              <span><time class="font-mono text-sm text-info italic">2024</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-success">Sci-kit learn</div>
+              <div class="badge badge-xs badge-outline badge-success">Pyspark</div>
+              <div class="badge badge-xs badge-outline badge-warning">Big data</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/TUD---Bigdata-CA" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/TUD---Bigdata-CA" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
             </div>
-            <p>Built a PySpark ML pipeline for steel-plate defect classification in a Kaggle competition, achieving an AUC-ROC score of 0.86375. <br><br> Implemented distributed computing techniques to process industrial sensor data and develop a multi-class model for manufacturing quality control. Ranked in the 65th percentile among 2199 participants.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-success">Sci-kit learn</div>
-              <div class="badge badge-outline badge-success">Pyspark</div>
-              <div class="badge badge-outline badge-warning">Big data</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Built a PySpark ML pipeline for steel-plate defect classification in a Kaggle competition, achieving an AUC-ROC score of 0.86375. <br><br> Implemented distributed computing techniques to process industrial sensor data and develop a multi-class model for manufacturing quality control. Ranked in the 65th percentile among 2199 participants.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -465,32 +346,31 @@
         <div class="project-card" data-topic="datascience" data-complexity="advanced" data-date="2024-04">
           <figure>
             <img
-              src="img/projects/deepl_ca_screen2.png"
+              src="img/cs/deepl_ca_screen2.png"
               alt="Screenshot of model output for image processing"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Prediction, Image processing & Transfer learning
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2024</time>
-              </span>
+              <h2 class="card-title">Prediction, Image processing & Transfer learning</h2>
+              <span><time class="font-mono text-sm text-info italic">2024</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-success">Tensorflow/Keras</div>
+              <div class="badge badge-xs badge-outline badge-warning">Deep learning</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/TUD---DeepL-CA1" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/TUD---DeepL-CA1" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
             </div>
-            <p>Created a deep CNN project for audio classification and image recognition and leveragin  transfer learning. Fine-tuned pre-trained models with hyperparameter optimization to achieve an improvement over baseline performance.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-success">Tensorflow/Keras</div>
-              <div class="badge badge-outline badge-warning">Deep learning</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Created a deep CNN project for audio classification and image recognition and leveragin  transfer learning. Fine-tuned pre-trained models with hyperparameter optimization to achieve an improvement over baseline performance.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -499,34 +379,33 @@
         <div class="project-card" data-topic="softdev" data-complexity="advanced" data-date="2024-12">
           <figure>
             <img
-              src="img/projects/magpie_screen.png"
+              src="img/cs/magpie_screen.png"
               alt="Screenshot of dashboard"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Magpie
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2024</time>
-              </span>
+              <h2 class="card-title">Magpie: a Geographic Information System</h2>
+              <span><time class="font-mono text-sm text-info italic">2024</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-success">Typescript</div>
+              <div class="badge badge-xs badge-outline badge-success">Go</div>
+              <div class="badge badge-xs badge-outline badge-success">CSS</div>
+              <div class="badge badge-xs badge-outline badge-warning">WebApp development</div>
             </div>
             <div>
-              <a href="https://github.com/2024-CMPU9010-GROUP-3/magpie" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/2024-CMPU9010-GROUP-3/magpie" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
             </div>
-            <p>Led comprehensive user testing for Magpie, a GIS platform for urban planners, gathering and implementing critical feedback to enhance usability.<br><br> Specialized in training object detection model (YOLO) to accurately identify vehicles from satellite and street-level imagery. Refined detection algorithms to improve accuracy across diverse urban environments, building a brand new dataset of parking spaces.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-success">Typescript</div>
-              <div class="badge badge-outline badge-success">Go</div>
-              <div class="badge badge-outline badge-success">CSS</div>
-              <div class="badge badge-outline badge-warning">WebApp development</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Led comprehensive user testing for Magpie, a GIS platform for urban planners, gathering and implementing critical feedback to enhance usability.<br><br> Specialized in training object detection model (YOLO) to accurately identify vehicles from satellite and street-level imagery. Refined detection algorithms to improve accuracy across diverse urban environments, building a brand new dataset of parking spaces.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -535,33 +414,32 @@
         <div class="project-card" data-topic="softdev" data-complexity="intermediate" data-date="2025-03">
           <figure>
             <img
-              src="img/projects/to-do-app-screen.png"
+              src="img/cs/to-do-app-screen.png"
               alt="Screenshot of application"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              To do list application
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2025</time>
-              </span>
+              <h2 class="card-title">To do list application</h2>
+              <span><time class="font-mono text-sm text-info italic">2025</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">Python</div>
+              <div class="badge badge-xs badge-outline badge-success">SQL</div>
+              <div class="badge badge-xs badge-outline badge-success">QCSS</div>
+              <div class="badge badge-xs badge-outline badge-warning">Software development</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/to-do-list-app" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/to-do-list-app" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
             </div>
-            <p>Developed a PyQt5 task management application with an intuitive UI and SQLite database backend. <br><br> Implemented priority color coding, recurring tasks and a history function. Applied MVC architecture for clean separation of data and presentation layers.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">Python</div>
-              <div class="badge badge-outline badge-success">SQL</div>
-              <div class="badge badge-outline badge-success">QCSS</div>
-              <div class="badge badge-outline badge-warning">Software development</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Developed a PyQt5 task management application with an intuitive UI and SQLite database backend. <br><br> Implemented priority color coding, recurring tasks and a history function. Applied MVC architecture for clean separation of data and presentation layers.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -570,45 +448,38 @@
         <div class="project-card" data-topic="webdev" data-complexity="intermediate" data-date="2025-01">
           <figure>
             <img
-              src="img/projects/portfolio_website.png"
+              src="img/cs/portfolio_website.png"
               alt="Screenshot of website landing page"
               class="project-img"/>
           </figure>
           <div class="card-body">
             <div class="flex justify-between items-center">
-              <h2 class="card-title">
-              Portfolio website
-              </h2>
-              <span>
-                <time class="font-mono text-sm text-info italic">2025</time>
-              </span>
+              <h2 class="card-title">Portfolio website</h2>
+              <span><time class="font-mono text-sm text-info italic">2025</time></span>
+            </div>
+            <div class="card-actions justify-normal py-2">
+              <div class="badge badge-xs badge-outline badge-success">HTML</div>
+              <div class="badge badge-xs badge-outline badge-success">Tailwind CSS</div>
+              <div class="badge badge-xs badge-outline badge-success">Javascript</div>
+              <div class="badge badge-xs badge-outline badge-warning">Web development</div>
             </div>
             <div>
-              <a href="https://github.com/anaisbl/portfolio" target="_blank" class="btn btn-xs btn-outline">
-                View
-                <svg width="16" height="16" fill="currentColor" class="ml-1">
-                  <path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+              <a href="https://github.com/anaisbl/portfolio" target="_blank" class="btn btn-sm btn-ghost outline-1 hover:btn-primary hover:outline-0">
+                View Code ›
               </a>
             </div>
-            <p>Built and deployed a custom portfolio website with HTML, Tailwind CSS, Javascript and icons from SVGrepo. <br><br> Leveraging Github for project management, issue tracking and deployment to Firebase through Github actions.</p>
-            <div class="card-actions justify-normal py-2">
-              <div class="badge badge-outline badge-success">HTML</div>
-              <div class="badge badge-outline badge-success">Tailwind CSS</div>
-              <div class="badge badge-outline badge-success">Javascript</div>
-              <div class="badge badge-outline badge-warning">Web development</div>
+            <div tabindex="0" class="collapse collapse-plus">
+              <input type="checkbox" />
+              <div class="collapse-title opacity-50 after:end-5 after:start-auto pe-12 ps-4 text-right">more</div>
+              <div class="collapse-content">
+                <p>Built and deployed a custom portfolio website with HTML, Tailwind CSS, Javascript and icons from SVGrepo. <br><br> Leveraging Github for project management, issue tracking and deployment to Firebase through Github actions.</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-      </section>
+    </main>
 
-    </div>
-
-    <footer class="footer footer-center bg-secondary p-2">
-      <aside>
-        <p class="text-primary-content">Copyright © 2025 - All right reserved to Nana</p>
-      </aside>
-    </footer>
   </body>
 </html>

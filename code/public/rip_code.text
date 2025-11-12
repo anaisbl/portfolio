@@ -1,0 +1,295 @@
+<!-- floating menu rip, you were beautiful -->
+    <details class="dropdown sm:dropdown-bottom dropdown-top fixed sm:right-12 sm:top-6 top-3/4 right-4 z-50">
+        <summary id="nav-icon" class="m-2">
+        <img src="icons/menu-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
+        </summary>
+        <ul class="menu dropdown-content z-1 w-52 p-2 gap-2">
+        <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="index.html" data-tip="Home">
+            <img src="icons/home-svgrepo-com.svg" alt="home-icon"class="h-5 w-5">
+            </a>
+        </li>
+        <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="about.html" data-tip="About">
+            <img src="icons/user-heart-rounded-svgrepo-com.svg" alt="about-me-icon" class="h-5 w-5">
+            </a>
+        </li>
+        <li id="nav-icon">
+            <a class="lg:tooltip lg:tooltip-left" href="art.html" data-tip="Art">
+            <img src="icons/pallete-2-svgrepo-com.svg" alt="art-icon" class="h-5 w-5">
+            </a>
+        </li>
+        <li id="nav-icon" onclick="my_modal_1.showModal()">
+            <a class="lg:tooltip lg:tooltip-left" data-tip="Contact">
+            <img src="icons/phone-svgrepo-com.svg" alt="contact-me-icon" class="h-5 w-5">
+            </a>
+        </li>
+        </ul>
+    </details>
+
+<!--contact modal -- rip it was so pretty
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <h2 class="text-xl font-bold py-3">Get in touch</h2>
+        <div class="flex flex-wrap gap-6">
+            <a href="https://www.linkedin.com/in/anais-blenet/" target="_blank" class="social-link tooltip" data-tip="Linkedin">
+            <img class="w-10 h-10" src="icons/linkedin-svgrepo-com.svg" alt="Linkedin" />
+            </a>
+            <a href="https://github.com/anaisbl" target="_blank" class="social-link tooltip" data-tip="Github">
+            <img class="w-10 h-10" src="icons/github-svgrepo-com.svg" alt="Github" />
+            </a>
+            <a href="mailto:anais.bl@workmail.com" target="_blank" class="social-link tooltip" data-tip="Email">
+            <img class="h-10 w-10" src="icons/letter-unread-svgrepo-com.svg" alt="Email" />
+            </a>
+            <a href="https://calendly.com/anais-bl-gflv" target="_blank" class="social-link tooltip" data-tip="Call">
+            <img class="h-10 w-10" src="icons/phone-svgrepo-com.svg" alt="Phone" />
+            </a>
+        </div>
+        </div>
+    </dialog>-->
+
+<!--Timeline -- i will possibly revisit you
+    <div class="pt-8 mb-5 w-full max-w-7xl flex justify-center">
+    <ul class="timeline timeline-vertical lg:timeline-horizontal">
+        <-- Business Management Degree ->
+        <li>
+        <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
+            <time class="font-mono text-info italic">2020</time>
+            <div class="text-md">Graduated in Business Management</div>
+            <p>ESCP Business School</p>
+        </div>
+        <div class="timeline-middle">
+            <div class="h-5 w-5 bg-accent rounded-full"></div>
+        </div>
+        <hr class="bg-accent"/>
+        </li>
+        <-- Pivot to Computer Science ->
+        <li>
+        <hr class="bg-accent"/>
+        <div class="timeline-middle">
+            <div class="h-5 w-5 bg-accent rounded-full"></div>
+        </div>
+        <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
+            <time class="font-mono text-info italic">2021-2022</time>
+            <div class="text-md">Started learning Computer Science</div>
+            <p>Self-taught web development</p>
+        </div>
+        <hr class="bg-accent"/>
+        </li>
+        <-- Logistics & Accounts Job ->
+        <li>
+        <hr class="bg-accent"/>
+        <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
+            <time class="font-mono text-info italic">2022-2024</time>
+            <div class="text-md">Worked in Logistics & Accounting</div>
+            <p>Corto Safaris Ltd</p>
+        </div>
+        <div class="timeline-middle">
+            <div class="h-5 w-5 bg-accent rounded-full"></div>
+        </div>
+        <hr class="bg-accent"/>
+        </li>
+        <-- Master’s in Data Science ->
+        <li>
+        <hr class="bg-accent"/>
+        <div class="timeline-middle">
+            <div class="h-5 w-5 bg-accent rounded-full"></div>
+        </div>
+        <div class="timeline-end timeline-box text-center text-base-content max-w-[240px]">
+            <time class="font-mono italic text-info">2025</time>
+            <div class="text-md">Graduated in Computer Science</div>
+            <p>TU Dublin</p>
+        </div>
+        <hr class="bg-accent"/>
+        </li>
+        <-- Currently ->
+        <li>
+        <hr />
+        <div class="timeline-start timeline-box text-center text-base-content max-w-[240px]">
+            <time class="font-mono italic text-info">2025-now</time>
+            <div class="text-md">Career in Data</div>
+            <p>Landing that perfect job soon!</p>
+        </div>
+        <div class="timeline-middle">
+            <div class="h-5 w-5  outline outline-accent rounded-full animate-ping"></div>
+        </div>
+        </li>
+    </ul>
+    </div>-->
+
+<!--Light/Dark mode button - this was fun--
+    <label class="grid cursor-pointer place-items-center fixed top-4 right-4 z-50">
+    <input
+        type="checkbox"
+        value="synthwave"
+        class="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+        onclick="toggleTheme()" />
+    <img
+        src="https://img.icons8.com/?size=100&id=67709&format=png&color=000000"
+        class="col-start-1 row-start-1"
+        width="20"
+        alt="Light Mode Icon" />
+    <img
+        src="https://img.icons8.com/?size=100&id=67639&format=png&color=000000"
+        class="col-start-2 row-start-1"
+        width="20"
+        alt="Dark Mode Icon" />
+    </label>-->
+// light/dark mode button
+// main function
+/*function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'fantasy' ? 'coffee' : 'fantasy';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // call function that switches items based on theme
+  updateTheme(newTheme);
+}
+
+// function to switch avatar and icons
+function updateTheme(theme) {
+  const elements = [
+    { id: 'avatar', darkSrc: 'img/profile-dark.jpg', lightSrc: 'img/profile-light.jpg' },
+    { id: 'construction', darkSrc: 'icons/dark/icons8-under-construction-100-brown.png', lightSrc: 'icons/light/icons8-under-construction-100-light.png'},
+    { class: 'bubble-float', darkSrc: 'icons/dark/icons8-hamburger-menu-100-floating.png', lightSrc: 'icons/light/icons8-hamburger-menu-100-light.png' },
+    { class: 'social-email', darkSrc: 'icons/dark/icons8-email-100-green.png', lightSrc: 'icons/light/icons8-email-100-light.png' },
+    { class: 'social-github', darkSrc: 'icons/dark/icons8-github-100-green.png', lightSrc: 'icons/light/icons8-github-100-light.png' },
+    { class: 'social-linkedin', darkSrc: 'icons/dark/icons8-linkedin-100-green.png', lightSrc: 'icons/light/icons8-linkedin-100-light.png' },
+  ];
+
+  elements.forEach(element => {
+    if (element.id) {
+      // Check for ID-based elements
+      const el = document.getElementById(element.id);
+      if (el) {
+        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
+      }
+    } else if (element.class) {
+      // Check for class-based elements
+      const els = document.querySelectorAll(`.${element.class}`);
+      els.forEach(el => {
+        el.src = theme === 'coffee' ? element.darkSrc : element.lightSrc;
+      });
+    }
+  });
+}
+
+// apply the stored theme on load
+window.addEventListener('DOMContentLoaded', () => {
+  const storedTheme = localStorage.getItem('theme') || 'fantasy';
+  document.documentElement.setAttribute('data-theme', storedTheme);
+  document.querySelector('.theme-controller').checked = storedTheme === 'coffee';
+
+  // update items based on the stored theme
+  updateTheme(storedTheme);
+});*/
+
+/* ____________DARK - LIGHT MODE____________ */
+
+/* theme toggle positioning */
+.theme-toggle {
+    z-index: 1000; /* Ensure it's on top of other elements */
+    outline: 1px gainsboro groove ;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* theme toggle icons */
+.theme-toggle img {
+    filter: invert(0); /* Default state */
+}
+
+[data-theme="coffee"] #light-icon {
+filter: invert(1); /* Dark mode: light icon gets inverted color */
+}
+
+[data-theme="coffee"] #dark-icon {
+filter: invert(1); /* Dark mode: dark icon remains same color */
+}
+
+[data-theme="fantasy"] #light-icon {
+filter: invert(0); /* Light mode: light icon remains same color */
+}
+
+[data-theme="fantasy"] #dark-icon {
+filter: invert(0); /* Light mode: dark icon gets inverted color */
+}
+
+// project filter
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.filter');
+  const resetBtn = form.querySelector('input[type="reset"]');
+  const cards = document.querySelectorAll('.project .project-card');
+  const container = document.querySelector('.project');
+
+  const inputGroups = {
+    topic: form.querySelectorAll('input[name="topic"]'),
+    complexity: form.querySelectorAll('input[name="complexity"]'),
+    date: form.querySelectorAll('input[name="date"]'),
+  };
+
+  function updateFilters() {
+    const filters = new FormData(form);
+    const topic = filters.get('topic');
+    const complexity = filters.get('complexity');
+    const sortOrder = filters.get('date');
+
+    // Show or hide the reset button
+    const filtersApplied =
+      (topic && topic !== 'all') ||
+      (complexity && complexity !== '') ||
+      (sortOrder && sortOrder !== 'newest');
+    resetBtn.classList.toggle('hidden', !filtersApplied);
+
+    let visibleCards = Array.from(cards).filter(card => {
+      const matchesTopic = topic && topic !== 'all' && card.dataset.topic === topic;
+      const matchesComplexity = complexity && card.dataset.complexity === complexity;
+
+      // Only one group should be active at a time
+      if (topic && topic !== 'all') return matchesTopic;
+      if (complexity) return matchesComplexity;
+      return true; // show all if only date is selected
+    });
+
+    if (sortOrder === 'newest') {
+      visibleCards.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+    } else if (sortOrder === 'oldest') {
+      visibleCards.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+    }
+
+    container.innerHTML = '';
+    visibleCards.forEach(card => container.appendChild(card));
+  }
+
+  // Handle exclusivity between filter groups
+  form.addEventListener('change', e => {
+    const changedGroup = e.target.name;
+  
+    // Only enforce mutual exclusivity between topic and complexity
+    if (changedGroup === 'topic') {
+      inputGroups.complexity.forEach(input => (input.checked = false));
+    } else if (changedGroup === 'complexity') {
+      inputGroups.topic.forEach(input => (input.checked = false));
+    }
+  
+    updateFilters();
+  });
+  
+  form.addEventListener('reset', () => {
+    setTimeout(() => {
+      resetBtn.classList.add('hidden');
+      const sorted = Array.from(cards).sort((a, b) =>
+        b.dataset.date.localeCompare(a.dataset.date)
+      );
+      container.innerHTML = '';
+      sorted.forEach(card => container.appendChild(card));
+    }, 10);
+  });
+
+  // Initialize on page load
+  updateFilters();
+});
