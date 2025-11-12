@@ -71,13 +71,13 @@ function loadPage(page) {
 
 // Handle browser back/forward buttons
 window.addEventListener('popstate', () => {
-  const page = location.hash.slice(1) || 'index';
+  const page = location.hash.slice(1) || 'home';
   loadPage(page);
 });
 
 // Load initial page on DOM ready
 window.addEventListener('DOMContentLoaded', () => {
-  const page = location.hash.slice(1) || 'index';
+  const page = location.hash.slice(1) || 'home';
   loadPage(page);
 });
 
@@ -113,7 +113,7 @@ function setActiveLink(page) {
 
 // Utility function to get current page
 function getCurrentPage() {
-  return location.hash.slice(1) || 'index';
+  return location.hash.slice(1) || 'home';
 }
 
 // Add smooth transitions
@@ -433,6 +433,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initialize
   applyFilters();
+});
+
+//____________________________________________________________________________
+
+// Collapse toggle text functionality
+function initCollapseToggles(root = document) {
+  const collapses = root.querySelectorAll('div.collapse');
+  
+  collapses.forEach(collapse => {
+    const checkbox = collapse.querySelector('input[type="checkbox"]');
+    const titleDiv = collapse.querySelector('div.collapse-title');
+    
+    if (checkbox && titleDiv) {
+      // Set initial state
+      updateCollapseText(checkbox, titleDiv);
+      
+      // Listen for changes
+      checkbox.addEventListener('change', () => {
+        updateCollapseText(checkbox, titleDiv);
+      });
+    }
+  });
+}
+
+function updateCollapseText(checkbox, titleDiv) {
+  if (checkbox.checked) {
+    titleDiv.textContent = 'less';
+  } else {
+    titleDiv.textContent = 'more';
+  }
+}
+
+// Initialize on DOMContentLoaded and after content:loaded (SPA navigation)
+document.addEventListener('DOMContentLoaded', () => initCollapseToggles(document));
+document.addEventListener('content:loaded', (e) => {
+  const main = document.getElementById('main-content');
+  if (main) initCollapseToggles(main);
 });
 
 

@@ -6,33 +6,50 @@
 
 /* ___________IMPORT FONTS______________ */
 @font-face {
-    font-family: "notulenfont";
-    src: url("/fonts/notulen-serif-display-extra-bold.otf");
-    font-weight: bold;
+    font-family: "licoriceregular";
+    src: url("../fonts/Licorice-Regular.ttf");
+    font-weight: bolder;
+    font-style: bold;
+}
+@font-face {
+    font-family: "kleeoneregular";
+    src: url("../fonts/KleeOne-Regular.ttf");
+    font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: "bellefairfont";
-    src: url("/fonts/Bellefair-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
+    font-family: "kleeonesemibold";
+    src: url("../fonts/KleeOne-SemiBold.ttf");
+    font-weight: bold;
+    font-style: bold;
 }
 
 /* ____________HTML STYLING_____________ */
 h1 {
-    font-family: "notulenfont" !important;
+    font-family: "licoriceregular" !important;
 }
-h2, h3, h4, p, a {
-    font-family: "bellefairfont" !important;
+h2, h3, h4, p, a, em, span, div {
+    font-family: "kleeoneregular" !important;
+}
+
+/* Override Tailwind font utilities to ensure bellefair is applied */
+h2.font-mono, h3.font-mono, h4.font-mono, p.font-mono, a.font-mono {
+    font-family: "kleeoneregular" !important;
+}
+h4.font-bold, .font-semibold, h2.font-extrabold {
+    font-family: "kleeonesemibold" !important;
+}
+time {
+    font-family: "kleeoneregular" !important;
 }
 
 
 /* ____________CLASS STYLING____________ */
 
-/* chat container */
+/* chat container 
 .chat-container {
     @apply bg-base-100 space-y-4 outline-solid outline-1 rounded-md outline-primary mb-2 p-4 overflow-y-auto h-[300px] max-h-screen flex flex-col relative
-}
+}*/
 
 /* project cards */
 .project-img {
@@ -45,4 +62,97 @@ h2, h3, h4, p, a {
 /* about pictures */
 .about-pic {
     @apply h-40 rounded
+}
+
+/* Custom bounce animations for carousel arrows */
+@keyframes bounce-left {
+    0%, 100% {
+        transform: translateX(-4px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(4px);
+        opacity: 0.6;
+    }
+}
+
+@keyframes bounce-right {
+    0%, 100% {
+        transform: translateX(4px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-4px);
+        opacity: 0.6;
+    }
+}
+
+.animate-bounce-left {
+    animation: bounce-left 1s infinite;
+}
+
+.animate-bounce-right {
+    animation: bounce-right 1s infinite;
+}
+
+/* Tech stack icon animations */
+@keyframes float-up {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px rgba(var(--color-secondary), 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(var(--color-secondary), 0.5));
+    }
+}
+
+.tech-icon {
+    animation: float-up 3s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.15) translateY(-12px);
+    filter: drop-shadow(0 0 12px rgba(var(--color-secondary), 0.8));
+}
+
+/* Staggered animation delays for each icon */
+.tech-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.tech-icon:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.tech-icon:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tech-icon:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.tech-icon:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.tech-icon:nth-child(6) {
+    animation-delay: 0.75s;
+}
+
+.tech-icon:nth-child(7) {
+    animation-delay: 0.9s;
+}
+
+.tech-icon:nth-child(8) {
+    animation-delay: 1.05s;
 }
