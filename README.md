@@ -2,7 +2,7 @@
 
 Welcome to my portfolio repo! I’m building a website to showcase my work, experiences, and projects.
 
-<img src="https://github.com/user-attachments/assets/6d2deb66-1064-404f-868a-8561f1d1563d" height="400">
+<img src="https://github.com/user-attachments/assets/84b04d10-1c1d-4278-8f37-aa86db93677e" height="400">
 
 ### What I'm Using: :wrench:
 - **HTML**: Basic structure for the website. 
@@ -20,5 +20,7 @@ I’m hosting the site on **Firebase** 🚀 and using **GitHub Actions** to auto
 
 ### What’s Next:
 - ~~**About me page**: Currently working on the about me page and restructuring home 🏠 (15/4/2025)~~ --> done 19/04/2025
-- ~~Restructuring the CS page: I need to revist the layout + filter buttons and cards (19/04/2025)~~ --> done 13/05/2025
-- **Re-doing the Art page**: To make it more cohesive with the other newly refreshed pages (13/05/2025)
+- ~~**Restructuring the CS page**: I need to revist the layout + filter buttons and cards (19/04/2025)~~ --> done 13/05/2025
+- ~~**Re-doing the Art page**: To make it more cohesive with the other newly refreshed pages~~ --> done 18/11/2025
+- ~~**Website Revamp**: Re-doing every single page of the portfolio for a more sleek, modern, mobile friendly look~~ --> done 18/11/2025
+- **General UI fixes**: small bugs and laundry items (19/11/2025)
