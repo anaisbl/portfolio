@@ -25,6 +25,7 @@ function loadPage(page) {
       .then(html => {
         // Replace content
         main.innerHTML = html;
+        window.scrollTo(0, 0);
         window.history.pushState(null, '', `#${page}`);
         setActiveLink(page);
 
@@ -476,4 +477,12 @@ document.addEventListener('content:loaded', (e) => {
 
 
 
+
+// _____ demo modal ______ //
+function showDemo(videoPath) {
+  const videoSource = document.querySelector('#demo_modal video source');
+  videoSource.src = videoPath;
+  videoSource.parentElement.load(); // Reload the video player
+  document.getElementById('demo_modal').showModal();
+}
 

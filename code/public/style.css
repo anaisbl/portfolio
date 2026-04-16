@@ -7,19 +7,19 @@
 /* ___________IMPORT FONTS______________ */
 @font-face {
     font-family: "licoriceregular";
-    src: url("../fonts/Licorice-Regular.ttf");
+    src: url("../assets/fonts/Licorice-Regular.ttf");
     font-weight: bolder;
     font-style: bold;
 }
 @font-face {
     font-family: "kleeoneregular";
-    src: url("../fonts/KleeOne-Regular.ttf");
+    src: url("../assets/fonts/KleeOne-Regular.ttf");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "kleeonesemibold";
-    src: url("../fonts/KleeOne-SemiBold.ttf");
+    src: url("../assets/fonts/KleeOne-SemiBold.ttf");
     font-weight: bold;
     font-style: bold;
 }
